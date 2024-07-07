@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "qqgjyx / home"
+title                    : "Juntang Wang"
 title_separator          : "-"
 name                     : &name "王俊棠 (WANG JUN TANG)"
 description              : &description "王俊棠"
@@ -22,7 +22,7 @@ repository               : "qqgjyx/qqgjyx.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "王俊棠 (WANG JUN TANG)"
+  name             : "Juntang Wang"
   pronouns         : "he/him"# example: "she/her"
   bio              : "Applied Math/CS Junior"
   location         : "China"
