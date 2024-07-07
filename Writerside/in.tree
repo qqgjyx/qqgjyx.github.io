@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                 name="Instance Name" start-page="CONTRIBUTING.md">
+
+    <toc-element topic="CONTRIBUTING.md"/>
+    <toc-element topic="README.md"/>
+    <toc-element toc-title="_talks">
+        <toc-element topic="2012-03-01-talk-1.md"/>
+        <toc-element topic="2013-03-01-tutorial-1.md"/>
+        <toc-element topic="2014-02-01-talk-2.md"/>
+        <toc-element topic="2014-03-01-talk-3.md"/>
+    </toc-element>
+    <toc-element toc-title="_publications">
+        <toc-element topic="2010-10-01-paper-title-number-2.md"/>
+        <toc-element topic="2024-02-17-paper-title-number-4.md"/>
+        <toc-element topic="2009-10-01-paper-title-number-1.md"/>
+        <toc-element topic="2015-10-01-paper-title-number-3.md"/>
+    </toc-element>
+    <toc-element toc-title="markdown_generator">
+        <toc-element topic="readme.md"/>
+    </toc-element>
+    <toc-element toc-title="_posts">
+        <toc-element topic="2012-08-14-blog-post-1.md"/>
+        <toc-element topic="2014-08-14-blog-post-3.md"/>
+        <toc-element topic="2199-01-01-future-post.md"/>
+        <toc-element topic="2015-08-14-blog-post-4.md"/>
+        <toc-element topic="2013-08-14-blog-post-2.md"/>
+    </toc-element>
+    <toc-element toc-title="_portfolio">
+        <toc-element topic="portfolio-1.md"/>
+    </toc-element>
+    <toc-element toc-title="_drafts">
+        <toc-element topic="post-draft.md"/>
+    </toc-element>
+    <toc-element toc-title="_pages">
+        <toc-element topic="sitemap.md"/>
+        <toc-element topic="archive-layout-with-content.md"/>
+        <toc-element topic="about.md"/>
+        <toc-element topic="non-menu-page.md"/>
+        <toc-element topic="404.md"/>
+        <toc-element topic="terms.md"/>
+        <toc-element topic="publications.md"/>
+        <toc-element topic="about_bk.md"/>
+        <toc-element topic="cv.md"/>
+        <toc-element topic="markdown.md"/>
+    </toc-element>
+    <toc-element toc-title=".github">
+        <toc-element toc-title="ISSUE_TEMPLATE">
+            <toc-element topic="bug_report.md"/>
+            <toc-element topic="feature_request.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element toc-title="_teaching">
+        <toc-element topic="2014-spring-teaching-1.md"/>
+        <toc-element topic="2015-spring-teaching-2.md"/>
+    </toc-element>
+</instance-profile>
