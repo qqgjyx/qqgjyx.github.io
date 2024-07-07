@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Juntang Wang / Q9gJYx''s homepage"
+title                    : "Juntang / homepage"
 title_separator          : "-"
 name                     : &name "Juntang Wang"
 description              : &description "personal description"
@@ -22,11 +22,11 @@ repository               : "qqgjyx/qqgjyx.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Juntang"
+  name             : "Juntang Wang"
   pronouns         : "he/him"# example: "she/her"
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Applied Math - CS Junior @ Duke/Duke Kunshan"
   location         : "China"
-  employer         : "Undergraduate - Duke Kunshan University"
+  employer         : "Duke Kunshan University"
   uri              : "qqgjyx.com"# URL
   email            : "jw853@duke.edu"
 
