@@ -12,20 +12,23 @@ redirect_from:
 Education
 ======
 * B.S. in Applied Math & Computational Science; Computer Science Track, Duke Kunshan University (DKU) & Duke University, Class of 2026
-  * GPA: 3.7/4.0; Dean’s List: Fall 2023
-  * Courses: COMPSCI, MATH, BIOL, RINDSTU, ECON, MEDIART, ARHU, PSYCH, HIST
-  * Clubs: DKU Kendo Club (Training Leader)
+  * GPA: 3.73/4.00
+  * Honors:
+    * Dean's List with Distinction: Spring 2024 
+    * Dean’s List: Fall 2023
+  * Courses:
+    * MATH 302: Numerical Analysis (A)
+    * MATH 202: Linear Algebra (A) 
+    * MATH 201: Multivariable Calculus (A)
+    * COMPSCI 101: Intro to Comp Science (A+) 
+    * MATH 105: Calculus (A+)
+    * BIOL 110: Intro to Comp Science (A+)
+    * RINDSTU, ECON, MEDIART, ARHU, PSYCH, HIST
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
 Teaching
