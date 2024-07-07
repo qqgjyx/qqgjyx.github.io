@@ -11,19 +11,42 @@ redirect_from:
 
 Education
 ======
-* B.S. in Applied Math & Computational Science; Computer Science Track, Duke Kunshan University (DKU) & Duke University, Class of 2026
-  * GPA: 3.73/4.00
-  * Honors:
-    * Dean's List with Distinction: Spring 2024 
-    * Dean’s List: Fall 2023
-  * Courses:
-    * MATH 302: Numerical Analysis (A)
-    * MATH 202: Linear Algebra (A) 
-    * MATH 201: Multivariable Calculus (A)
-    * COMPSCI 101: Intro to Comp Science (A+) 
-    * MATH 105: Calculus (A+)
-    * BIOL 110: Integrated Science - Biology (A+)
-    * RINDSTU, ECON, MEDIART, ARHU, PSYCH, HIST
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Duke Kunshan University (DKU) & Duke University Dual Degree</strong><br>
+    <em>B.S. in Applied Math & Computational Science; Computer Science Track (DKU)</em><br>
+    <em>B.S. in Interdisciplinary Studies; Applied Math & Computational Science; Computer Science (Duke)</em><br>
+  </div>
+  <div style="text-align: right;">
+    Class of 2026<br>
+    Kunshan, China<br>
+    Durham, U.S.
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li><strong>GPA:</strong> 3.73/4.00</li>
+    <li><strong>Honors:</strong>
+      <ul>
+        <li>Dean's List with Distinction: Spring 2024</li>
+        <li>Dean’s List: Fall 2023</li>
+      </ul>
+    </li>
+    <li><strong>Courses:</strong>
+      <ul>
+        <li>MATH 302: Numerical Analysis (A)</li>
+        <li>MATH 202: Linear Algebra (A)</li>
+        <li>MATH 201: Multivariable Calculus (A)</li>
+        <li>COMPSCI 101: Intro to Comp Science (A+)</li>
+        <li>MATH 105: Calculus (A+)</li>
+        <li>BIOL 110: Integrated Science - Biology (A+)</li>
+        <li>RINDSTU, ECON, MEDIART, ARHU, PSYCH, HIST</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
 
 Publications
 ======
