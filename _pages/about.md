@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "王俊棠 (Juntang Wang)"
+title: "Juntang Wang"
 author_profile: true
 redirect_from: 
   - /about/
