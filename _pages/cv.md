@@ -22,7 +22,7 @@ Education
     * MATH 201: Multivariable Calculus (A)
     * COMPSCI 101: Intro to Comp Science (A+) 
     * MATH 105: Calculus (A+)
-    * BIOL 110: Intro to Comp Science (A+)
+    * BIOL 110: Integrated Science - Biology (A+)
     * RINDSTU, ECON, MEDIART, ARHU, PSYCH, HIST
 
 Publications
