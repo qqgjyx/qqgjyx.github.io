@@ -64,7 +64,7 @@ redirect_from:
 <div style="display: flex; justify-content: space-between;">
   <div>
     <strong>RINDSTU 393 – Photon & Exciton Dynamics</strong><br>
-    <em>Research Independent Study</em>
+    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang<br>
   </div>
   <div style="text-align: right;">
     Mar - May 2024<br>
@@ -86,7 +86,7 @@ redirect_from:
 <div style="display: flex; justify-content: space-between;">
   <div>
     <strong>RINDSTU 393 – Photoluminescence</strong><br>
-    <em>Research Independent Study</em>
+    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang<br>
   </div>
   <div style="text-align: right;">
     Jan - Mar 2024<br>
@@ -102,10 +102,11 @@ redirect_from:
   </ul>
 </div>
 
+
 <div style="display: flex; justify-content: space-between;">
   <div>
     <strong>RINDSTU 393 – Superconductivity</strong><br>
-    <em>Research Independent Study</em>
+    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang<br>
   </div>
   <div style="text-align: right;">
     Aug - Oct 2023<br>
