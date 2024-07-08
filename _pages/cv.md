@@ -59,12 +59,24 @@ redirect_from:
   </ul>
 </div>
 
+## Publications
+<hr>
+  <ul>{% for post in site.publications reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+  
+## Teaching
+<hr>
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
 ## Research experience
 <hr>
 <div style="display: flex; justify-content: space-between;">
   <div>
-    <strong>Data Driven Model for AIS Reperfusion Decision-making</strong><br>
-    <em>Research Assistant, Zu Chongzhi Center for Mathematics and Computational Science</em>, PI: Prof. Shixin Xu<br>
+    <strong>Zu Chongzhi Center for Mathematics and Computational Science</strong><br>
+    <em>Research Assistant</em>, PI: Prof. Shixin Xu<br>
   </div>
   <div style="text-align: right;">
     Mar 2024 - Present<br>
@@ -73,6 +85,7 @@ redirect_from:
 </div>
 <div style="padding-left: 20px;">
   <ul style="margin-top: 0;">
+    <li>Investigated on the topic of "Data Driven Model for AIS Reperfusion Decision-making."</li>
     <li>Milestoned a novel ODE model of the perfusion process in pwiMRI presurgery diagnosis for acute hemorrhagic, in comparison to previous Kernel models.</li>
     <li>Scraped 100+ fields from an open database about the topic of bacterial cultivation as a side project.</li>
   </ul>
@@ -177,17 +190,7 @@ redirect_from:
 </div>
 
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
 
 Work experience
 ======
