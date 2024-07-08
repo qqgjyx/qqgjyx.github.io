@@ -86,7 +86,7 @@ redirect_from:
 <div style="display: flex; justify-content: space-between;">
   <div>
     <strong>RINDSTU 393 – Photoluminescence</strong><br>
-    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang & Prof Changcheng Zheng<br>
+    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang & Prof. Changcheng Zheng<br>
   </div>
   <div style="text-align: right;">
     Jan - Mar 2024<br>
