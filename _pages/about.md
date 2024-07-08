@@ -11,41 +11,56 @@ I'm **Juntang Wang**, a student at **Duke Kunshan University (DKU) & Duke Univer
 
 ---
 
-<details>
-  <summary>
-    <div style="display: flex; justify-content: space-between;">
-      <div>
-        <strong>Duke Kunshan University (DKU) & Duke University Dual Degree</strong><br>
-        <em>B.S. in Applied Math & Computational Science; Computer Science Track (DKU)</em><br>
-        <em>B.S. in Interdisciplinary Studies; Applied Math & Computational Science; Computer Science (Duke)</em><br>
-      </div>
-      <div style="text-align: right;">
-        Class of 2026<br>
-        Kunshan, China<br>
-        Durham, U.S.
-      </div>
-    </div>
-  </summary>
-  <div style="display: flex; justify-content: space-between;">
-    <ul style="margin-top: 0;">
-      <li><strong>GPA:</strong> 3.73/4.00</li>
-      <li><strong>Honors:</strong>
-        <ul>
-          <li>Dean's List with Distinction: Spring 2024</li>
-          <li>Dean’s List: Fall 2023</li>
-        </ul>
-      </li>
-      <li><strong>Courses:</strong>
-        <ul>
-          <li>MATH 302: Numerical Analysis (A)</li>
-          <li>MATH 202: Linear Algebra (A)</li>
-          <li>MATH 201: Multivariable Calculus (A)</li>
-          <li>COMPSCI 101: Intro to Comp Science (A+)</li>
-          <li>MATH 105: Calculus (A+)</li>
-          <li>BIOL 110: Integrated Science - Biology (A+)</li>
-          <li>RINDSTU, ECON, MEDIART, ARHU, PSYCH, HIST</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</details>
+# Personal Chatbox
+
+This is a chatbox integrated into my personal homepage. You can ask questions, and the bot will answer based on the information about me and my website.
+
+<div class="chatbox" id="chatbox">
+    <!-- Chat messages will be displayed here -->
+</div>
+<input type="text" id="userInput" class="input-box" placeholder="Type a message">
+<button onclick="sendMessage()">Send</button>
+
+<script>
+    async function sendMessage() {
+        const inputBox = document.getElementById('userInput');
+        const message = inputBox.value;
+        inputBox.value = '';
+
+        // Display user message
+        const chatbox = document.getElementById('chatbox');
+        chatbox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+
+        // Send message to backend
+        try {
+            const response = await fetch('http://llama.qqgjyx.com/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message })
+            });
+            const data = await response.json();
+
+            // Display response
+            chatbox.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
+        } catch (error) {
+            chatbox.innerHTML += `<p><strong>Bot:</strong> Error: ${error.message}</p>`;
+        }
+    }
+</script>
+
+<style>
+    /* Add your CSS styling here */
+    .chatbox {
+        width: 300px;
+        height: 400px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .input-box {
+        width: 100%;
+        padding: 10px;
+    }
+</style>
