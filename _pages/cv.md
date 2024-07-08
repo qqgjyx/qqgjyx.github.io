@@ -67,9 +67,9 @@ redirect_from:
   
 ## Teaching
 <hr>
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+{% for post in site.teaching reversed %}
+  {% include archive-single.html %}
+{% endfor %}
 
 ## Research experience
 <hr>
