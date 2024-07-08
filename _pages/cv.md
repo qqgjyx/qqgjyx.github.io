@@ -23,6 +23,7 @@ redirect_from:
 </div>
 
 ## Education
+<hr>
 <div style="display: flex; justify-content: space-between;">
   <div>
     <strong>Duke Kunshan University (DKU) & Duke University Dual Degree</strong><br>
@@ -59,6 +60,7 @@ redirect_from:
 </div>
 
 ## Research experience
+<hr>
 <div style="display: flex; justify-content: space-between;">
   <div>
     <strong>RINDSTU 393 – Photon & Exciton Dynamics</strong><br>
