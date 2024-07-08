@@ -13,6 +13,6 @@ I'm **Juntang Wang**, a student at **Duke Kunshan University (DKU) & Duke Univer
 
 # Personal Chatbox
 
-Here you can learn more about me and interact with my AI chatbox.
+This is a chatbox integrated into my personal homepage. You can ask questions, and the bot will answer based on the information about me and my website.
 
-<iframe src="chatbox.html" width="100%" height="500" style="border:none;"></iframe>
+<iframe src="http://llama.qqgjyx.com" width="100%" height="500" style="border:none;"></iframe>
