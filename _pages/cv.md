@@ -11,14 +11,14 @@ redirect_from:
 
 <div style="display: flex; justify-content: space-between;">
   <div>
-    <strong>Email:</strong> <a href="mailto:jw853@duke.edu" target="_blank">jw853@duke.edu</a><br>
-    <strong>Phone (China):</strong> <a href="tel:+8613706267747" target="_blank">+86 13706267747</a><br>
-    <strong>Phone (US):</strong> <a href="tel:+19192014521" target="_blank">+1 919-201-4521</a>
+    Email: <a href="mailto:jw853@duke.edu" target="_blank">jw853@duke.edu</a><br>
+    Phone (China): <a href="tel:+8613706267747" target="_blank">+86 13706267747</a><br>
+    Phone (US): <a href="tel:+19192014521" target="_blank">+1 919-201-4521</a>
   </div>
   <div>
-    <strong>Website:</strong> <a href="http://qqgjyx.com" target="_blank">qqgjyx.com</a><br>
-    <strong>LinkedIn:</strong> <a href="http://linkedin.com/in/q9gjyx" target="_blank">linkedin.com/in/q9gjyx</a><br>
-    <strong>GitHub:</strong> <a href="http://github.com/qqgjyx" target="_blank">github.com/qqgjyx</a>
+    Website: <a href="http://qqgjyx.com" target="_blank">qqgjyx.com</a><br>
+    LinkedIn: <a href="http://linkedin.com/in/q9gjyx" target="_blank">linkedin.com/in/q9gjyx</a><br>
+    GitHub: <a href="http://github.com/qqgjyx" target="_blank">github.com/qqgjyx</a>
   </div>
 </div>
 
