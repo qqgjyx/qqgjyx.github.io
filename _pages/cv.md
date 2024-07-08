@@ -9,6 +9,19 @@ redirect_from:
 
 {% include base_path %}
 
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <div>
+    <strong>Email:</strong> <a href="mailto:jw853@duke.edu" target="_blank">jw853@duke.edu</a><br>
+    <strong>Phone (China):</strong> <a href="tel:+8613706267747" target="_blank">+86 13706267747</a><br>
+    <strong>Phone (US):</strong> <a href="tel:+19192014521" target="_blank">+1 919-201-4521</a>
+  </div>
+  <div>
+    <strong>Website:</strong> <a href="http://qqgjyx.com" target="_blank">qqgjyx.com</a><br>
+    <strong>LinkedIn:</strong> <a href="http://linkedin.com/in/q9gjyx" target="_blank">linkedin.com/in/q9gjyx</a><br>
+    <strong>GitHub:</strong> <a href="http://github.com/qqgjyx" target="_blank">github.com/qqgjyx</a>
+  </div>
+</div>
+
 Education
 ======
 <div style="display: flex; justify-content: space-between;">
@@ -46,6 +59,103 @@ Education
   </ul>
 </div>
 
+Research experience
+======
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>RINDSTU 393 – Photon & Exciton Dynamics</strong><br>
+    <em>Research Independent Study</em>
+  </div>
+  <div style="text-align: right;">
+    Mar - May 2024<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Continued unfinished research from previous studies on Photoluminescence and Superconductivity.</li>
+    <li>Completed 2 manuscripts, currently in the process of publishing:
+      <ul>
+        <li><em>Analyzing Temperature-Induced Phase Transitions in LK-99 (Pb<sub>10-x</sub>Cu<sub>x</sub>(PO<sub>4</sub>)<sub>6</sub>O)</em></li>
+        <li><em>Comparative Study on the Optical and Vibrational Properties of NaBaYb(BO<sub>3</sub>)<sub>2</sub> and KBaYb(BO<sub>3</sub>)<sub>2</sub></em></li>
+      </ul>
+    </li>
+    <li>Achieved a grade of A.</li>
+  </ul>
+</div>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>RINDSTU 393 – Photoluminescence</strong><br>
+    <em>Research Independent Study</em>
+  </div>
+  <div style="text-align: right;">
+    Jan - Mar 2024<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Engaged in comprehensive research focused on "Photoluminescence in Rare-earth-based Materials."</li>
+    <li>Developed and implemented an automated modification to conduct DFT calculation, non-self-consistent field (nSCF), Raman spectroscopy, and Photoluminescence (PL) shift analysis.</li>
+    <li>In the process of authoring a research paper detailing these findings for publication, demonstrating potential impact in the field.</li>
+    <li>Achieved a grade of A.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>RINDSTU 393 – Superconductivity</strong><br>
+    <em>Research Independent Study</em>
+  </div>
+  <div style="text-align: right;">
+    Aug - Oct 2023<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Conducted in-depth research on "Superconductivity - Synthesizing and Testing on Edge Materials."</li>
+    <li>Successfully synthesized pure samples of Li<sub>3</sub>Re<sub>3</sub>Te<sub>2</sub>O<sub>12</sub> and Pb<sub>9</sub>Cu(PO<sub>4</sub>)<sub>6</sub>O. Performed X-Ray Diffraction (XRD) analysis and levitation experiments to assess superconductivity.</li>
+    <li>Developed a novel synthesis recipe with an altered ratio, leading to significant findings. Currently preparing a manuscript for publication.</li>
+    <li>Achieved a grade of A.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>ECON 101 – Introduction to Economics</strong><br>
+    <em>Student Research</em>
+  </div>
+  <div style="text-align: right;">
+    Jan - Mar 2023<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Conducted research on "Economics in Pharmaceutical Marketing."</li>
+    <li>Analyzed 10+ academic resources.</li>
+    <li>Presented a 30-minute report on the economic mechanisms behind pharmaceutics.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>PSYCHO 101 – Introduction to Psychology</strong><br>
+    <em>Student Research</em>
+  </div>
+  <div style="text-align: right;">
+    Aug - Oct 2022<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Conducted research on "Teenagers’ Abnormal Behavior under Auditing Effect."</li>
+    <li>Analyzed 10+ academic resources.</li>
+    <li>Completed a 3000-word report.</li>
+  </ul>
+</div>
 
 
 Publications
@@ -59,30 +169,6 @@ Teaching
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-
-Research experience
-======
-* Research Independent Study, RINDSTU 393 – Photoluminescence (Jan - Mar 2024)
-  * Kunshan, China
-  * Research focused on "Photoluminescence in Rare-earth-based Materials"
-  * Developed and implemented automated modification for DFT calculation, non-self-consistent field (nSCF), Raman spectroscopy, and Photoluminescence (PL) shift analysis
-  * In process of authoring research paper for publication
-
-* Research Independent Study, RINDSTU 393 – Superconductivity (Aug - Oct 2023)
-  * Kunshan, China
-  * Research on "Superconductivity - Synthesizing and Testing on Edge Materials"
-  * Synthesized pure samples, performed XRD analysis, levitation experiments, developed novel synthesis recipe
-  * Preparing manuscript for publication
-
-* Student Research, ECON 101 – Introduction to Economics (Jan - Mar 2023)
-  * Kunshan, China
-  * Researched “Economics in pharmaceutical marketing”
-  * Analyzed 10+ academic resources, presented a 30-minute report on economical mechanisms behind pharmaceutics
-
-* Student Research, PSYCHO 101 – Introduction to Psychology (Aug - Oct 2022)
-  * Kunshan, China
-  * Researched “teenagers’ abnormal behavior under auditing effect”
-  * Analyzed 10+ academic resources, completed a 3000-word report  
 
 Work experience
 ======
