@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; justify-content: space-between;">
   <div>
     <strong>Email:</strong> <a href="mailto:jw853@duke.edu" target="_blank">jw853@duke.edu</a><br>
     <strong>Phone (China):</strong> <a href="tel:+8613706267747" target="_blank">+86 13706267747</a><br>
