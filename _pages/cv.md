@@ -192,33 +192,77 @@ redirect_from:
 
 
 
-Work experience
-======
-* Resident Assistant & Duty Assistant, Residence Life, DKU (Sep 2022 - present)
-  * Kunshan, China
-  * Duties included: Completing all duties and duty logs without absence, helping post RA recruitment info in CC building
-  * Award: Duty Assistant of the Year (2022)
-  * Responsibilities: 50+ duty shifts, dealt with 100+ incidents with 0 mistakes
+## Work experience
+<hr>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Resident Assistant & Duty Assistant</strong><br>
+    <em>Residence Life, DKU</em>
+  </div>
+  <div style="text-align: right;">
+    Sep 2022 - Jun 2024<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Completed all duties and duty logs without absence, helped post RA recruitment info in CC building.</li>
+    <li>Award: Duty Assistant of the Year (2022).</li>
+    <li>Responsibilities: 50+ duty shifts, dealt with 100+ incidents with 0 mistakes.</li>
+  </ul>
+</div>
 
-* Teaching Assistant, MATH101, Division of Natural and Applied Sciences, DKU (Aug - Oct 2023)
-  * Kunshan, China
-  * Conducted 10+ recitation sessions for a class of 40 students, focusing on practice problems and reviewing key concepts
-  * Earned commendations for effective facilitation of learning from students and instructor
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Product Testing Intern</strong><br>
+    <em>Second DX Division, NTT Data</em>
+  </div>
+  <div style="text-align: right;">
+    July - Aug 2023<br>
+    Wuxi, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Interned across all departments, guided by a research lab director affiliated with the Chinese Academy of Sciences.</li>
+    <li>Attended professional internal Japanese language classes at N1 level, gained insights from 12+ innovative software-related companies.</li>
+  </ul>
+</div>
 
-* Product Testing Intern, Second DX Division, NTT Data (July - Aug 2023)
-  * Wuxi, China
-  * Interned across all departments, guided by a research lab director affiliated with the Chinese Academy of Sciences
-  * Attended professional internal Japanese language classes at N1 level, gained insights from 12+ innovative software-related companies
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Internship Client Manager</strong><br>
+    <em>Business Department, Bank of Huaxia</em>
+  </div>
+  <div style="text-align: right;">
+    Jun - July 2023<br>
+    Suzhou, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Handled dozens of audit reports, conducted in-depth industry research, credit applications, and special case reports.</li>
+    <li>Assisted in the loan department with responsibilities including auditing and archiving 500+ invoice verifications, managing bank drafts, and facilitating multimillion-dollar loan transactions.</li>
+  </ul>
+</div>
 
-* Internship Client Manager, Business Department, Bank of Huaxia (Jun - July 2023)
-  * Suzhou, China
-  * Handled dozens of audit reports, conducted in-depth industry research, credit applications, and special case reports
-  * Assisted in the loan department with responsibilities including auditing and archiving 500+ invoice verifications, managing bank drafts, and facilitating multimillion-dollar loan transactions
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Barista</strong><br>
+    <em>Double-win Coffee</em>
+  </div>
+  <div style="text-align: right;">
+    Jun - Aug 2022<br>
+    Shanghai, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Acquired position of duty barista in 3 days, breaking the record.</li>
+    <li>Increased daily sales by 50% through procedure improvements.</li>
+  </ul>
+</div>
 
-* Barista, Double-win Coffee (Jun - Aug 2022)
-  * Shanghai, China
-  * Acquired position of duty barista in 3 days, breaking the record
-  * Increased daily sales by 50% through procedure improvements
 
 Skills
 ======
