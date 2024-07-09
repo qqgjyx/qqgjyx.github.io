@@ -1,20 +1,16 @@
 ---
-title: "Teaching experience 1"
+title: "MATH 101: Calculus"
 collection: teaching
-type: "TA"
+type: "Teaching Assistant"
 permalink: /teaching/2023-fall-teaching-1
-date: 2023-08-01
+date: Aug - Oct 2023
 location: "Kunshan, China"
 ---
 
 <div style="display: flex; justify-content: space-between; margin-top: 10px;">
   <div>
-    <strong>Teaching Assistant, MATH101</strong><br>
-    <em>Division of Natural and Applied Sciences, DKU</em>
-  </div>
-  <div style="text-align: right;">
-    Aug - Oct 2023<br>
-    Kunshan, China
+    <em>Division of Natural and Applied Sciences, DKU</em><br>
+    <em>Instructor: Prof. Dang Xing Chen</em>
   </div>
 </div>
 <div style="padding-left: 20px;">
