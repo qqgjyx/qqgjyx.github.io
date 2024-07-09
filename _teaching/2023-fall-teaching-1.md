@@ -7,10 +7,6 @@ date: 2023-08-01
 location: "Kunshan, China"
 ---
 
-<div>
-  <em>{{ page.type }}, {{ page.venue }}, {{ page.date | date: "%Y" }}</em>
-</div>
-
 <div style="display: flex; justify-content: space-between; margin-top: 10px;">
   <div>
     <strong>Teaching Assistant, MATH101</strong><br>
