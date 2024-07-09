@@ -67,9 +67,9 @@ redirect_from:
   
 ## Teaching
 <hr>
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single.html %}
+  {% endfor %}</ul>
 
 ## Research experience
 <hr>
@@ -153,41 +153,74 @@ redirect_from:
   </ul>
 </div>
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>ECON 101 – Introduction to Economics</strong><br>
-    <em>Student Research</em>
-  </div>
-  <div style="text-align: right;">
-    Jan - Mar 2023<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Conducted research on "Economics in Pharmaceutical Marketing."</li>
-    <li>Analyzed 10+ academic resources.</li>
-    <li>Presented a 30-minute report on the economic mechanisms behind pharmaceutics.</li>
-  </ul>
-</div>
+[//]: # (<div style="display: flex; justify-content: space-between;">)
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>PSYCHO 101 – Introduction to Psychology</strong><br>
-    <em>Student Research</em>
-  </div>
-  <div style="text-align: right;">
-    Aug - Oct 2022<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Conducted research on "Teenagers’ Abnormal Behavior under Auditing Effect."</li>
-    <li>Analyzed 10+ academic resources.</li>
-    <li>Completed a 3000-word report.</li>
-  </ul>
-</div>
+[//]: # (  <div>)
+
+[//]: # (    <strong>ECON 101 – Introduction to Economics</strong><br>)
+
+[//]: # (    <em>Student Research</em>)
+
+[//]: # (  </div>)
+
+[//]: # (  <div style="text-align: right;">)
+
+[//]: # (    Jan - Mar 2023<br>)
+
+[//]: # (    Kunshan, China)
+
+[//]: # (  </div>)
+
+[//]: # (</div>)
+
+[//]: # (<div style="padding-left: 20px;">)
+
+[//]: # (  <ul style="margin-top: 0;">)
+
+[//]: # (    <li>Conducted research on "Economics in Pharmaceutical Marketing."</li>)
+
+[//]: # (    <li>Analyzed 10+ academic resources.</li>)
+
+[//]: # (    <li>Presented a 30-minute report on the economic mechanisms behind pharmaceutics.</li>)
+
+[//]: # (  </ul>)
+
+[//]: # (</div>)
+
+[//]: # ()
+[//]: # (<div style="display: flex; justify-content: space-between;">)
+
+[//]: # (  <div>)
+
+[//]: # (    <strong>PSYCHO 101 – Introduction to Psychology</strong><br>)
+
+[//]: # (    <em>Student Research</em>)
+
+[//]: # (  </div>)
+
+[//]: # (  <div style="text-align: right;">)
+
+[//]: # (    Aug - Oct 2022<br>)
+
+[//]: # (    Kunshan, China)
+
+[//]: # (  </div>)
+
+[//]: # (</div>)
+
+[//]: # (<div style="padding-left: 20px;">)
+
+[//]: # (  <ul style="margin-top: 0;">)
+
+[//]: # (    <li>Conducted research on "Teenagers’ Abnormal Behavior under Auditing Effect."</li>)
+
+[//]: # (    <li>Analyzed 10+ academic resources.</li>)
+
+[//]: # (    <li>Completed a 3000-word report.</li>)
+
+[//]: # (  </ul>)
+
+[//]: # (</div>)
 
 
 
