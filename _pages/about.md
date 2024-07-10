@@ -17,7 +17,7 @@ Welcome to my personal website! I am a junior student at **Duke Kunshan Universi
 
 Feel free to interact with my chatbox integrated into this homepage. You can ask questions, and the bot will respond based on the information about me and my website.
 
-<iframe src="http://llama.qqgjyx.com" width="100%" height="500" style="border:none;"></iframe>
+<iframe src="http://ollama.qqgjyx.com" width="100%" height="500" style="border:none;"></iframe>
 
 ---
 
