@@ -9,18 +9,22 @@ redirect_from:
 
 # Juntang Wang
 
-Welcome to my personal website! I am a junior student at **Duke Kunshan University (DKU) & Duke University**, majoring in **Applied Math & Computational Science (Computer Science)**. This site showcases my academic journey, professional experiences, research, and personal projects.
+I am a junior student at **Duke Kunshan University (DKU) & Duke University**, majoring in **Applied Math & Computational Science (Computer Science)**.
+
+---
+
+## Research Interests
+
+- Brain-Computer Interface (BCI) and Human-Computer Interaction (HCI)
+- Interdisciplinary studies across Neuroscience and Applied Math (Computer Science)
+- Optical and Photonic dynamics
 
 ---
 
 ## Personal Chatbox
-
-Feel free to interact with my chatbox integrated into this homepage. You can ask questions, and the bot will respond based on the information about me and my website.
 
 <iframe src="http://ollama.qqgjyx.com" width="100%" height="500" style="border:none;"></iframe>
 
 ---
 
 I hope you find this information useful and enjoy exploring my site!
-
----
