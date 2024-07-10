@@ -7,6 +7,12 @@ redirect_from:
   - /resume
 ---
 
+<style>
+    .highlight {
+        background-color: yellow;
+    }
+</style>
+
 {% include base_path %}
 
 <div style="display: flex; justify-content: space-between;">
@@ -66,8 +72,8 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Programming Lang.</strong>
     <ul>
-      <li><p style="color: blue;">Python</p></li>
-      <li><p style="color: blue;">Wolfram Script</p></li>
+      <li>&#9733Python</li>
+      <li>&#9733Wolfram Script</li>
       <li>Java</li>
       <li>Bash</li>
       <li>C#</li>
@@ -96,7 +102,7 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Tools & Tech.</strong>
     <ul>
-      <li><p style="color: blue;">JetBrains</p></li>
+      <li>&#9733JetBrains</li>
       <li>VS Code</li>
       <li>Spyder</li>
       <li>Git, GitHub & GitLab</li>
@@ -105,7 +111,7 @@ redirect_from:
       <li>LaTeX</li>
       <li>Zotero</li>
       <li>AWS</li>
-      <li><p style="color: blue;">Cloudflare</p></li>
+      <li>&#9733Cloudflare</li>
       <li>Stable Diffusion</li>
       <li>ChatGPT</li>
       <li>Ollama</li>
@@ -115,7 +121,7 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Sci. Software</strong>
     <ul>
-      <li><p style="color: blue;">Mathematica</p></li>
+      <li>&#9733Mathematica</li>
       <li>Matlab</li>
       <li>Origin Lab</li>
       <li>OsiriX</li>
