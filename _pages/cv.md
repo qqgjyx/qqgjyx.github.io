@@ -56,8 +56,8 @@ redirect_from:
         <li>MATH 302: Numerical Analysis (A)</li>
         <li>MATH 202: Linear Algebra (A)</li>
         <li>MATH 201: Multivariable Calculus (A)</li>
-        <li>COMPSCI 101: Intro to Comp Science (A+)</li>
         <li>COMPSCI 201: Intro to Programming and Data Structures (A)</li>
+        <li>COMPSCI 101: Intro to Comp Science (A+)</li>
         <li>MATH 105: Calculus (A+)</li>
         <li>BIOL 110: Integrated Science - Biology (A+)</li>
         <li>RINDSTU, ECON, MEDIART, ARHU, PSYCH, HIST</li>
