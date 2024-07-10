@@ -59,17 +59,103 @@ redirect_from:
   </ul>
 </div>
 
-## Publications
+## Skills
 <hr>
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-## Teaching
-<hr>
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single.html %}
-  {% endfor %}</ul>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+
+  <div style="flex: 1 1 200px;">
+    <strong>Programming Languages</strong>
+    <ul>
+      <li><strong>Python</strong></li>
+      <li><strong>Wolfram Script</strong></li>
+      <li>Java</li>
+      <li>Bash</li>
+      <li>C#</li>
+      <li>JavaScript</li>
+      <li>R</li>
+      <li>Dev C++</li>
+      <li>PHP</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Web Development & Databases</strong>
+    <ul>
+      <li><strong>Markdown</strong></li>
+      <li><strong>Selenium</strong></li>
+      <li>TypeScript</li>
+      <li>Node.js</li>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>React</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Tools & Technologies</strong>
+    <ul>
+      <li><strong>JetBrains</strong></li>
+      <li>VS Code</li>
+      <li>Spyder</li>
+      <li>Git, GitHub & GitLab</li>
+      <li><strong>Docker</strong></li>
+      <li>Linux</li>
+      <li><strong>LaTeX</strong></li>
+      <li>Zotero</li>
+      <li>AWS</li>
+      <li><strong>Cloudflare</strong></li>
+      <li>Stable Diffusion</li>
+      <li>ChatGPT</li>
+      <li>Ollama</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Scientific & Research Software</strong>
+    <ul>
+      <li><strong>Mathematica</strong></li>
+      <li>Matlab</li>
+      <li>Origin Lab</li>
+      <li>OsiriX</li>
+      <li>Slicer</li>
+      <li><strong>Quantum Espresso</strong></li>
+      <li>YAMBO</li>
+      <li>Jana2006</li>
+      <li>MDI Jade</li>
+      <li>FullProf</li>
+      <li>Vesta</li>
+      <li>Mercury</li>
+      <li>DNASTAR</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Media & Design</strong>
+    <ul>
+      <li><strong>Adobe Creative Suite</strong></li>
+      <li>Sai</li>
+      <li>Davinci Resolve</li>
+      <li>Unity</li>
+      <li>Unreal Engine</li>
+      <li>Procreate</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Languages</strong>
+    <ul>
+      <li><strong>English (fluent)</strong></li>
+      <li>Mandarin (native)</li>
+      <li>Kunshanese (conversational)</li>
+      <li>Korean</li>
+      <li>French</li>
+      <li>Japanese</li>
+    </ul>
+  </div>
+
+</div>
 
 ## Research experience
 <hr>
@@ -153,77 +239,17 @@ redirect_from:
   </ul>
 </div>
 
-[//]: # (<div style="display: flex; justify-content: space-between;">)
-
-[//]: # (  <div>)
-
-[//]: # (    <strong>ECON 101 – Introduction to Economics</strong><br>)
-
-[//]: # (    <em>Student Research</em>)
-
-[//]: # (  </div>)
-
-[//]: # (  <div style="text-align: right;">)
-
-[//]: # (    Jan - Mar 2023<br>)
-
-[//]: # (    Kunshan, China)
-
-[//]: # (  </div>)
-
-[//]: # (</div>)
-
-[//]: # (<div style="padding-left: 20px;">)
-
-[//]: # (  <ul style="margin-top: 0;">)
-
-[//]: # (    <li>Conducted research on "Economics in Pharmaceutical Marketing."</li>)
-
-[//]: # (    <li>Analyzed 10+ academic resources.</li>)
-
-[//]: # (    <li>Presented a 30-minute report on the economic mechanisms behind pharmaceutics.</li>)
-
-[//]: # (  </ul>)
-
-[//]: # (</div>)
-
-[//]: # ()
-[//]: # (<div style="display: flex; justify-content: space-between;">)
-
-[//]: # (  <div>)
-
-[//]: # (    <strong>PSYCHO 101 – Introduction to Psychology</strong><br>)
-
-[//]: # (    <em>Student Research</em>)
-
-[//]: # (  </div>)
-
-[//]: # (  <div style="text-align: right;">)
-
-[//]: # (    Aug - Oct 2022<br>)
-
-[//]: # (    Kunshan, China)
-
-[//]: # (  </div>)
-
-[//]: # (</div>)
-
-[//]: # (<div style="padding-left: 20px;">)
-
-[//]: # (  <ul style="margin-top: 0;">)
-
-[//]: # (    <li>Conducted research on "Teenagers’ Abnormal Behavior under Auditing Effect."</li>)
-
-[//]: # (    <li>Analyzed 10+ academic resources.</li>)
-
-[//]: # (    <li>Completed a 3000-word report.</li>)
-
-[//]: # (  </ul>)
-
-[//]: # (</div>)
-
-
-
+## Publications
+<hr>
+  <ul>{% for post in site.publications reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+  
+## Teaching
+<hr>
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single.html %}
+  {% endfor %}</ul>
 
 ## Work experience
 <hr>
@@ -296,61 +322,54 @@ redirect_from:
   </ul>
 </div>
 
+## Leadership and Service
+<hr>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Training Leader</strong><br>
+    <em>DKU Kendo Club</em>
+  </div>
+  <div style="text-align: right;">
+    Aug 2023 - Present<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Ranked 1st in Kendo ranking competition.</li> 
+    <li>Operated Kendo workshop with 10+ participants.</li>
+  </ul>
+</div>
 
-Skills
-======
-* Python3
-* Java
-* JavaScript
-* Wolfram Script
-* R
-* Git
-* SSH
-* Linux
-* Eclipse
-* JetBrains
-* Visual Studio
-* FRP
-* Stable Diffusion
-* Generative AI
-* Origin Lab
-* Mathematica
-* Jana
-* MDI Jade
-* Vesta
-* Quantum Espresso
-* Adobe
-* Sai
-* Davinci Resolve
-* DNASTAR
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Band Founder & Bassist</strong><br>
+    <em>DKU Akat City Band</em>
+  </div>
+  <div style="text-align: right;">
+    Aug 2023 - Present<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Founded and performed with band.</li>
+    <li>Specializing in bass and guitar.</li>
+  </ul>
+</div>
 
-Languages
-======
-* English (fluent)
-* Dialects of Kunshan (conversational)
-* Mandarin (native)
-* Korean
-* Japanese
-* French
-
-Leadership and service
-======
-* Training Leader, DKU Kendo Club (Aug 2023 - present)
-  * Kunshan, China
-  * Ranked 1st in Kendo ranking competition, operated Kendo workshop with 10+ participants
-
-* Band Founder & Bassist, DKU Akat City Band (Aug 2023 - present)
-  * Kunshan, China
-  * Founded and performed with band, specializing in bass and guitar
-
-Additional information
-======
-* Interests: Working out, guitar, piano, cooking, bass, ACG, films
-* Personal projects:
-  * Planning an EEG signal processing project, secured SEED-V dataset from Shanghai Jiao Tong University
-  * Innovatively bypassed intranet restrictions using Fast Reverse Proxy (FRP), implemented game servers, remote desktop functionalities
-  * Contributed to establishment and maintenance of supercomputer-based Linux server for quantum physics calculations
-  * Co-developed a specialized WeChat micro-app for auction platform
-  * Implemented and refined edge AI generative tools, including Stable Diffusion versions and enhanced UI for Stable-Diffusion-WebUI
-
+## Additional Information
+<hr>
+<ul>
+  <li><strong>Interests:</strong> Working out, guitar, piano, cooking, bass, ACG, films</li>
+  <li><strong>Personal Projects:</strong>
+    <ul>
+      <li>Planning an EEG signal processing project, secured SEED-V dataset from Shanghai Jiao Tong University; Planning a HSI analysis project, secured WU datasets from Wuhan University.</li>
+      <li>Innovatively bypassed intranet restrictions using Fast Reverse Proxy (FRP), implemented game servers (Terraria, Sid Meier's: Civilization VI), P2P connection and remote desktop functionalities.</li>
+      <li>Contributed to establishment and maintenance of supercomputer-based Linux server for quantum physics calculations.</li>
+      <li>Co-developed a specialized WeChat micro-app for auction platform.</li>
+      <li>Implemented and refined edge AI generative tools, including Stable Diffusion versions, Ollama, and enhanced UI for both.</li>
+    </ul>
+  </li>
+</ul>
 
