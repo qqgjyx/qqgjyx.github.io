@@ -64,10 +64,10 @@ redirect_from:
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
 
   <div style="flex: 1 1 200px;">
-    <strong>Programming Languages</strong>
+    <strong>Programming Lang.</strong>
     <ul>
-      <li><strong>Python</strong></li>
-      <li><strong>Wolfram Script</strong></li>
+      <li><p style="color: blue;">Python</li>
+      <li><p style="color: blue;">Wolfram Script</li>
       <li>Java</li>
       <li>Bash</li>
       <li>C#</li>
@@ -79,10 +79,10 @@ redirect_from:
   </div>
 
   <div style="flex: 1 1 200px;">
-    <strong>Web Development & Databases</strong>
+    <strong>Web & Databases</strong>
     <ul>
-      <li><strong>Markdown</strong></li>
-      <li><strong>Selenium</strong></li>
+      <li>Markdown</li>
+      <li>Selenium</li>
       <li>TypeScript</li>
       <li>Node.js</li>
       <li>HTML5</li>
@@ -94,18 +94,18 @@ redirect_from:
   </div>
 
   <div style="flex: 1 1 200px;">
-    <strong>Tools & Technologies</strong>
+    <strong>Tools & Tech.</strong>
     <ul>
-      <li><strong>JetBrains</strong></li>
+      <li><p style="color: blue;">JetBrains</li>
       <li>VS Code</li>
       <li>Spyder</li>
       <li>Git, GitHub & GitLab</li>
-      <li><strong>Docker</strong></li>
+      <li>Docker</li>
       <li>Linux</li>
-      <li><strong>LaTeX</strong></li>
+      <li>LaTeX</li>
       <li>Zotero</li>
       <li>AWS</li>
-      <li><strong>Cloudflare</strong></li>
+      <li><p style="color: blue;">Cloudflare</li>
       <li>Stable Diffusion</li>
       <li>ChatGPT</li>
       <li>Ollama</li>
@@ -113,14 +113,14 @@ redirect_from:
   </div>
 
   <div style="flex: 1 1 200px;">
-    <strong>Scientific & Research Software</strong>
+    <strong>Sci. Software</strong>
     <ul>
-      <li><strong>Mathematica</strong></li>
+      <li><p style="color: blue;">Mathematica</li>
       <li>Matlab</li>
       <li>Origin Lab</li>
       <li>OsiriX</li>
       <li>Slicer</li>
-      <li><strong>Quantum Espresso</strong></li>
+      <li>Quantum Espresso</li>
       <li>YAMBO</li>
       <li>Jana2006</li>
       <li>MDI Jade</li>
@@ -134,7 +134,7 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Media & Design</strong>
     <ul>
-      <li><strong>Adobe Creative Suite</strong></li>
+      <li>Adobe Creative Suite</li>
       <li>Sai</li>
       <li>Davinci Resolve</li>
       <li>Unity</li>
@@ -146,7 +146,7 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Languages</strong>
     <ul>
-      <li><strong>English (fluent)</strong></li>
+      <li>English (fluent)</li>
       <li>Mandarin (native)</li>
       <li>Kunshanese (conversational)</li>
       <li>Korean</li>
