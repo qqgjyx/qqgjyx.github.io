@@ -72,8 +72,8 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Programming Lang.</strong>
     <ul>
-      <li>&#9733 Python</li>
-      <li>&#9733 Wolfram Script</li>
+      <li>☆Python</li>
+      <li>☆Wolfram Script</li>
       <li>Java</li>
       <li>Bash</li>
       <li>C#</li>
@@ -102,7 +102,7 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Tools & Tech.</strong>
     <ul>
-      <li>&#9733 JetBrains</li>
+      <li>☆JetBrains</li>
       <li>VS Code</li>
       <li>Spyder</li>
       <li>Git, GitHub & GitLab</li>
@@ -111,7 +111,7 @@ redirect_from:
       <li>LaTeX</li>
       <li>Zotero</li>
       <li>AWS</li>
-      <li>&#9733 Cloudflare</li>
+      <li>☆Cloudflare</li>
       <li>Stable Diffusion</li>
       <li>ChatGPT</li>
       <li>Ollama</li>
@@ -121,7 +121,7 @@ redirect_from:
   <div style="flex: 1 1 200px;">
     <strong>Sci. Software</strong>
     <ul>
-      <li>&#9733 Mathematica</li>
+      <li>☆Mathematica</li>
       <li>Matlab</li>
       <li>Origin Lab</li>
       <li>OsiriX</li>
