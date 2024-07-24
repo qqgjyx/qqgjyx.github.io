@@ -280,7 +280,7 @@ redirect_from:
 
 <div style="display: flex; justify-content: space-between;">
   <div>
-    <strong>Product Testing Intern</strong><br>
+    <strong>Product Analyst, Intern</strong><br>
     <em>Second DX Division, NTT Data</em>
   </div>
   <div style="text-align: right;">
@@ -297,7 +297,7 @@ redirect_from:
 
 <div style="display: flex; justify-content: space-between;">
   <div>
-    <strong>Internship Client Manager</strong><br>
+    <strong>Business Banker, Intern</strong><br>
     <em>Business Department, Bank of Huaxia</em>
   </div>
   <div style="text-align: right;">
