@@ -66,103 +66,136 @@ redirect_from:
   </ul>
 </div>
 
-## Skills
+## Work experience
 <hr>
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-
-  <div style="flex: 1 1 200px;">
-    <strong>Programming Lang.</strong>
-    <ul>
-      <li>☆Python</li>
-      <li>☆Wolfram Script</li>
-      <li>Java</li>
-      <li>Bash</li>
-      <li>C#</li>
-      <li>JavaScript</li>
-      <li>R</li>
-      <li>Dev C++</li>
-      <li>PHP</li>
-    </ul>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Resident Assistant & Duty Assistant</strong><br>
+    <em>Residence Life, DKU</em>
   </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Web & Databases</strong>
-    <ul>
-      <li>Markdown</li>
-      <li>Selenium</li>
-      <li>TypeScript</li>
-      <li>Node.js</li>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>React</li>
-      <li>MySQL</li>
-      <li>MongoDB</li>
-    </ul>
+  <div style="text-align: right;">
+    Sep 2022 - Jun 2024<br>
+    Kunshan, China
   </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Tools & Tech.</strong>
-    <ul>
-      <li>☆JetBrains</li>
-      <li>VS Code</li>
-      <li>Spyder</li>
-      <li>Git, GitHub & GitLab</li>
-      <li>Docker</li>
-      <li>Linux</li>
-      <li>LaTeX</li>
-      <li>Zotero</li>
-      <li>AWS</li>
-      <li>☆Cloudflare</li>
-      <li>Stable Diffusion</li>
-      <li>ChatGPT</li>
-      <li>Ollama</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Sci. Software</strong>
-    <ul>
-      <li>☆Mathematica</li>
-      <li>Matlab</li>
-      <li>Origin Lab</li>
-      <li>OsiriX</li>
-      <li>Slicer</li>
-      <li>Quantum Espresso</li>
-      <li>YAMBO</li>
-      <li>Jana2006</li>
-      <li>MDI Jade</li>
-      <li>FullProf</li>
-      <li>Vesta</li>
-      <li>Mercury</li>
-      <li>DNASTAR</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Media & Design</strong>
-    <ul>
-      <li>Adobe Creative Suite</li>
-      <li>Sai</li>
-      <li>Davinci Resolve</li>
-      <li>Unity</li>
-      <li>Unreal Engine</li>
-      <li>Procreate</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Languages</strong>
-    <ul>
-      <li>English (fluent)</li>
-      <li>Mandarin (native)</li>
-      <li>Kunshanese (conversational)</li>
-      <li>Korean</li>
-      <li>French</li>
-      <li>Japanese</li>
-    </ul>
-  </div>
-
 </div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Completed all duties and duty logs without absence, helped post RA recruitment info in CC building.</li>
+    <li>Award: Duty Assistant of the Year (2022).</li>
+    <li>Responsibilities: 10+ community events, 50+ duty shifts, dealt with50+ incidents with 0 mistakes.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Product Analyst, Intern</strong><br>
+    <em>Second DX Division, NTT Data</em>
+  </div>
+  <div style="text-align: right;">
+    July - Aug 2023<br>
+    Wuxi, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Interned across all departments, guided by a research lab director affiliated with the Chinese Academy of Sciences.</li>
+    <li>Attended professional internal Japanese language classes at N1 level, gained insights from 12+ innovative software-related companies.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Business Banker, Intern</strong><br>
+    <em>Business Department, Bank of Huaxia</em>
+  </div>
+  <div style="text-align: right;">
+    Jun - July 2023<br>
+    Suzhou, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Handled dozens of audit reports, conducted in-depth industry research, credit applications, and special case reports.</li>
+    <li>Assisted in the loan department with responsibilities including auditing and archiving 500+ invoice verifications, managing bank drafts, and facilitating multimillion-dollar loan transactions.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Barista</strong><br>
+    <em>Double-win Coffee</em>
+  </div>
+  <div style="text-align: right;">
+    Jun - Aug 2022<br>
+    Shanghai, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Acquired position of duty barista in 3 days, breaking the record.</li>
+    <li>Increased daily sales by 50% through procedure improvements.</li>
+  </ul>
+</div>
+
+## Leadership and Service
+<hr>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Kunshan Student Orientation Peers</strong><br>
+    <em>Duke Office of DKU Relations</em>
+  </div>
+  <div style="text-align: right;">
+    Aug 2024 - Present<br>
+    Durham, NC
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Led a pod (20+) of DKU@Duke incoming peers.</li> 
+    <li>Succeed in getting the pod engaged in Orientation Week and events.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Training Leader</strong><br>
+    <em>DKU Kendo Club</em>
+  </div>
+  <div style="text-align: right;">
+    Aug 2023 - June 2024<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Ranked 1st in Kendo ranking competition.</li> 
+    <li>Operated Kendo workshop with 10+ participants.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Band Founder & Bassist</strong><br>
+    <em>DKU Akat City Band</em>
+  </div>
+  <div style="text-align: right;">
+    Aug 2023 - June 2024<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Founded and performed with band.</li>
+    <li>Specializing in bass and guitar.</li>
+  </ul>
+</div>
+
+  
+## Teaching
+<hr>
+  <ul>{% for post in site.teaching reversed %}
+    {% include archive-single.html %}
+  {% endfor %}</ul>
 
 ## Research experience
 <hr>
@@ -291,141 +324,109 @@ redirect_from:
 [//]: # (    {% include archive-single-cv.html %})
 
 [//]: # (  {% endfor %}</ul>)
-  
-## Teaching
+
+## Skills
 <hr>
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single.html %}
-  {% endfor %}</ul>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
 
-## Work experience
-<hr>
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Resident Assistant & Duty Assistant</strong><br>
-    <em>Residence Life, DKU</em>
+  <div style="flex: 1 1 200px;">
+    <strong>Programming Lang.</strong>
+    <ul>
+      <li>☆Python</li>
+      <li>☆Wolfram Script</li>
+      <li>Java</li>
+      <li>Bash</li>
+      <li>C#</li>
+      <li>JavaScript</li>
+      <li>R</li>
+      <li>Dev C++</li>
+      <li>PHP</li>
+    </ul>
   </div>
-  <div style="text-align: right;">
-    Sep 2022 - Jun 2024<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Completed all duties and duty logs without absence, helped post RA recruitment info in CC building.</li>
-    <li>Award: Duty Assistant of the Year (2022).</li>
-    <li>Responsibilities: 10+ community events, 50+ duty shifts, dealt with50+ incidents with 0 mistakes.</li>
-  </ul>
-</div>
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Product Analyst, Intern</strong><br>
-    <em>Second DX Division, NTT Data</em>
+  <div style="flex: 1 1 200px;">
+    <strong>Web & Databases</strong>
+    <ul>
+      <li>Markdown</li>
+      <li>Selenium</li>
+      <li>TypeScript</li>
+      <li>Node.js</li>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>React</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+    </ul>
   </div>
-  <div style="text-align: right;">
-    July - Aug 2023<br>
-    Wuxi, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Interned across all departments, guided by a research lab director affiliated with the Chinese Academy of Sciences.</li>
-    <li>Attended professional internal Japanese language classes at N1 level, gained insights from 12+ innovative software-related companies.</li>
-  </ul>
-</div>
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Business Banker, Intern</strong><br>
-    <em>Business Department, Bank of Huaxia</em>
+  <div style="flex: 1 1 200px;">
+    <strong>Tools & Tech.</strong>
+    <ul>
+      <li>☆JetBrains</li>
+      <li>VS Code</li>
+      <li>Spyder</li>
+      <li>Git, GitHub & GitLab</li>
+      <li>Docker</li>
+      <li>Linux</li>
+      <li>LaTeX</li>
+      <li>Zotero</li>
+      <li>AWS</li>
+      <li>☆Cloudflare</li>
+      <li>Stable Diffusion</li>
+      <li>ChatGPT</li>
+      <li>Ollama</li>
+    </ul>
   </div>
-  <div style="text-align: right;">
-    Jun - July 2023<br>
-    Suzhou, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Handled dozens of audit reports, conducted in-depth industry research, credit applications, and special case reports.</li>
-    <li>Assisted in the loan department with responsibilities including auditing and archiving 500+ invoice verifications, managing bank drafts, and facilitating multimillion-dollar loan transactions.</li>
-  </ul>
-</div>
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Barista</strong><br>
-    <em>Double-win Coffee</em>
+  <div style="flex: 1 1 200px;">
+    <strong>Sci. Software</strong>
+    <ul>
+      <li>☆Mathematica</li>
+      <li>Matlab</li>
+      <li>Origin Lab</li>
+      <li>OsiriX</li>
+      <li>Slicer</li>
+      <li>Quantum Espresso</li>
+      <li>YAMBO</li>
+      <li>Jana2006</li>
+      <li>MDI Jade</li>
+      <li>FullProf</li>
+      <li>Vesta</li>
+      <li>Mercury</li>
+      <li>DNASTAR</li>
+    </ul>
   </div>
-  <div style="text-align: right;">
-    Jun - Aug 2022<br>
-    Shanghai, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Acquired position of duty barista in 3 days, breaking the record.</li>
-    <li>Increased daily sales by 50% through procedure improvements.</li>
-  </ul>
-</div>
 
-## Leadership and Service
-<hr>
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Kunshan Student Orientation Peers</strong><br>
-    <em>Duke Office of DKU Relations</em>
+  <div style="flex: 1 1 200px;">
+    <strong>Media & Design</strong>
+    <ul>
+      <li>Adobe Creative Suite</li>
+      <li>Sai</li>
+      <li>Davinci Resolve</li>
+      <li>Unity</li>
+      <li>Unreal Engine</li>
+      <li>Procreate</li>
+    </ul>
   </div>
-  <div style="text-align: right;">
-    Aug 2024 - Present<br>
-    Durham, NC
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Led a pod (20+) of DKU@Duke incoming peers.</li> 
-    <li>Succeed in getting the pod engaged in Orientation Week and events.</li>
-  </ul>
-</div>
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Training Leader</strong><br>
-    <em>DKU Kendo Club</em>
+  <div style="flex: 1 1 200px;">
+    <strong>Languages</strong>
+    <ul>
+      <li>English (fluent)</li>
+      <li>Mandarin (native)</li>
+      <li>Kunshanese (conversational)</li>
+      <li>Korean</li>
+      <li>French</li>
+      <li>Japanese</li>
+    </ul>
   </div>
-  <div style="text-align: right;">
-    Aug 2023 - June 2024<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Ranked 1st in Kendo ranking competition.</li> 
-    <li>Operated Kendo workshop with 10+ participants.</li>
-  </ul>
-</div>
 
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Band Founder & Bassist</strong><br>
-    <em>DKU Akat City Band</em>
-  </div>
-  <div style="text-align: right;">
-    Aug 2023 - June 2024<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Founded and performed with band.</li>
-    <li>Specializing in bass and guitar.</li>
-  </ul>
 </div>
 
 ## Additional Information
 <hr>
 <ul>
-  <li><strong>Interests:</strong> Working out, guitar, piano, cooking, bass, ACG, films</li>
+  <li><strong>Interests:</strong> gym, guitar, piano, cooking, bass, ACG, films</li>
   <li><strong>Personal Projects:</strong>
     <ul>
       <li>Planning an EEG signal processing project, secured SEED-V dataset from Shanghai Jiao Tong University; Planning a HSI analysis project, secured WU datasets from Wuhan University.</li>
