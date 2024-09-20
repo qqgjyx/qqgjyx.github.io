@@ -168,12 +168,48 @@ redirect_from:
 <hr>
 <div style="display: flex; justify-content: space-between;">
   <div>
+    <strong>RINDSTU 393 – Unsupervised HSI Analysis</strong><br>
+    <em>Research Independent Study</em>, PI: Prof. Xiaobai Sun, Nikos Pitsianis & Dimitrios Floros<br>
+  </div>
+  <div style="text-align: right;">
+    Aug 2024 - Present<br>
+    Durham, NC
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Focused on Unsupervised Segmentation in Hyperspectral Images.</li>
+    <li>Highly praised by PI, Proceeding a publication and a thesis.
+    <li>Supported by Semester Research Program from DODR.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>ARTS&SCI 493 – Research Independent Study</strong><br>
+    <em>Duke Office of DKU Relations</em>, PI: Prof. Xiaobai Sun, Nikos Pitsianis & Dimitrios Floros<br>
+  </div>
+  <div style="text-align: right;">
+    June - Aug 2024<br>
+    Durham, NC
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Focused on Unsupervised Clustering for Hyperspectral Images.</li>
+    <li>Highly praised by PI, Completed 1 manuscript, 1 peer presentation.
+    <li>Founded by SELF & SF from DKU.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
     <strong>Zu Chongzhi Center for Mathematics and Computational Science</strong><br>
     <em>Research Assistant</em>, PI: Prof. Shixin Xu<br>
   </div>
   <div style="text-align: right;">
     Mar 2024 - Present<br>
-    Kunshan & Shanghai, China
+    Kunshan, China
   </div>
 </div>
 <div style="padding-left: 20px;">
@@ -246,11 +282,15 @@ redirect_from:
   </ul>
 </div>
 
-## Publications
-<hr>
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+[//]: # (## Publications)
+
+[//]: # (<hr>)
+
+[//]: # (  <ul>{% for post in site.publications reversed %})
+
+[//]: # (    {% include archive-single-cv.html %})
+
+[//]: # (  {% endfor %}</ul>)
   
 ## Teaching
 <hr>
@@ -274,7 +314,7 @@ redirect_from:
   <ul style="margin-top: 0;">
     <li>Completed all duties and duty logs without absence, helped post RA recruitment info in CC building.</li>
     <li>Award: Duty Assistant of the Year (2022).</li>
-    <li>Responsibilities: 50+ duty shifts, dealt with 100+ incidents with 0 mistakes.</li>
+    <li>Responsibilities: 10+ community events, 50+ duty shifts, dealt with50+ incidents with 0 mistakes.</li>
   </ul>
 </div>
 
@@ -333,11 +373,28 @@ redirect_from:
 <hr>
 <div style="display: flex; justify-content: space-between;">
   <div>
+    <strong>Kunshan Student Orientation Peers</strong><br>
+    <em>Duke Office of DKU Relations</em>
+  </div>
+  <div style="text-align: right;">
+    Aug 2024 - Present<br>
+    Durham, NC
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Led a pod (20+) of DKU@Duke incoming peers.</li> 
+    <li>Succeed in getting the pod engaged in Orientation Week and events.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
     <strong>Training Leader</strong><br>
     <em>DKU Kendo Club</em>
   </div>
   <div style="text-align: right;">
-    Aug 2023 - Present<br>
+    Aug 2023 - June 2024<br>
     Kunshan, China
   </div>
 </div>
@@ -354,7 +411,7 @@ redirect_from:
     <em>DKU Akat City Band</em>
   </div>
   <div style="text-align: right;">
-    Aug 2023 - Present<br>
+    Aug 2023 - June 2024<br>
     Kunshan, China
   </div>
 </div>
