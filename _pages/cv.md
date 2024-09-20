@@ -179,7 +179,7 @@ redirect_from:
 <div style="padding-left: 20px;">
   <ul style="margin-top: 0;">
     <li>Focused on Unsupervised Segmentation in Hyperspectral Images.</li>
-    <li>Highly praised by PI, Proceeding a publication and a thesis.
+    <li>Highly praised by PI, Proceeding a publication and a thesis.</li>
     <li>Supported by Semester Research Program from DODR.</li>
   </ul>
 </div>
@@ -197,7 +197,7 @@ redirect_from:
 <div style="padding-left: 20px;">
   <ul style="margin-top: 0;">
     <li>Focused on Unsupervised Clustering for Hyperspectral Images.</li>
-    <li>Highly praised by PI, Completed 1 manuscript, 1 peer presentation.
+    <li>Highly praised by PI, Completed 1 manuscript, 1 peer presentation.</li>
     <li>Founded by SELF & SF from DKU.</li>
   </ul>
 </div>
