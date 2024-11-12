@@ -23,7 +23,7 @@ I am a junior student at **Duke Kunshan University (DKU) & Duke University**, ma
 
 ## Personal Chatbox
 
-<iframe src="http://ollama.qqgjyx.com" width="100%" height="500" style="border:none;"></iframe>
+<iframe src="http://llama.qqgjyx.com" width="100%" height="500" style="border:none;"></iframe>
 
 ---
 
