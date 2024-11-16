@@ -25,6 +25,7 @@ redirect_from:
     Website: <a href="http://qqgjyx.com" target="_blank">qqgjyx.com</a><br>
     LinkedIn: <a href="http://linkedin.com/in/q9gjyx" target="_blank">linkedin.com/in/q9gjyx</a><br>
     GitHub: <a href="http://github.com/qqgjyx" target="_blank">github.com/qqgjyx</a>
+    GitLab: <a href="https://gitlab.oit.duke.edu/jw853" target="_blank">gitlab.oit.duke.edu/jw853</a>
   </div>
 </div>
 
@@ -53,6 +54,10 @@ redirect_from:
     </li>
     <li><strong>Courses:</strong>
       <ul>
+        <li>MATH 462 / COMPSCI 521: Matrix, Graph, and Network Analysis</li>
+        <li>COMPSCI 371: Elements of Machine Learning</li>
+        <li>COMPSCI 316: Introduction to Databases</li>
+        <li>COMPSCI 250 / ECE 250: Computer Architecture</li>
         <li>MATH 302: Numerical Analysis (A)</li>
         <li>MATH 202: Linear Algebra (A)</li>
         <li>MATH 201: Multivariable Calculus (A)</li>
@@ -66,6 +71,192 @@ redirect_from:
   </ul>
 </div>
 
+
+## Research experience
+<hr>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>RINDSTU 393 – Unsupervised HSI Analysis</strong><br>
+    <em>Research Independent Study</em>, PI: Prof. Xiaobai Sun, Nikos Pitsianis & Dimitrios Floros<br>
+  </div>
+  <div style="text-align: right;">
+    Aug 2024 - Present<br>
+    Durham, NC
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Focused on Unsupervised Segmentation in Hyperspectral Images.</li>
+    <li>Highly praised by PI, Proceeding a publication and a thesis.</li>
+    <li>Supported by Semester Research Program from DODR.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>ARTS&SCI 493 – Research Independent Study</strong><br>
+    <em>Duke Office of DKU Relations</em>, PI: Prof. Xiaobai Sun, Nikos Pitsianis & Dimitrios Floros<br>
+  </div>
+  <div style="text-align: right;">
+    June - Aug 2024<br>
+    Durham, NC
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Focused on Unsupervised Clustering for Hyperspectral Images.</li>
+    <li>Highly praised by PI, Completed 1 manuscript, 1 peer presentation.</li>
+    <li>Founded by SELF & SF from DKU.</li>
+  </ul>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>Zu Chongzhi Center for Mathematics and Computational Science</strong><br>
+    <em>Research Assistant</em>, PI: Prof. Shixin Xu<br>
+  </div>
+  <div style="text-align: right;">
+    Mar 2024 - Present<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Investigated on the topic of "Data Driven Model for AIS Reperfusion Decision-making."</li>
+    <li>Milestoned a novel ODE model of the perfusion process in pwiMRI presurgery diagnosis for acute hemorrhagic, in comparison to previous Kernel models.</li>
+    <li>Scraped 100+ fields from an open database about the topic of bacterial cultivation as a side project.</li>
+  </ul>
+</div>
+
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>RINDSTU 393 – Photon & Exciton Dynamics</strong><br>
+    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang<br>
+  </div>
+  <div style="text-align: right;">
+    Mar - May 2024<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Continued unfinished research from previous studies on Photoluminescence and Superconductivity.</li>
+    <li>Completed 2 manuscripts, currently in the process of publishing:
+      <ul>
+        <li><em>Analyzing Temperature-Induced Phase Transitions in LK-99 (Pb<sub>10-x</sub>Cu<sub>x</sub>(PO<sub>4</sub>)<sub>6</sub>O)</em></li>
+        <li><em>Comparative Study on the Optical and Vibrational Properties of NaBaYb(BO<sub>3</sub>)<sub>2</sub> and KBaYb(BO<sub>3</sub>)<sub>2</sub></em></li>
+      </ul>
+    </li>
+    <li>Achieved a grade of A.</li>
+  </ul>
+</div>
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>RINDSTU 393 – Photoluminescence</strong><br>
+    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang & Prof. Changcheng Zheng<br>
+  </div>
+  <div style="text-align: right;">
+    Jan - Mar 2024<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Engaged in comprehensive research focused on "Photoluminescence in Rare-earth-based Materials."</li>
+    <li>Developed and implemented an automated modification to conduct DFT calculation, non-self-consistent field (nSCF), Raman spectroscopy, and Photoluminescence (PL) shift analysis.</li>
+    <li>In the process of authoring a research paper detailing these findings for publication, demonstrating potential impact in the field.</li>
+    <li>Achieved a grade of A.</li>
+  </ul>
+</div>
+
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <strong>RINDSTU 393 – Superconductivity</strong><br>
+    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang<br>
+  </div>
+  <div style="text-align: right;">
+    Aug - Oct 2023<br>
+    Kunshan, China
+  </div>
+</div>
+<div style="padding-left: 20px;">
+  <ul style="margin-top: 0;">
+    <li>Conducted in-depth research on "Superconductivity - Synthesizing and Testing on Edge Materials."</li>
+    <li>Successfully synthesized pure samples of Li<sub>3</sub>Re<sub>3</sub>Te<sub>2</sub>O<sub>12</sub> and Pb<sub>9</sub>Cu(PO<sub>4</sub>)<sub>6</sub>O. Performed X-Ray Diffraction (XRD) analysis and levitation experiments to assess superconductivity.</li>
+    <li>Developed a novel synthesis recipe with an altered ratio, leading to significant findings. Currently preparing a manuscript for publication.</li>
+    <li>Achieved a grade of A.</li>
+  </ul>
+</div>
+
+## Skills
+<hr>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+
+  <div style="flex: 1 1 200px;">
+    <strong>Full Stack (excl. mobile)</strong>
+    <ul>
+      <li>☆Python</li>
+      <li>Java</li>
+      <li>PostgreSQL</li>
+      <li>MongoDB</li>
+      <li>HTML5/CSS3</li>
+      <li>GitLab/GitHub CI/CD</li>
+      <li>Cloudflare</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Other Programming Lang.</strong>
+    <ul>
+      <li>☆Wolfram</li>
+      <li>☆MATLAB</li>
+      <li>Julia</li>
+      <li>C</li>
+      <li>C#</li>
+      <li>Bash</li>
+      <li>R</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Tools & Tech.</strong>
+    <ul>
+      <li>LaTeX</li>
+      <li>Markdown</li>
+      <li>LLM as copilot</li>
+      <li>Origin Lab</li>
+      <li>QE/YAMBO</li>
+      <li>Adobe Suite</li>
+      <li>Unity</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 200px;">
+    <strong>Languages</strong>
+    <ul>
+      <li>English (fluent)</li>
+      <li>Mandarin (native)</li>
+      <li>Kunshanese (conversational)</li>
+      <li>Korean</li>
+      <li>French</li>
+      <li>Japanese</li>
+    </ul>
+  </div>
+
+</div>
+
+[//]: # (## Publications)
+
+[//]: # (<hr>)
+
+[//]: # (  <ul>{% for post in site.publications reversed %})
+
+[//]: # (    {% include archive-single-cv.html %})
+
+[//]: # (  {% endfor %}</ul>)
+
 ## Work experience
 <hr>
 <div style="display: flex; justify-content: space-between;">
@@ -74,7 +265,7 @@ redirect_from:
     <em>Residence Life, DKU</em>
   </div>
   <div style="text-align: right;">
-    Sep 2022 - Jun 2024<br>
+    Sep 2022 - Present<br>
     Kunshan, China
   </div>
 </div>
@@ -196,232 +387,6 @@ redirect_from:
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single.html %}
   {% endfor %}</ul>
-
-## Research experience
-<hr>
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>RINDSTU 393 – Unsupervised HSI Analysis</strong><br>
-    <em>Research Independent Study</em>, PI: Prof. Xiaobai Sun, Nikos Pitsianis & Dimitrios Floros<br>
-  </div>
-  <div style="text-align: right;">
-    Aug 2024 - Present<br>
-    Durham, NC
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Focused on Unsupervised Segmentation in Hyperspectral Images.</li>
-    <li>Highly praised by PI, Proceeding a publication and a thesis.</li>
-    <li>Supported by Semester Research Program from DODR.</li>
-  </ul>
-</div>
-
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>ARTS&SCI 493 – Research Independent Study</strong><br>
-    <em>Duke Office of DKU Relations</em>, PI: Prof. Xiaobai Sun, Nikos Pitsianis & Dimitrios Floros<br>
-  </div>
-  <div style="text-align: right;">
-    June - Aug 2024<br>
-    Durham, NC
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Focused on Unsupervised Clustering for Hyperspectral Images.</li>
-    <li>Highly praised by PI, Completed 1 manuscript, 1 peer presentation.</li>
-    <li>Founded by SELF & SF from DKU.</li>
-  </ul>
-</div>
-
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>Zu Chongzhi Center for Mathematics and Computational Science</strong><br>
-    <em>Research Assistant</em>, PI: Prof. Shixin Xu<br>
-  </div>
-  <div style="text-align: right;">
-    Mar 2024 - Present<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Investigated on the topic of "Data Driven Model for AIS Reperfusion Decision-making."</li>
-    <li>Milestoned a novel ODE model of the perfusion process in pwiMRI presurgery diagnosis for acute hemorrhagic, in comparison to previous Kernel models.</li>
-    <li>Scraped 100+ fields from an open database about the topic of bacterial cultivation as a side project.</li>
-  </ul>
-</div>
-
-
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>RINDSTU 393 – Photon & Exciton Dynamics</strong><br>
-    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang<br>
-  </div>
-  <div style="text-align: right;">
-    Mar - May 2024<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Continued unfinished research from previous studies on Photoluminescence and Superconductivity.</li>
-    <li>Completed 2 manuscripts, currently in the process of publishing:
-      <ul>
-        <li><em>Analyzing Temperature-Induced Phase Transitions in LK-99 (Pb<sub>10-x</sub>Cu<sub>x</sub>(PO<sub>4</sub>)<sub>6</sub>O)</em></li>
-        <li><em>Comparative Study on the Optical and Vibrational Properties of NaBaYb(BO<sub>3</sub>)<sub>2</sub> and KBaYb(BO<sub>3</sub>)<sub>2</sub></em></li>
-      </ul>
-    </li>
-    <li>Achieved a grade of A.</li>
-  </ul>
-</div>
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>RINDSTU 393 – Photoluminescence</strong><br>
-    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang & Prof. Changcheng Zheng<br>
-  </div>
-  <div style="text-align: right;">
-    Jan - Mar 2024<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Engaged in comprehensive research focused on "Photoluminescence in Rare-earth-based Materials."</li>
-    <li>Developed and implemented an automated modification to conduct DFT calculation, non-self-consistent field (nSCF), Raman spectroscopy, and Photoluminescence (PL) shift analysis.</li>
-    <li>In the process of authoring a research paper detailing these findings for publication, demonstrating potential impact in the field.</li>
-    <li>Achieved a grade of A.</li>
-  </ul>
-</div>
-
-
-<div style="display: flex; justify-content: space-between;">
-  <div>
-    <strong>RINDSTU 393 – Superconductivity</strong><br>
-    <em>Research Independent Study</em>, PI: Prof. Xiawa Wang<br>
-  </div>
-  <div style="text-align: right;">
-    Aug - Oct 2023<br>
-    Kunshan, China
-  </div>
-</div>
-<div style="padding-left: 20px;">
-  <ul style="margin-top: 0;">
-    <li>Conducted in-depth research on "Superconductivity - Synthesizing and Testing on Edge Materials."</li>
-    <li>Successfully synthesized pure samples of Li<sub>3</sub>Re<sub>3</sub>Te<sub>2</sub>O<sub>12</sub> and Pb<sub>9</sub>Cu(PO<sub>4</sub>)<sub>6</sub>O. Performed X-Ray Diffraction (XRD) analysis and levitation experiments to assess superconductivity.</li>
-    <li>Developed a novel synthesis recipe with an altered ratio, leading to significant findings. Currently preparing a manuscript for publication.</li>
-    <li>Achieved a grade of A.</li>
-  </ul>
-</div>
-
-[//]: # (## Publications)
-
-[//]: # (<hr>)
-
-[//]: # (  <ul>{% for post in site.publications reversed %})
-
-[//]: # (    {% include archive-single-cv.html %})
-
-[//]: # (  {% endfor %}</ul>)
-
-## Skills
-<hr>
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-
-  <div style="flex: 1 1 200px;">
-    <strong>Programming Lang.</strong>
-    <ul>
-      <li>☆Python</li>
-      <li>☆Wolfram Script</li>
-      <li>Java</li>
-      <li>Bash</li>
-      <li>C#</li>
-      <li>JavaScript</li>
-      <li>R</li>
-      <li>Dev C++</li>
-      <li>PHP</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Web & Databases</strong>
-    <ul>
-      <li>Markdown</li>
-      <li>Selenium</li>
-      <li>TypeScript</li>
-      <li>Node.js</li>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>React</li>
-      <li>MySQL</li>
-      <li>MongoDB</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Tools & Tech.</strong>
-    <ul>
-      <li>☆JetBrains</li>
-      <li>VS Code</li>
-      <li>Spyder</li>
-      <li>Git, GitHub & GitLab</li>
-      <li>Docker</li>
-      <li>Linux</li>
-      <li>LaTeX</li>
-      <li>Zotero</li>
-      <li>AWS</li>
-      <li>☆Cloudflare</li>
-      <li>Stable Diffusion</li>
-      <li>ChatGPT</li>
-      <li>Ollama</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Sci. Software</strong>
-    <ul>
-      <li>☆Mathematica</li>
-      <li>Matlab</li>
-      <li>Origin Lab</li>
-      <li>OsiriX</li>
-      <li>Slicer</li>
-      <li>Quantum Espresso</li>
-      <li>YAMBO</li>
-      <li>Jana2006</li>
-      <li>MDI Jade</li>
-      <li>FullProf</li>
-      <li>Vesta</li>
-      <li>Mercury</li>
-      <li>DNASTAR</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Media & Design</strong>
-    <ul>
-      <li>Adobe Creative Suite</li>
-      <li>Sai</li>
-      <li>Davinci Resolve</li>
-      <li>Unity</li>
-      <li>Unreal Engine</li>
-      <li>Procreate</li>
-    </ul>
-  </div>
-
-  <div style="flex: 1 1 200px;">
-    <strong>Languages</strong>
-    <ul>
-      <li>English (fluent)</li>
-      <li>Mandarin (native)</li>
-      <li>Kunshanese (conversational)</li>
-      <li>Korean</li>
-      <li>French</li>
-      <li>Japanese</li>
-    </ul>
-  </div>
-
-</div>
 
 ## Additional Information
 <hr>

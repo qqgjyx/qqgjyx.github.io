@@ -9,7 +9,7 @@ redirect_from:
 
 # Juntang Wang
 
-I am a junior student at **Duke Kunshan University (DKU) & Duke University**, majoring in **Applied Math & Computational Science (Computer Science)**.
+A junior student at **Duke Kunshan University (DKU) & Duke University**, majoring in **Applied Math & Computational Science (Computer Science)**.
 
 ---
 
