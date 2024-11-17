@@ -8,6 +8,7 @@ redirect_from:
 
 ### Published Projects
 
+- **[qqgjyx.com/pysgtsnepi](https://qqgjyx.com/pysgtsnepi){:target="_blank"}**: A Python wrapper for the SG-t-SNE-Π algorithm for dimensionality reduction and visualization.
 - **[qqgjyx.com/mheatmap](https://qqgjyx.com/mheatmap){:target="_blank"}**: A Python package for advanced heatmap visualization and matrix analysis, featuring mosaic/proportional heatmaps, confusion matrix post-processing, and spectral reordering capabilities.
 
 ### Past Projects
