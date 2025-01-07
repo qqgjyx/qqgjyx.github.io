@@ -23,11 +23,11 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Juntang Wang"
-  pronouns         : "he/him"# example: "she/her"
+  pronouns         : "he/him/his" # example: "she/her"
   bio              : "Applied Math/CS Junior"
   location         : "China"
   employer         : "Duke Kunshan"
-  uri              : "qqgjyx.com"# URL
+  uri              : "qqgjyx.com" # URL
   email            : "jw853@duke.edu"
 
   # Academic websites
