@@ -19,3 +19,6 @@ _tmp_scaffold/
 
 # pnpm
 .pnpm-store/
+
+# Claude Code harness state
+.claude/

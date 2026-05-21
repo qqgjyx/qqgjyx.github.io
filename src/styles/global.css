@@ -33,12 +33,32 @@ html.dark {
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
   }
 
   a {
     color: var(--color-link);
   }
-  a:hover {
+  a:hover,
+  a:focus-visible {
     color: var(--color-link-hover);
+  }
+  a:focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
