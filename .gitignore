@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+_tmp_scaffold/
+
+# env
+.env
+.env.local
+.env.production
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.swp
+
+# pnpm
+.pnpm-store/
