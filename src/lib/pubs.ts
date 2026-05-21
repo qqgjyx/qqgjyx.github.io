@@ -35,6 +35,11 @@ function asBool(v: string | undefined): boolean {
   return v?.toLowerCase() === "true";
 }
 
+function renderInlineTeX(s: string | undefined): string | undefined {
+  if (!s) return s;
+  return s.replace(/\{\\dag\}/g, "†").replace(/\{\\ddag\}/g, "‡");
+}
+
 function mapEntry(entry: ParsedEntry): Pub {
   const f = entry.fields;
   return PubSchema.parse({
@@ -43,7 +48,7 @@ function mapEntry(entry: ParsedEntry): Pub {
     type: entry.type,
     title: f.title ?? "",
     authors: entry.authors,
-    displayAuthors: f.display_authors,
+    displayAuthors: renderInlineTeX(f.display_authors),
     venue: f.booktitle ?? f.journal ?? f.note,
     venueShort: f.venue_short,
     track: f.track,
