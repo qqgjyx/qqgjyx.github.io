@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import { getAllPubs } from "../lib/pubs";
+
+const pubs = getAllPubs();
+---
+
+<Base title="Juntang Wang">
+  <main class="mx-auto max-w-screen-lg px-5 py-12">
+    <h1 class="text-3xl font-semibold tracking-tight">Juntang Wang</h1>
+    <p class="mt-2 text-[var(--color-fg-muted)]">
+      Placeholder home — Weekend 1 scaffold smoke test. {pubs.length} publications loaded from <code>citations.bib</code>.
+    </p>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold">Publications (smoke)</h2>
+      <ul class="mt-4 space-y-3">
+        {pubs.map((p) => (
+          <li class="border-b border-[var(--color-rule)] pb-3">
+            <div class="text-sm text-[var(--color-fg-muted)]">
+              <code>{p.id}</code> · {p.year} · {p.venueShort ?? p.venue}
+              {p.featured && <span class="ml-2 text-[var(--color-accent)]">featured</span>}
+            </div>
+            <div class="mt-1 font-medium">{p.title}</div>
+            {p.displayAuthors && (
+              <div class="mt-1 text-sm" set:html={p.displayAuthors} />
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Base>

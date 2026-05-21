@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --color-bg: #ffffff;
+  --color-fg: #1a1a1a;
+  --color-fg-muted: #595959;
+  --color-link: #0055aa;
+  --color-link-hover: #003875;
+  --color-accent: #A51C30;
+  --color-rule: #e5e5e5;
+  --color-card-bg: #fafafa;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html.dark {
+  --color-bg: #0a0a0a;
+  --color-fg: #e8e8e8;
+  --color-fg-muted: #999999;
+  --color-link: #7fb3ff;
+  --color-link-hover: #a5cbff;
+  --color-accent: #ff6080;
+  --color-rule: #2a2a2a;
+  --color-card-bg: #141414;
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  a {
+    color: var(--color-link);
+  }
+  a:hover,
+  a:focus-visible {
+    color: var(--color-link-hover);
+  }
+  a:focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

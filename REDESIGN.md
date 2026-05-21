@@ -394,7 +394,7 @@ No unit tests in v1. Components are presentational; Zod catches data issues; Lig
 
 1. **Free the magic-name slot.** `gh repo rename qqgjyx/qqgjyx.github.io qqgjyx.github.io.archive` (or via GitHub UI). Disable GH Pages on the renamed repo if it was enabled. Reversible if needed.
 2. **Create new empty repo.** `gh repo create qqgjyx/qqgjyx.github.io --public --description "Personal academic site — Astro rebuild"`. No README/license yet; Astro init will populate.
-3. **BibTeX parser spike.** Pick a real BibTeX draft and verify custom-field preservation in priority order: `@citation-js/core` → `@retorquere/bibtex-parser` → hand-rolled regex copying Scholar-Lite's pattern. Lock the choice. ~30 min.
+3. **BibTeX parser spike.** ✅ **Done 2026-05-21.** Tested in priority order against a 6-entry draft (`_spike/citations.bib`). Locked: **hand-rolled (priority-3 fallback)**. 38/38 custom fields preserved verbatim. `@citation-js/core` dropped every custom field (CSL JSON normalizes them away); `@retorquere/bibtex-parser` lost URL %-encoding and HTML angle brackets under default options, and the option matrix to fix it (`raw: true` / `verbatimFields` / `sentenceCase: false`) was fiddlier than a ~50-LOC brace-balanced scanner. Implementation lifts into `src/lib/bibtex.ts` during Weekend 1. See `_spike/FINDINGS.md` for full scoreboard, gotchas, and follow-on plan.
 4. **CF Pages project** pointed at new empty repo. Get staging URL `qqgjyx-github-io.pages.dev` (auto-generated). **Disable** GH Pages on the new repo — CF only.
 
 ### Weekend 1 — Scaffolding
