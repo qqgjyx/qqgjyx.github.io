@@ -1,33 +1,113 @@
 ---
 import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PubCard from "../components/PubCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import { getAllPubs } from "../lib/pubs";
+import { news } from "../data/news";
+import { education } from "../data/education";
+import { work } from "../data/work";
+import { archivedProjects } from "../data/archived";
+import { projects } from "../data/projects";
+import { researchInterests } from "../data/research";
 
 const pubs = getAllPubs();
 ---
 
-<Base title="Juntang Wang">
-  <main class="mx-auto max-w-screen-lg px-5 py-12">
-    <h1 class="text-3xl font-semibold tracking-tight">Juntang Wang</h1>
-    <p class="mt-2 text-[var(--color-fg-muted)]">
-      Placeholder home — Weekend 1 scaffold smoke test. {pubs.length} publications loaded from <code>citations.bib</code>.
-    </p>
-
-    <section class="mt-10">
-      <h2 class="text-xl font-semibold">Publications (smoke)</h2>
-      <ul class="mt-4 space-y-3">
-        {pubs.map((p) => (
-          <li class="border-b border-[var(--color-rule)] pb-3">
-            <div class="text-sm text-[var(--color-fg-muted)]">
-              <code>{p.id}</code> · {p.year} · {p.venueShort ?? p.venue}
-              {p.featured && <span class="ml-2 text-[var(--color-accent)]">featured</span>}
-            </div>
-            <div class="mt-1 font-medium">{p.title}</div>
-            {p.displayAuthors && (
-              <div class="mt-1 text-sm" set:html={p.displayAuthors} />
-            )}
-          </li>
-        ))}
-      </ul>
+<Base title="Juntang Wang" description="Personal site of Juntang Wang, AI for Science researcher.">
+  <Header />
+  <main id="main" class="mx-auto max-w-screen-lg px-5 py-10">
+    <section id="bio" class="scroll-mt-20">
+      <h1 class="text-3xl font-semibold tracking-tight">Juntang Wang</h1>
+      <p class="mt-2 text-sm text-[var(--color-fg-muted)]">
+        {researchInterests.join(" · ")}
+      </p>
+      <!-- TODO: user bio -->
+      <p class="mt-4 max-w-prose">
+        Researcher in AI for Science. Current threads: graph and spectral methods,
+        manifold-informed learning for medical signals, and configuration learning
+        for early cognition. Starting the Harvard MS in Data Science, fall 2026.
+      </p>
     </section>
+
+    {news.length > 0 && (
+      <section id="news" class="mt-12 scroll-mt-20">
+        <h2 class="text-xl font-semibold tracking-tight">News</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          {news.map((n) => (
+            <li class="flex gap-3">
+              <span class="shrink-0 text-[var(--color-fg-muted)] tabular-nums">{n.date}</span>
+              <span>
+                {n.link ? <a href={n.link}>{n.body}</a> : n.body}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section id="publications" class="mt-12 scroll-mt-20">
+      <h2 class="text-xl font-semibold tracking-tight">Publications</h2>
+      <div class="mt-2">
+        {pubs.map((p) => <PubCard pub={p} />)}
+      </div>
+    </section>
+
+    {projects.length > 0 && (
+      <section id="projects" class="mt-12 scroll-mt-20">
+        <h2 class="text-xl font-semibold tracking-tight">Projects</h2>
+        <div class="mt-2">
+          {projects.map((p) => <ProjectCard project={p} />)}
+        </div>
+      </section>
+    )}
+
+    {education.length > 0 && (
+      <section id="education" class="mt-12 scroll-mt-20">
+        <h2 class="text-xl font-semibold tracking-tight">Education</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          {education.map((e) => (
+            <li>
+              <span class="font-medium">{e.school}</span>
+              <span class="text-[var(--color-fg-muted)]"> · {e.degree}</span>
+              <span class="text-[var(--color-fg-muted)]"> · {e.start}{e.end ? `–${e.end}` : ""}</span>
+              {e.location && <span class="text-[var(--color-fg-muted)]"> · {e.location}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {work.length > 0 && (
+      <section id="work" class="mt-12 scroll-mt-20">
+        <h2 class="text-xl font-semibold tracking-tight">Work</h2>
+        <ul class="mt-3 space-y-2 text-sm">
+          {work.map((w) => (
+            <li>
+              <span class="font-medium">{w.org}</span>
+              <span class="text-[var(--color-fg-muted)]"> · {w.role}</span>
+              <span class="text-[var(--color-fg-muted)]"> · {w.start}{w.end ? `–${w.end}` : ""}</span>
+              {w.location && <span class="text-[var(--color-fg-muted)]"> · {w.location}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {archivedProjects.length > 0 && (
+      <section id="archived" class="mt-12 scroll-mt-20">
+        <h2 class="text-xl font-semibold tracking-tight">Archived</h2>
+        <ul class="mt-3 space-y-1 text-sm">
+          {archivedProjects.map((a) => (
+            <li>
+              <a href={a.url}>{a.title}</a>
+              {a.tagline && <span class="text-[var(--color-fg-muted)]"> · {a.tagline}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
   </main>
+  <Footer />
 </Base>

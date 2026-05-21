@@ -1,0 +1,55 @@
+---
+import type { Pub } from "../lib/pubs";
+
+interface Props {
+  pub: Pub;
+}
+
+const { pub } = Astro.props;
+
+type Link = { href: string; label: string };
+const links: Link[] = [
+  pub.paperurl && { href: pub.paperurl, label: "paper" },
+  pub.arxivurl && { href: pub.arxivurl, label: "arxiv" },
+  pub.pdfurl && { href: pub.pdfurl, label: "pdf" },
+  pub.codeurl && { href: pub.codeurl, label: "code" },
+  pub.posterurl && { href: pub.posterurl, label: "poster" },
+  pub.slidesurl && { href: pub.slidesurl, label: "slides" },
+].filter((l): l is Link => Boolean(l));
+
+const heroPath = `/images/pubs/${pub.anchor}.webp`;
+---
+
+<article id={pub.anchor} class="grid grid-cols-1 gap-5 border-b border-[var(--color-rule)] py-6 md:grid-cols-[40%_1fr] md:gap-6">
+  <div class="aspect-video overflow-hidden rounded-md bg-[var(--color-card-bg)]">
+    <img
+      src={heroPath}
+      alt={pub.title}
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover"
+      onerror={`this.style.display='none';this.parentElement.classList.add('flex','items-center','justify-center','p-3','text-center','text-xs','text-[var(--color-fg-muted)]');this.parentElement.textContent='${pub.anchor}';`}
+    />
+  </div>
+  <div class="min-w-0">
+    <h3 class="text-lg font-semibold leading-snug tracking-tight">{pub.title}</h3>
+    {pub.displayAuthors && (
+      <p class="mt-1 text-sm leading-relaxed" set:html={pub.displayAuthors} />
+    )}
+    <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
+      <span>{pub.venueShort ?? pub.venue}</span>
+      <span> · {pub.year}</span>
+      {pub.track && <span> · {pub.track}</span>}
+      {pub.featured && <span class="ml-2 text-[var(--color-accent)]">featured</span>}
+      {pub.award && <span class="ml-2 text-[var(--color-accent)]">{pub.award}</span>}
+    </p>
+    {pub.tldr && <p class="mt-2 text-sm">{pub.tldr}</p>}
+    {links.length > 0 && (
+      <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+        {links.map((l) => (
+          <li><a href={l.href} target="_blank" rel="noopener">{l.label}</a></li>
+        ))}
+      </ul>
+    )}
+  </div>
+</article>

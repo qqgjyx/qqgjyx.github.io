@@ -3,4 +3,6 @@ export interface ExternalLink {
   url: string;
 }
 
-export const links: ExternalLink[] = [];
+export const links: ExternalLink[] = [
+  { label: "github", url: "https://github.com/qqgjyx" },
+];

@@ -1,0 +1,18 @@
+---
+import { links } from "../data/links";
+
+const year = new Date().getUTCFullYear();
+---
+
+<footer class="mt-16 border-t border-[var(--color-rule)]">
+  <div class="mx-auto flex max-w-screen-lg flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 py-6 text-sm text-[var(--color-fg-muted)]">
+    <p>© {year} Juntang Wang</p>
+    {links.length > 0 && (
+      <ul class="flex flex-wrap gap-x-4 gap-y-1">
+        {links.map((l) => (
+          <li><a href={l.url} target="_blank" rel="noopener">{l.label}</a></li>
+        ))}
+      </ul>
+    )}
+  </div>
+</footer>
