@@ -1,18 +1,22 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
 
 /*
   Catppuccin Latte (default) + Mocha (auto via prefers-color-scheme).
   Spec source: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
   Mappings:
-    --color-bg        = Base       (guide: "Main application background")
-    --color-fg        = Text       (guide: "Body Copy" / "Main Headline")
-    --color-fg-muted  = Subtext 0  (guide: "Sub-Headlines, Labels")
-    --color-link      = Blue       (guide: "Normal Links")
-    --color-link-hover= Sky        (guide: "On Hover Links")
-    --color-card-bg   = Surface 0  (guide: "Cards, inputs, elevated surfaces")
-    --color-rule      = Surface 1  (guide-adjacent: next elevation tier above card)
+    --color-bg        = Base       ("Main application background")
+    --color-fg        = Text       ("Body Copy" / "Main Headline")
+    --color-fg-muted  = Subtext 0  ("Sub-Headlines, Labels")
+    --color-link      = Blue       ("Normal Links")
+    --color-link-hover= Sky        ("On Hover Links")
+    --color-card-bg   = Surface 0  ("Cards, inputs, elevated surfaces")
+    --color-rule      = Overlay 0  ("Inactive Border" — strict spec)
     --color-accent    = Mauve      (deviation: guide silent on brand accent)
+
+  Font: Monaspace Neon variable, loaded via Astro Fonts API (see astro.config.mjs).
+  Full-mono identity with legibility mitigations: line-height 1.65, body
+  max-width 68ch, body weight 380 (variable axis), texture healing via calt
+  + ss01 + ss02.
 */
 
 @theme {
@@ -22,11 +26,8 @@
   --color-link: #1e66f5;
   --color-link-hover: #04a5e5;
   --color-card-bg: #ccd0da;
-  --color-rule: #bcc0cc;
+  --color-rule: #9ca0b0;
   --color-accent: #8839ef;
-
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
-    sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,8 +38,36 @@
     --color-link: #89b4fa;
     --color-link-hover: #89dceb;
     --color-card-bg: #313244;
-    --color-rule: #45475a;
+    --color-rule: #6c7086;
     --color-accent: #cba6f7;
+  }
+}
+
+/* CSS-only light/dark override toggle.
+   Adopter renders <input type="checkbox" id="theme-toggle"> somewhere in the
+   page (Base.astro puts a sun/moon-icon label in the footer). When checked:
+     - if OS prefers light, force Mocha (dark)
+     - if OS prefers dark, force Latte (light) */
+html:has(#theme-toggle:checked) {
+  --color-bg: #1e1e2e;
+  --color-fg: #cdd6f4;
+  --color-fg-muted: #a6adc8;
+  --color-link: #89b4fa;
+  --color-link-hover: #89dceb;
+  --color-card-bg: #313244;
+  --color-rule: #6c7086;
+  --color-accent: #cba6f7;
+}
+@media (prefers-color-scheme: dark) {
+  html:has(#theme-toggle:checked) {
+    --color-bg: #eff1f5;
+    --color-fg: #4c4f69;
+    --color-fg-muted: #6c6f85;
+    --color-link: #1e66f5;
+    --color-link-hover: #04a5e5;
+    --color-card-bg: #ccd0da;
+    --color-rule: #9ca0b0;
+    --color-accent: #8839ef;
   }
 }
 
@@ -46,11 +75,16 @@
   html {
     background: var(--color-bg);
     color: var(--color-fg);
-    font-family: var(--font-sans);
+    font-family: var(--font-mono), ui-monospace, "Cascadia Mono", Menlo,
+      monospace;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
+    font-feature-settings: "calt" 1, "ss01" 1, "ss02" 1;
     -webkit-font-smoothing: antialiased;
     color-scheme: light dark;
+  }
+  body {
+    font-weight: 380;
   }
 
   a {

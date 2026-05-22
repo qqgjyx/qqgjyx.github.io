@@ -1,4 +1,6 @@
 ---
+import { Font } from "astro:assets";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "../consts";
 import "../styles/global.css";
 
 interface Props {
@@ -12,8 +14,8 @@ interface Props {
 }
 
 const {
-  title = "Juntang Wang",
-  description = "Personal site of Juntang Wang.",
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
   ogImage,
   ogType = "website",
   noIndex = false,
@@ -21,10 +23,7 @@ const {
   className,
 } = Astro.props;
 
-const canonical = new URL(
-  Astro.url.pathname,
-  Astro.site ?? "https://qqgjyx.com",
-);
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
 ---
 
 <!doctype html>
@@ -48,6 +47,8 @@ const canonical = new URL(
     <meta name="twitter:card" content="summary_large_image" />
 
     {noIndex && <meta name="robots" content="noindex,nofollow" />}
+
+    <Font cssVariable="--font-mono" preload />
   </head>
   <body class={className}>
     <slot />
