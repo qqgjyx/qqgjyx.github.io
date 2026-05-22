@@ -44,7 +44,7 @@ const links = Object.entries(data.links ?? {})
     )
   }
   <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
-    <em>{data.venueShort ?? data.venue}</em>
+    <em class="text-[var(--color-teal)] not-italic">{data.venueShort ?? data.venue}</em>
     <span> · {data.date.getUTCFullYear()}</span>
     {data.track && <span> · {data.track}</span>}
     {

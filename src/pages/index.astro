@@ -61,7 +61,7 @@ const hasEqualContribution = pubs.some(
               alt="Juntang Wang"
               loading="eager"
               decoding="async"
-              class="aspect-square w-full rounded-md bg-[var(--color-card-bg)] object-cover"
+              class="aspect-square w-full rounded-md bg-[var(--color-card-bg)] object-cover ring-2 ring-[var(--color-accent-ring)]"
               data-fallback="JW"
             />
           )
@@ -76,7 +76,9 @@ const hasEqualContribution = pubs.some(
     {
       news.length > 0 && (
         <section class="mt-12">
-          <h2 class="text-xl font-semibold tracking-tight">News</h2>
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>News
+          </h2>
           <ul class="mt-3 space-y-1.5">
             {news.map((n) => (
               <NewsEntry item={n} />
@@ -90,7 +92,7 @@ const hasEqualContribution = pubs.some(
       pubs.length > 0 && (
         <section class="mt-12">
           <h2 class="text-xl font-semibold tracking-tight">
-            Selected Publications
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Selected Publications
           </h2>
           {hasEqualContribution && (
             <p class="mt-1 text-xs text-[var(--color-fg-muted)]">
@@ -109,7 +111,9 @@ const hasEqualContribution = pubs.some(
     {
       education.length > 0 && (
         <section class="mt-12">
-          <h2 class="text-xl font-semibold tracking-tight">Education</h2>
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Education
+          </h2>
           <div class="mt-2">
             {education.map((e) => (
               <EduRow entry={e} />
@@ -122,7 +126,9 @@ const hasEqualContribution = pubs.some(
     {
       work.length > 0 && (
         <section class="mt-12">
-          <h2 class="text-xl font-semibold tracking-tight">Work Experience</h2>
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Work Experience
+          </h2>
           <div class="mt-2">
             {work.map((w) => (
               <WorkRow entry={w} />
@@ -135,7 +141,9 @@ const hasEqualContribution = pubs.some(
     {
       misc.length > 0 && (
         <section class="mt-12">
-          <h2 class="text-xl font-semibold tracking-tight">Miscellanea</h2>
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Miscellanea
+          </h2>
           <ul class="mt-3 space-y-1.5">
             {misc.map((m) => (
               <MiscEntry item={m} />
@@ -146,7 +154,7 @@ const hasEqualContribution = pubs.some(
     }
 
     <p
-      class="mt-16 text-center text-[var(--color-fg-muted)]"
+      class="mt-16 text-center text-[var(--color-accent-soft)]"
       aria-hidden="true"
     >
       ~ · ~

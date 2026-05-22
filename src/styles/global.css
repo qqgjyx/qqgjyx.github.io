@@ -28,6 +28,8 @@
   --color-card-bg: #ccd0da;
   --color-rule: #9ca0b0;
   --color-accent: #8839ef;
+  --color-peach: #fe640b;
+  --color-teal: #179299;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,7 +42,15 @@
     --color-card-bg: #313244;
     --color-rule: #6c7086;
     --color-accent: #cba6f7;
+    --color-peach: #fab387;
+    --color-teal: #94e2d5;
   }
+}
+
+/* Derived from --color-accent so they auto-adapt across themes. */
+:root {
+  --color-accent-ring: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 65%, transparent);
 }
 
 /* Explicit user choice via the header ThemeToggle button. An inline script
@@ -56,6 +66,8 @@
   --color-card-bg: #313244;
   --color-rule: #6c7086;
   --color-accent: #cba6f7;
+  --color-peach: #fab387;
+  --color-teal: #94e2d5;
 }
 :root[data-theme="light"] {
   --color-bg: #eff1f5;
@@ -66,6 +78,8 @@
   --color-card-bg: #ccd0da;
   --color-rule: #9ca0b0;
   --color-accent: #8839ef;
+  --color-peach: #fe640b;
+  --color-teal: #179299;
 }
 
 @layer base {
@@ -97,14 +111,9 @@
     border-radius: 2px;
   }
 
-  /* Overlay 2 @ 25% — Catppuccin spec ("Selection: Overlay 2, 20–30% Opacity") */
+  /* Mauve @ 25% — brand-accented selection, auto-adapts across themes. */
   ::selection {
-    background: rgba(124, 127, 147, 0.25);
-  }
-  @media (prefers-color-scheme: dark) {
-    ::selection {
-      background: rgba(147, 153, 178, 0.25);
-    }
+    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
   }
 
   @media (prefers-reduced-motion: reduce) {
