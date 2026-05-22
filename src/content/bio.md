@@ -9,5 +9,5 @@ I received my B.S. with Distinction in Applied Math & Comp. Sci. (CS Track) from
 advised by [Prof. Shixin Xu](https://faculty.dukekunshan.edu.cn/faculty_profiles/shixin-xu)
 and [Prof. Dongmian Zou](https://faculty.dukekunshan.edu.cn/faculty_profiles/dongmian-zou).
 
-I work on AI for Science, general ML, graph/spectral methods.
+I work on **AI for Science**, ML, graph/spectral methods.
 Always open to collaboration; feel free to reach out.
