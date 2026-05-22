@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;
+  href: string;
+  label: string;
+}
+
+const { icon, href, label } = Astro.props;
+---
+
+<a
+  href={href}
+  target={href.startsWith("http") || href.startsWith("mailto:") ? "_blank" : undefined}
+  rel="noopener"
+  class="inline-flex items-center gap-2 text-sm no-underline hover:underline"
+>
+  <Icon name={icon} class="size-4 shrink-0" aria-hidden="true" />
+  <span>{label}</span>
+</a>
