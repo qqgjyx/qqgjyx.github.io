@@ -43,12 +43,11 @@
   }
 }
 
-/* CSS-only light/dark override toggle.
-   Adopter renders <input type="checkbox" id="theme-toggle"> somewhere in the
-   page (Base.astro puts a sun/moon-icon label in the footer). When checked:
-     - if OS prefers light, force Mocha (dark)
-     - if OS prefers dark, force Latte (light) */
-html:has(#theme-toggle:checked) {
+/* Explicit user choice via the header ThemeToggle button. An inline script
+   in Base.astro sets :root[data-theme] before paint from localStorage, so
+   these selectors win over the prefers-color-scheme block above whenever a
+   preference has been set. */
+:root[data-theme="dark"] {
   --color-bg: #1e1e2e;
   --color-fg: #cdd6f4;
   --color-fg-muted: #a6adc8;
@@ -58,17 +57,15 @@ html:has(#theme-toggle:checked) {
   --color-rule: #6c7086;
   --color-accent: #cba6f7;
 }
-@media (prefers-color-scheme: dark) {
-  html:has(#theme-toggle:checked) {
-    --color-bg: #eff1f5;
-    --color-fg: #4c4f69;
-    --color-fg-muted: #6c6f85;
-    --color-link: #1e66f5;
-    --color-link-hover: #04a5e5;
-    --color-card-bg: #ccd0da;
-    --color-rule: #9ca0b0;
-    --color-accent: #8839ef;
-  }
+:root[data-theme="light"] {
+  --color-bg: #eff1f5;
+  --color-fg: #4c4f69;
+  --color-fg-muted: #6c6f85;
+  --color-link: #1e66f5;
+  --color-link-hover: #04a5e5;
+  --color-card-bg: #ccd0da;
+  --color-rule: #9ca0b0;
+  --color-accent: #8839ef;
 }
 
 @layer base {

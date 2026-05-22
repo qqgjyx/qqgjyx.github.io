@@ -1,37 +1,44 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   pub: CollectionEntry<"pubs">;
 }
 
+const LINK_ICONS: Record<string, string> = {
+  paper: "lucide:file-text",
+  pdf: "lucide:file-text",
+  arxiv: "lucide:book-open-text",
+  code: "lucide:github",
+  slides: "lucide:presentation",
+  poster: "lucide:image",
+};
+
+const LINK_LABELS: Record<string, string> = {
+  paper: "paper",
+  pdf: "pdf",
+  arxiv: "arXiv",
+  code: "code",
+  slides: "slides",
+  poster: "poster",
+};
+
 const { pub } = Astro.props;
 const { data } = pub;
 const links = Object.entries(data.links ?? {})
   .filter(([, v]) => Boolean(v))
-  .map(([label, url]) => ({ label, url: url as string }));
+  .map(([key, url]) => ({
+    key,
+    url: url as string,
+    icon: LINK_ICONS[key] ?? "lucide:link",
+    label: LINK_LABELS[key] ?? key,
+  }));
 ---
 
 <article id={pub.id} class="py-5">
   <p class="leading-snug">
     <strong class="font-semibold">{data.title}</strong>
-    {
-      links.length > 0 && (
-        <span class="text-[var(--color-fg-muted)]">
-          {" "}
-          {links.map((l, i) => (
-            <Fragment>
-              {i > 0 && " / "}
-              {"["}
-              <a href={l.url} target="_blank" rel="noopener">
-                {l.label}
-              </a>
-              {"]"}
-            </Fragment>
-          ))}
-        </span>
-      )
-    }
   </p>
   {
     data.displayAuthors && (
@@ -49,4 +56,21 @@ const links = Object.entries(data.links ?? {})
     }
   </p>
   {data.tldr && <p class="mt-2 text-sm">{data.tldr}</p>}
+  {
+    links.length > 0 && (
+      <p class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+        {links.map((l) => (
+          <a
+            href={l.url}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-1 text-[var(--color-fg-muted)] no-underline hover:text-[var(--color-link)] hover:underline"
+          >
+            <Icon name={l.icon} class="size-3.5 shrink-0" aria-hidden="true" />
+            <span>{l.label}</span>
+          </a>
+        ))}
+      </p>
+    )
+  }
 </article>

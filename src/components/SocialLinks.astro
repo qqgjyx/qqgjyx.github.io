@@ -1,14 +1,36 @@
 ---
+import { Icon } from "astro-icon/components";
 import { SOCIAL_LINKS } from "../consts";
-import IconLabel from "./IconLabel.astro";
 ---
 
-<ul class="mt-3 flex flex-col gap-1.5">
+<ul class="mt-3 flex flex-wrap gap-x-1 gap-y-1">
   {
     SOCIAL_LINKS.map((link) => (
       <li>
-        <IconLabel icon={link.icon} href={link.url} label={link.label} />
+        <a
+          href={link.url}
+          target={link.url.startsWith("http") || link.url.startsWith("mailto:") ? "_blank" : undefined}
+          rel="noopener"
+          aria-label={link.label}
+          class="social-link group inline-flex items-center rounded-md px-1.5 py-1 text-[var(--color-fg-muted)] no-underline hover:bg-[var(--color-card-bg)] hover:text-[var(--color-fg)] focus-visible:bg-[var(--color-card-bg)] focus-visible:text-[var(--color-fg)]"
+        >
+          <Icon name={link.icon} class="size-4 shrink-0" aria-hidden="true" />
+          <span class="social-label grid grid-cols-[0fr] transition-[grid-template-columns] duration-200 ease-out group-hover:grid-cols-[1fr] group-focus-within:grid-cols-[1fr] motion-reduce:transition-none">
+            <span class="overflow-hidden whitespace-nowrap pl-1.5 text-sm">
+              {link.label}
+            </span>
+          </span>
+        </a>
       </li>
     ))
   }
 </ul>
+
+<style>
+  /* Touch devices have no hover — show labels at rest so links stay scannable. */
+  @media (hover: none) {
+    .social-label {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

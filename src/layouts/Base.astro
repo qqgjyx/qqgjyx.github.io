@@ -49,6 +49,24 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
     {noIndex && <meta name="robots" content="noindex,nofollow" />}
 
     <Font cssVariable="--font-mono" preload />
+
+    <script is:inline>
+      // Set initial theme before paint to avoid FOUC. Reads localStorage
+      // (user preference, wins) then falls back to OS prefers-color-scheme.
+      try {
+        const saved = localStorage.getItem("theme");
+        const dark = saved
+          ? saved === "dark"
+          : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches
+          ? "dark"
+          : "light";
+      }
+    </script>
   </head>
   <body class={className}>
     <slot />
