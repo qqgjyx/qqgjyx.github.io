@@ -9,8 +9,13 @@ const { project } = Astro.props;
 const heroPath = project.hero ?? `/images/projects/${project.slug}.webp`;
 ---
 
-<article id={project.slug} class="grid grid-cols-1 gap-5 border-b border-[var(--color-rule)] py-6 md:grid-cols-[40%_1fr] md:gap-6">
-  <div class="aspect-video overflow-hidden rounded-md bg-[var(--color-card-bg)]">
+<article
+  id={project.slug}
+  class="grid grid-cols-1 gap-4 py-5 sm:grid-cols-[160px_1fr] sm:gap-5"
+>
+  <div
+    class="aspect-square overflow-hidden rounded-md bg-[var(--color-card-bg)]"
+  >
     <img
       src={heroPath}
       alt={project.title}
@@ -21,17 +26,29 @@ const heroPath = project.hero ?? `/images/projects/${project.slug}.webp`;
     />
   </div>
   <div class="min-w-0">
-    <h3 class="text-lg font-semibold leading-snug tracking-tight">{project.title}</h3>
-    {project.role && (
-      <p class="mt-1 text-sm text-[var(--color-fg-muted)]">{project.role}</p>
-    )}
+    <p class="leading-snug">
+      <strong class="font-semibold">{project.title}</strong>
+      {
+        project.links && project.links.length > 0 && (
+          <span class="text-[var(--color-fg-muted)]">
+            {" "}
+            {project.links.map((l, i) => (
+              <Fragment>
+                {i > 0 && " / "}
+                {"["}<a href={l.href} target="_blank" rel="noopener">{l.label}</a>{"]"}
+              </Fragment>
+            ))}
+          </span>
+        )
+      }
+    </p>
+    {
+      project.role && (
+        <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
+          <em>{project.role}</em>
+        </p>
+      )
+    }
     <p class="mt-2 text-sm">{project.blurb}</p>
-    {project.links && project.links.length > 0 && (
-      <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
-        {project.links.map((l) => (
-          <li><a href={l.href} target="_blank" rel="noopener">{l.label}</a></li>
-        ))}
-      </ul>
-    )}
   </div>
 </article>

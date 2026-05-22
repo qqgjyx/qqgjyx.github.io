@@ -20,8 +20,13 @@ const links: Link[] = [
 const heroPath = `/images/pubs/${pub.anchor}.webp`;
 ---
 
-<article id={pub.anchor} class="grid grid-cols-1 gap-5 border-b border-[var(--color-rule)] py-6 md:grid-cols-[40%_1fr] md:gap-6">
-  <div class="aspect-video overflow-hidden rounded-md bg-[var(--color-card-bg)]">
+<article
+  id={pub.anchor}
+  class="grid grid-cols-1 gap-4 py-5 sm:grid-cols-[160px_1fr] sm:gap-5"
+>
+  <div
+    class="aspect-square overflow-hidden rounded-md bg-[var(--color-card-bg)]"
+  >
     <img
       src={heroPath}
       alt={pub.title}
@@ -32,24 +37,35 @@ const heroPath = `/images/pubs/${pub.anchor}.webp`;
     />
   </div>
   <div class="min-w-0">
-    <h3 class="text-lg font-semibold leading-snug tracking-tight">{pub.title}</h3>
-    {pub.displayAuthors && (
-      <p class="mt-1 text-sm leading-relaxed" set:html={pub.displayAuthors} />
-    )}
+    <p class="leading-snug">
+      <strong class="font-semibold">{pub.title}</strong>
+      {
+        links.length > 0 && (
+          <span class="text-[var(--color-fg-muted)]">
+            {" "}
+            {links.map((l, i) => (
+              <Fragment>
+                {i > 0 && " / "}
+                {"["}<a href={l.href} target="_blank" rel="noopener">{l.label}</a>{"]"}
+              </Fragment>
+            ))}
+          </span>
+        )
+      }
+    </p>
+    {
+      pub.displayAuthors && (
+        <p class="mt-1 text-sm leading-relaxed" set:html={pub.displayAuthors} />
+      )
+    }
     <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
-      <span>{pub.venueShort ?? pub.venue}</span>
+      <em>{pub.venueShort ?? pub.venue}</em>
       <span> · {pub.year}</span>
       {pub.track && <span> · {pub.track}</span>}
-      {pub.featured && <span class="ml-2 text-[var(--color-accent)]">featured</span>}
-      {pub.award && <span class="ml-2 text-[var(--color-accent)]">{pub.award}</span>}
+      {pub.award && (
+        <span class="text-[var(--color-accent)]"> · {pub.award}</span>
+      )}
     </p>
     {pub.tldr && <p class="mt-2 text-sm">{pub.tldr}</p>}
-    {links.length > 0 && (
-      <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
-        {links.map((l) => (
-          <li><a href={l.href} target="_blank" rel="noopener">{l.label}</a></li>
-        ))}
-      </ul>
-    )}
   </div>
 </article>
