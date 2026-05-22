@@ -1,28 +1,45 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
 
-@theme {
-  --color-bg: #ffffff;
-  --color-fg: #1a1a1a;
-  --color-fg-muted: #595959;
-  --color-link: #0055aa;
-  --color-link-hover: #003875;
-  --color-accent: #A51C30;
-  --color-rule: #e5e5e5;
-  --color-card-bg: #fafafa;
+/*
+  Catppuccin Latte (default) + Mocha (auto via prefers-color-scheme).
+  Spec source: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
+  Mappings:
+    --color-bg        = Base       (guide: "Main application background")
+    --color-fg        = Text       (guide: "Body Copy" / "Main Headline")
+    --color-fg-muted  = Subtext 0  (guide: "Sub-Headlines, Labels")
+    --color-link      = Blue       (guide: "Normal Links")
+    --color-link-hover= Sky        (guide: "On Hover Links")
+    --color-card-bg   = Surface 0  (guide: "Cards, inputs, elevated surfaces")
+    --color-rule      = Surface 1  (guide-adjacent: next elevation tier above card)
+    --color-accent    = Mauve      (deviation: guide silent on brand accent)
+*/
 
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+@theme {
+  --color-bg: #eff1f5;
+  --color-fg: #4c4f69;
+  --color-fg-muted: #6c6f85;
+  --color-link: #1e66f5;
+  --color-link-hover: #04a5e5;
+  --color-card-bg: #ccd0da;
+  --color-rule: #bcc0cc;
+  --color-accent: #8839ef;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    sans-serif;
 }
 
-html.dark {
-  --color-bg: #0a0a0a;
-  --color-fg: #e8e8e8;
-  --color-fg-muted: #999999;
-  --color-link: #7fb3ff;
-  --color-link-hover: #a5cbff;
-  --color-accent: #ff6080;
-  --color-rule: #2a2a2a;
-  --color-card-bg: #141414;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1e1e2e;
+    --color-fg: #cdd6f4;
+    --color-fg-muted: #a6adc8;
+    --color-link: #89b4fa;
+    --color-link-hover: #89dceb;
+    --color-card-bg: #313244;
+    --color-rule: #45475a;
+    --color-accent: #cba6f7;
+  }
 }
 
 @layer base {
@@ -33,10 +50,7 @@ html.dark {
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    color-scheme: light;
-  }
-  html.dark {
-    color-scheme: dark;
+    color-scheme: light dark;
   }
 
   a {
@@ -50,6 +64,16 @@ html.dark {
     outline: 2px solid var(--color-link);
     outline-offset: 2px;
     border-radius: 2px;
+  }
+
+  /* Overlay 2 @ 25% — Catppuccin spec ("Selection: Overlay 2, 20–30% Opacity") */
+  ::selection {
+    background: rgba(124, 127, 147, 0.25);
+  }
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      background: rgba(147, 153, 178, 0.25);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

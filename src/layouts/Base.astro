@@ -21,7 +21,10 @@ const {
   className,
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://qqgjyx.com");
+const canonical = new URL(
+  Astro.url.pathname,
+  Astro.site ?? "https://qqgjyx.com",
+);
 ---
 
 <!doctype html>
@@ -45,19 +48,36 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://qqgjyx.com"
     <meta name="twitter:card" content="summary_large_image" />
 
     {noIndex && <meta name="robots" content="noindex,nofollow" />}
-
-    <script is:inline>
-      // FOUC-prevention: set theme before paint. localStorage > prefers-color-scheme > light.
-      (() => {
-        const stored = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (stored === "dark" || (!stored && prefersDark)) {
-          document.documentElement.classList.add("dark");
-        }
-      })();
-    </script>
   </head>
   <body class={className}>
     <slot />
+    <script>
+      // CSP-friendly image fallback: any <img data-fallback="..."> swaps to a
+      // text placeholder containing the fallback string on error. One handler
+      // covers every card; no per-element inline JS.
+      document.addEventListener(
+        "error",
+        (event) => {
+          const target = event.target;
+          if (!(target instanceof HTMLImageElement)) return;
+          const label = target.dataset.fallback;
+          if (!label) return;
+          const parent = target.parentElement;
+          if (!parent) return;
+          target.style.display = "none";
+          parent.classList.add(
+            "flex",
+            "items-center",
+            "justify-center",
+            "p-3",
+            "text-center",
+            "text-xs",
+            "text-[var(--color-fg-muted)]",
+          );
+          parent.textContent = label;
+        },
+        true,
+      );
+    </script>
   </body>
 </html>

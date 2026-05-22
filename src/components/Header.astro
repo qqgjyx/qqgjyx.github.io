@@ -1,27 +1,49 @@
 ---
+import { archivedProjects } from "../data/archived";
+import { education } from "../data/education";
+import { news } from "../data/news";
+import { projects } from "../data/projects";
+import { work } from "../data/work";
+
 const nav = [
-  { href: "#bio", label: "bio" },
-  { href: "#news", label: "news" },
-  { href: "#publications", label: "publications" },
-  { href: "#projects", label: "projects" },
-  { href: "#education", label: "education" },
-  { href: "#work", label: "work" },
-];
+  { href: "#bio", label: "bio", show: true },
+  { href: "#news", label: "news", show: news.length > 0 },
+  { href: "#publications", label: "publications", show: true },
+  { href: "#projects", label: "projects", show: projects.length > 0 },
+  { href: "#education", label: "education", show: education.length > 0 },
+  { href: "#work", label: "work", show: work.length > 0 },
+  { href: "#archived", label: "archived", show: archivedProjects.length > 0 },
+].filter((item) => item.show);
 ---
 
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded focus:bg-[var(--color-bg)] focus:px-3 focus:py-2">
+<a
+  href="#main"
+  class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded focus:bg-[var(--color-bg)] focus:px-3 focus:py-2"
+>
   Skip to content
 </a>
-<header class="border-b border-[var(--color-rule)]">
-  <div class="mx-auto flex max-w-screen-lg flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 py-4">
-    <a href="#bio" class="font-semibold tracking-tight no-underline" style="color: var(--color-fg)">
+<header
+  class="sticky top-0 z-10 border-b border-[var(--color-rule)] bg-[var(--color-bg)]/80 backdrop-blur"
+>
+  <div
+    class="mx-auto flex max-w-screen-lg flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 py-4"
+  >
+    <a
+      href="#bio"
+      class="font-semibold tracking-tight no-underline"
+      style="color: var(--color-fg)"
+    >
       Juntang Wang
     </a>
     <nav aria-label="Primary">
       <ul class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-        {nav.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
-        ))}
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </div>

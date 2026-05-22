@@ -17,7 +17,7 @@ const heroPath = project.hero ?? `/images/projects/${project.slug}.webp`;
       loading="lazy"
       decoding="async"
       class="h-full w-full object-cover"
-      onerror={`this.style.display='none';this.parentElement.classList.add('flex','items-center','justify-center','p-3','text-center','text-xs','text-[var(--color-fg-muted)]');this.parentElement.textContent='${project.slug}';`}
+      data-fallback={project.slug}
     />
   </div>
   <div class="min-w-0">

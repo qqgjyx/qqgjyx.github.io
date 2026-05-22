@@ -8,5 +8,10 @@ export interface EducationItem {
 }
 
 export const education: EducationItem[] = [
-  { school: "Harvard University", degree: "MS, Data Science (incoming)", start: "2026-09", location: "Cambridge, MA" },
+  {
+    school: "Harvard University",
+    degree: "MS, Data Science (incoming)",
+    start: "2026-09",
+    location: "Cambridge, MA",
+  },
 ];

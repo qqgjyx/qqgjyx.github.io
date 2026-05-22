@@ -46,7 +46,7 @@ function mapEntry(entry: ParsedEntry): Pub {
     id: entry.id,
     anchor: f.display_anchor ?? entry.id,
     type: entry.type,
-    title: f.title ?? "",
+    title: f.title,
     authors: entry.authors,
     displayAuthors: renderInlineTeX(f.display_authors),
     venue: f.booktitle ?? f.journal ?? f.note,

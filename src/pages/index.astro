@@ -1,16 +1,16 @@
 ---
-import Base from "../layouts/Base.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import PubCard from "../components/PubCard.astro";
+import Header from "../components/Header.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { getAllPubs } from "../lib/pubs";
-import { news } from "../data/news";
-import { education } from "../data/education";
-import { work } from "../data/work";
+import PubCard from "../components/PubCard.astro";
 import { archivedProjects } from "../data/archived";
+import { education } from "../data/education";
+import { news } from "../data/news";
 import { projects } from "../data/projects";
 import { researchInterests } from "../data/research";
+import { work } from "../data/work";
+import Base from "../layouts/Base.astro";
+import { getAllPubs } from "../lib/pubs";
 
 const pubs = getAllPubs();
 ---

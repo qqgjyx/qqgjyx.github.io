@@ -24,8 +24,18 @@ export interface ParsedEntry {
 }
 
 const MONTHS: Record<string, number> = {
-  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
-  jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+  jan: 1,
+  feb: 2,
+  mar: 3,
+  apr: 4,
+  may: 5,
+  jun: 6,
+  jul: 7,
+  aug: 8,
+  sep: 9,
+  oct: 10,
+  nov: 11,
+  dec: 12,
 };
 
 function stripComments(src: string): string {
@@ -40,9 +50,10 @@ export function parseBibTeX(src: string): RawEntry[] {
   const entries: RawEntry[] = [];
   const headerRe = /@(\w+)\s*\{\s*([^,\s]+)\s*,/g;
 
-  let match: RegExpExecArray | null;
-  while ((match = headerRe.exec(cleaned)) !== null) {
-    const [headerText, type, key] = match;
+  let match = headerRe.exec(cleaned);
+  while (match !== null) {
+    const type = match[1];
+    const key = match[2];
     const entryStart = match.index;
     const bodyStart = headerRe.lastIndex;
 
@@ -61,6 +72,7 @@ export function parseBibTeX(src: string): RawEntry[] {
 
     entries.push({ type: type.toLowerCase(), key, fields, bibtex });
     headerRe.lastIndex = i;
+    match = headerRe.exec(cleaned);
   }
 
   return entries;
@@ -125,7 +137,9 @@ function coerceDate(fields: RawFields): Date {
     }
     return new Date(Date.UTC(year, month - 1, 1));
   }
-  throw new Error(`bibtex entry missing required date/year: ${JSON.stringify(fields)}`);
+  throw new Error(
+    `bibtex entry missing required date/year: ${JSON.stringify(fields)}`,
+  );
 }
 
 function splitAuthors(authorField: string | undefined): string[] {

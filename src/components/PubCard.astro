@@ -28,7 +28,7 @@ const heroPath = `/images/pubs/${pub.anchor}.webp`;
       loading="lazy"
       decoding="async"
       class="h-full w-full object-cover"
-      onerror={`this.style.display='none';this.parentElement.classList.add('flex','items-center','justify-center','p-3','text-center','text-xs','text-[var(--color-fg-muted)]');this.parentElement.textContent='${pub.anchor}';`}
+      data-fallback={pub.anchor}
     />
   </div>
   <div class="min-w-0">
