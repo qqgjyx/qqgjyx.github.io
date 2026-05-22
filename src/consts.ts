@@ -1,9 +1,9 @@
 /**
  * Site-level metadata — single source of truth for the homepage.
  *
- * Adopters editing this file: SOCIAL_LINKS renders as a wrapping row of
- * bracketed text links under your photo. Drop entries you don't use; add
- * any platform you want — labels are free-form.
+ * Adopters editing this file: SOCIAL_LINKS renders as a single row of
+ * icon-only links under your photo. Pick any icon name from
+ * https://icones.js.org/collection/lucide.
  */
 
 export const SITE_TITLE = "Juntang Wang";
@@ -14,15 +14,24 @@ export const SITE_URL = "https://qqgjyx.com";
 export interface SocialLink {
   label: string;
   url: string;
+  icon: string;
 }
 
 export const SOCIAL_LINKS: readonly SocialLink[] = [
-  { label: "CV", url: "/files/resume.pdf" },
-  { label: "中文简历", url: "/files/resume_zh.pdf" },
-  { label: "Scholar", url: "https://scholar.google.com/citations?user=iUaLgWwAAAAJ" },
-  { label: "GitHub", url: "https://github.com/qqgjyx" },
-  { label: "Email", url: "mailto:jw853@duke.edu" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/q9gjyx" },
+  { label: "CV", url: "/files/resume.pdf", icon: "lucide:file-text" },
+  { label: "中文简历", url: "/files/resume_zh.pdf", icon: "lucide:languages" },
+  {
+    label: "Scholar",
+    url: "https://scholar.google.com/citations?user=iUaLgWwAAAAJ",
+    icon: "lucide:graduation-cap",
+  },
+  { label: "GitHub", url: "https://github.com/qqgjyx", icon: "lucide:github" },
+  { label: "Email", url: "mailto:jw853@duke.edu", icon: "lucide:mail" },
+  {
+    label: "LinkedIn",
+    url: "https://linkedin.com/in/q9gjyx",
+    icon: "lucide:linkedin",
+  },
 ] as const;
 
 /**
