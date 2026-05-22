@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"education">;
+}
+
+const { entry } = Astro.props;
+const { school, degree, start, end, location, logo, url } = entry.data;
+const initial = school.charAt(0);
+---
+
+<div class="flex items-start gap-4 py-3">
+  <div
+    class="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md bg-[var(--color-card-bg)] text-lg font-semibold text-[var(--color-fg-muted)]"
+  >
+    {
+      logo ? (
+        <img
+          src={logo}
+          alt={school}
+          class="h-full w-full object-cover"
+          data-fallback={initial}
+        />
+      ) : (
+        <span aria-hidden="true">{initial}</span>
+      )
+    }
+  </div>
+  <div class="min-w-0 text-sm">
+    {
+      url ? (
+        <a href={url} class="font-semibold">
+          {school}
+        </a>
+      ) : (
+        <strong>{school}</strong>
+      )
+    }
+    <div class="text-[var(--color-fg-muted)]">{degree}</div>
+    <div class="text-[var(--color-fg-muted)]">
+      {start}{end ? ` – ${end}` : ""}{location ? ` · ${location}` : ""}
+    </div>
+  </div>
+</div>

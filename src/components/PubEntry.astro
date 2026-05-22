@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  pub: CollectionEntry<"pubs">;
+}
+
+const { pub } = Astro.props;
+const { data } = pub;
+const links = Object.entries(data.links ?? {})
+  .filter(([, v]) => Boolean(v))
+  .map(([label, url]) => ({ label, url: url as string }));
+---
+
+<article id={pub.id} class="py-5">
+  <p class="leading-snug">
+    <strong class="font-semibold">{data.title}</strong>
+    {
+      links.length > 0 && (
+        <span class="text-[var(--color-fg-muted)]">
+          {" "}
+          {links.map((l, i) => (
+            <Fragment>
+              {i > 0 && " / "}
+              {"["}
+              <a href={l.url} target="_blank" rel="noopener">
+                {l.label}
+              </a>
+              {"]"}
+            </Fragment>
+          ))}
+        </span>
+      )
+    }
+  </p>
+  {
+    data.displayAuthors && (
+      <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
+    )
+  }
+  <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
+    <em>{data.venueShort ?? data.venue}</em>
+    <span> · {data.date.getUTCFullYear()}</span>
+    {data.track && <span> · {data.track}</span>}
+    {
+      data.award && (
+        <span class="text-[var(--color-accent)]"> · {data.award}</span>
+      )
+    }
+  </p>
+  {data.tldr && <p class="mt-2 text-sm">{data.tldr}</p>}
+</article>
