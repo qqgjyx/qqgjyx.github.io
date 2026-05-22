@@ -37,9 +37,7 @@ const links = Object.entries(data.links ?? {})
 ---
 
 <article id={pub.id} class="py-5">
-  <p class="leading-snug">
-    <strong class="font-semibold">{data.title}</strong>
-  </p>
+  <h3 class="font-semibold leading-snug">{data.title}</h3>
   {
     data.displayAuthors && (
       <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
