@@ -11,7 +11,6 @@ authors:
   - { name: "Sze Chai Kwok" }
 displayAuthors: "Shu Kit Eric Tam, <strong>Juntang Wang</strong>, Jianke Cen, Aleksandra Stryjska, Pascal Grange, Sze Chai Kwok"
 venue: "18th Annual Meeting of the Chinese Neuroscience Society (CNS 2025)"
-venueShort: CNS
 links:
   poster: "https://www.kwoklab.org/labresource/Shujie%20Tan/Poster_TSJ_20250927.pdf"
   slides: "https://qqgjyx.my.canva.site/s02-tamkwok-srs"

@@ -14,7 +14,6 @@ venue: "Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and
 venueShort: KDD
 track: AI for Science Track (Inaugural)
 equalContribution: [wang_juntang, wang_yihan, wu_hao]
-featured: true
 links:
   paper: "https://openreview.net/forum?id=LEwjtvV1VK"
 tldr: Bakes physiological priors (REM bookkeeping, transition latency) into sleep-stage scoring, cutting clinically implausible labels without hurting accuracy.

@@ -7,7 +7,6 @@ authors:
   - { name: "Shixin Xu" }
 displayAuthors: "<strong>Juntang Wang</strong>, Shixin Xu"
 venue: "DKU SignatureWork Symposium 2026"
-venueShort: DKU SW
 links:
   pdf: /files/p02-SW2026-MINN-paper.pdf
   poster: /files/p02-SW2026-MINN-poster.pdf

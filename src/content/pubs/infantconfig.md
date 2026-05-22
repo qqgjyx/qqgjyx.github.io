@@ -13,7 +13,6 @@ venue: "15th International Conference on Brain Inspired Cognitive Systems (BICS 
 venueShort: BICS
 award: Oral Presentation
 equalContribution: [wang_juntang, wang_yihan, wu_hao]
-featured: true
 links:
   arxiv: "https://arxiv.org/abs/2510.19229"
   code: "https://github.com/qqgjyx/mheatmap"

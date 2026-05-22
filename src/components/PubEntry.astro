@@ -26,6 +26,7 @@ const LINK_LABELS: Record<string, string> = {
 
 const { pub } = Astro.props;
 const { data } = pub;
+const heroPath = data.hero ?? `/images/pubs/${pub.id}.webp`;
 const links = Object.entries(data.links ?? {})
   .filter(([, v]) => Boolean(v))
   .map(([key, url]) => ({
@@ -36,39 +37,60 @@ const links = Object.entries(data.links ?? {})
   }));
 ---
 
-<article id={pub.id} class="py-5">
-  <h3 class="font-semibold leading-snug">{data.title}</h3>
-  {
-    data.displayAuthors && (
-      <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
-    )
-  }
-  <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
-    <em class="text-[var(--color-teal)] not-italic">{data.venueShort ?? data.venue}</em>
-    <span> · {data.date.getUTCFullYear()}</span>
-    {data.track && <span> · {data.track}</span>}
+<article
+  id={pub.id}
+  class:list={[
+    "grid grid-cols-1 gap-4 py-5 sm:grid-cols-[240px_1fr] sm:gap-5",
+    data.featured &&
+      "-mx-4 rounded-md bg-[var(--color-card-bg)] px-4 sm:-mx-5 sm:px-5",
+  ]}
+>
+  <div
+    class="aspect-[4/3] overflow-hidden rounded-md bg-[var(--color-card-bg)]"
+  >
+    <img
+      src={heroPath}
+      alt={data.title}
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover"
+      data-fallback={pub.id}
+    />
+  </div>
+  <div class="min-w-0">
+    <h3 class="font-semibold leading-snug">{data.title}</h3>
     {
-      data.award && (
-        <span class="text-[var(--color-accent)]"> · {data.award}</span>
+      data.displayAuthors && (
+        <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
       )
     }
-  </p>
-  {data.tldr && <p class="mt-2 text-sm">{data.tldr}</p>}
-  {
-    links.length > 0 && (
-      <p class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
-        {links.map((l) => (
-          <a
-            href={l.url}
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center gap-1 text-[var(--color-fg-muted)] no-underline hover:text-[var(--color-link)] hover:underline"
-          >
-            <Icon name={l.icon} class="size-3.5 shrink-0" aria-hidden="true" />
-            <span>{l.label}</span>
-          </a>
-        ))}
-      </p>
-    )
-  }
+    <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
+      <em title={data.venue}>{data.venueShort ?? data.venue}</em>
+      <span> · {data.date.getUTCFullYear()}</span>
+      {data.track && <span> · {data.track}</span>}
+      {
+        data.award && (
+          <span class="text-[var(--color-accent)]"> · {data.award}</span>
+        )
+      }
+    </p>
+    {data.tldr && <p class="mt-2 text-sm">{data.tldr}</p>}
+    {
+      links.length > 0 && (
+        <p class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+          {links.map((l) => (
+            <a
+              href={l.url}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-1 text-[var(--color-link)] no-underline hover:text-[var(--color-link-hover)] hover:underline"
+            >
+              <Icon name={l.icon} class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{l.label}</span>
+            </a>
+          ))}
+        </p>
+      )
+    }
+  </div>
 </article>
