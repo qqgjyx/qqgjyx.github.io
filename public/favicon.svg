@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="JT favicon">
   <style>
     :root {
-      --fg: #179299;
+      --fg: #000000;
       --text: #FFFFFF;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --fg: #94E2D5;
-        --text: #1E1E2E;
+        --fg: #FFFFFF;
+        --text: #000000;
       }
     }
   </style>
