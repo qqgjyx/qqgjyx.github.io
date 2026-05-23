@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   entry: CollectionEntry<"work">;
@@ -36,7 +37,10 @@ const endFmt = end ? fmt(end) : "Present";
 
 <div class="flex items-start gap-4 py-3">
   <div
-    class="flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-md text-lg font-semibold text-[var(--color-fg-muted)]"
+    class:list={[
+      "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-md text-[var(--color-fg-muted)]",
+      !logo && "bg-[var(--color-card-bg)]",
+    ]}
   >
     {
       logo && logo.format === "svg" ? (
@@ -61,7 +65,7 @@ const endFmt = end ? fmt(end) : "Present";
           data-fallback={initial}
         />
       ) : (
-        <span aria-hidden="true">{initial}</span>
+        <Icon name="lucide:briefcase" class="size-7" aria-hidden="true" />
       )
     }
   </div>
