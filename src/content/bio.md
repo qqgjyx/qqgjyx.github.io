@@ -1,6 +1,6 @@
 ---
 photo: ../assets/profile.webp
-role: "M.S. Data Science @ Harvard | AI for Science"
+role: "M.S. Data Science @ Harvard"
 ---
 I'm an incoming M.S. in Data Science student at [Harvard](https://gsas.harvard.edu/).
 I received my B.S. with Distinction in Applied Math & Comp. Sci. (CS Track) from
