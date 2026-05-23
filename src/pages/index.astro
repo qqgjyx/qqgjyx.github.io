@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import { getCollection, getEntry, render } from "astro:content";
+import { Icon } from "astro-icon/components";
 import EduRow from "../components/EduRow.astro";
 import NewsEntry from "../components/NewsEntry.astro";
 import ProjectEntry from "../components/ProjectEntry.astro";
@@ -12,8 +12,8 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 import WorkRow from "../components/WorkRow.astro";
 import { honors } from "../data/honors";
 import { service } from "../data/service";
-import { inlineMd } from "../lib/inline-md";
 import Base from "../layouts/Base.astro";
+import { inlineMd } from "../lib/inline-md";
 
 const bioEntry = await getEntry("bio", "bio");
 if (!bioEntry) throw new Error("Missing src/content/bio.md");

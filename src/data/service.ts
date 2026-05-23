@@ -10,8 +10,7 @@ export interface ServiceEntry {
 
 export const service: readonly ServiceEntry[] = [
   {
-    title:
-      "Reviewer, [NeurIPS 2026](https://neurips.cc/Conferences/2026)",
+    title: "Reviewer, [NeurIPS 2026](https://neurips.cc/Conferences/2026)",
   },
   {
     title:
