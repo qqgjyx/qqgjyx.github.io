@@ -88,7 +88,7 @@ const links = Object.entries(data.links ?? {})
           ? `${data.venueShort} ${data.date.getUTCFullYear()}`
           : `${data.venue} ${data.date.getUTCFullYear()}`}
       </em>
-      {data.track && <span> · {data.track}</span>}
+      {data.track && <span> {data.track}</span>}
       {data.award && <Fragment>{" · "}<span class="font-bold text-[var(--color-yellow)]">{data.award}</span></Fragment>}
     </p>
     {
