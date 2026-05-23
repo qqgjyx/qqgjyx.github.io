@@ -199,11 +199,11 @@ const hasEqualContribution = pubs.some((p) =>
             <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Miscellanea
           </h2>
 
-          <div class="mt-4 grid grid-cols-[48px_1fr] gap-x-4 gap-y-4">
+          <div class="mt-4 grid grid-cols-[64px_1fr] gap-x-4 gap-y-4">
             {projects.length > 0 && (
               <>
-                <div class="flex size-12 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Projects">
-                  <Icon name="lucide:wrench" class="size-5" aria-hidden="true" />
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Projects">
+                  <Icon name="lucide:wrench" class="size-7" aria-hidden="true" />
                 </div>
                 <div class="space-y-1.5">
                   {projects.map((p) => (
@@ -215,8 +215,8 @@ const hasEqualContribution = pubs.some((p) =>
 
             {teaching.length > 0 && (
               <>
-                <div class="flex size-12 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Teaching">
-                  <Icon name="lucide:graduation-cap" class="size-5" aria-hidden="true" />
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Teaching">
+                  <Icon name="lucide:graduation-cap" class="size-7" aria-hidden="true" />
                 </div>
                 <div class="space-y-1.5">
                   {teaching.map((t) => (
@@ -228,8 +228,8 @@ const hasEqualContribution = pubs.some((p) =>
 
             {honors.length > 0 && (
               <>
-                <div class="flex size-12 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Honors & Awards">
-                  <Icon name="lucide:award" class="size-5" aria-hidden="true" />
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Honors & Awards">
+                  <Icon name="lucide:award" class="size-7" aria-hidden="true" />
                 </div>
                 <div class="space-y-1.5 text-sm">
                   {honors.map((h) => (
@@ -246,8 +246,8 @@ const hasEqualContribution = pubs.some((p) =>
 
             {service.length > 0 && (
               <>
-                <div class="flex size-12 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Service & Leadership">
-                  <Icon name="lucide:users" class="size-5" aria-hidden="true" />
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Service & Leadership">
+                  <Icon name="lucide:users" class="size-7" aria-hidden="true" />
                 </div>
                 <div class="space-y-1.5 text-sm">
                   {service.map((s) => (

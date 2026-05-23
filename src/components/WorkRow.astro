@@ -36,7 +36,7 @@ const endFmt = end ? fmt(end) : "Present";
 
 <div class="flex items-start gap-4 py-3">
   <div
-    class="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md text-lg font-semibold text-[var(--color-fg-muted)]"
+    class="flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-md text-lg font-semibold text-[var(--color-fg-muted)]"
   >
     {
       logo && logo.format === "svg" ? (
@@ -45,8 +45,8 @@ const endFmt = end ? fmt(end) : "Present";
           alt={org}
           loading="lazy"
           decoding="async"
-          width={48}
-          height={48}
+          width={64}
+          height={64}
           class="h-full w-full object-contain"
           data-fallback={initial}
         />
@@ -55,8 +55,8 @@ const endFmt = end ? fmt(end) : "Present";
           src={logo}
           alt={org}
           loading="lazy"
-          widths={[48, 96]}
-          sizes="48px"
+          widths={[64, 128]}
+          sizes="64px"
           class="h-full w-full object-contain"
           data-fallback={initial}
         />
