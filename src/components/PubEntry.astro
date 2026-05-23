@@ -1,9 +1,11 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
+import { people } from "../data/people";
 
 interface Props {
   pub: CollectionEntry<"pubs">;
+  priority?: boolean;
 }
 
 const LINK_ICONS: Record<string, string> = {
@@ -24,7 +26,7 @@ const LINK_LABELS: Record<string, string> = {
   poster: "poster",
 };
 
-const { pub } = Astro.props;
+const { pub, priority = false } = Astro.props;
 const { data } = pub;
 const heroPath = data.hero ?? `/images/pubs/${pub.id}.webp`;
 const links = Object.entries(data.links ?? {})
@@ -40,41 +42,55 @@ const links = Object.entries(data.links ?? {})
 <article
   id={pub.id}
   class:list={[
-    "grid grid-cols-1 gap-4 py-5 sm:grid-cols-[240px_1fr] sm:gap-5",
+    "grid grid-cols-[100px_1fr] gap-3 py-5 sm:grid-cols-[180px_1fr] sm:gap-5",
     data.featured &&
       "-mx-4 rounded-md bg-[var(--color-card-bg)] px-4 sm:-mx-5 sm:px-5",
   ]}
 >
-  <div
-    class="aspect-[4/3] overflow-hidden rounded-md bg-[var(--color-card-bg)]"
-  >
+  <div class="relative flex aspect-video items-center justify-center overflow-hidden rounded-md bg-[var(--color-card-bg)]">
+    <Icon
+      name="lucide:file-text"
+      class="size-10 text-[var(--color-fg-muted)]"
+      aria-hidden="true"
+    />
     <img
       src={heroPath}
       alt={data.title}
-      loading="lazy"
+      loading={priority ? "eager" : "lazy"}
       decoding="async"
-      class="h-full w-full object-cover"
-      data-fallback={pub.id}
+      class="absolute inset-0 h-full w-full object-cover"
+      data-fallback="hide"
     />
   </div>
   <div class="min-w-0">
     <h3 class="font-semibold leading-snug">{data.title}</h3>
-    {
-      data.displayAuthors && (
-        <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
-      )
-    }
-    <p class="mt-1 text-sm text-[var(--color-fg-muted)]">
-      <em title={data.venue}>{data.venueShort ?? data.venue}</em>
-      <span> · {data.date.getUTCFullYear()}</span>
+    {data.authors && data.authors.length > 0 ? (
+      <p class="mt-1 text-sm leading-relaxed">
+        {data.authors.map((a, i) => {
+          const url = !a.self ? people[a.name]?.url : undefined;
+          const named = url ? <a href={url}>{a.name}</a> : a.name;
+          const wrapped = a.self ? <strong>{named}</strong> : named;
+          return (
+            <>
+              {i > 0 && ", "}
+              {wrapped}
+              {a.equal && <sup>†</sup>}
+            </>
+          );
+        })}
+      </p>
+    ) : data.displayAuthors && (
+      <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
+    )}
+    <p class="mt-1 text-sm">
+      <em title={data.venue} class:list={[data.venueHighlight && "font-bold not-italic text-[var(--color-yellow)]"]}>
+        {data.venueShort
+          ? `${data.venueShort} ${data.date.getUTCFullYear()}`
+          : data.venue}
+      </em>
       {data.track && <span> · {data.track}</span>}
-      {
-        data.award && (
-          <span class="text-[var(--color-accent)]"> · {data.award}</span>
-        )
-      }
+      {data.award && <Fragment>{" · "}<span class="font-bold text-[var(--color-yellow)]">{data.award}</span></Fragment>}
     </p>
-    {data.tldr && <p class="mt-2 text-sm">{data.tldr}</p>}
     {
       links.length > 0 && (
         <p class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">

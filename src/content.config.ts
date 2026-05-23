@@ -4,11 +4,12 @@ import { glob } from "astro/loaders";
 
 const bio = defineCollection({
   loader: glob({ pattern: "bio.md", base: "./src/content" }),
-  schema: z.object({
-    photo: z.string().optional(),
-    role: z.string().optional(),
-    affiliation: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      photo: image().optional(),
+      role: z.string().optional(),
+      affiliation: z.string().optional(),
+    }),
 });
 
 const pubs = defineCollection({
@@ -32,8 +33,7 @@ const pubs = defineCollection({
     track: z.string().optional(),
     award: z.string().optional(),
     featured: z.boolean().default(false),
-    highlighted: z.boolean().default(false),
-    equalContribution: z.array(z.string()).optional(),
+    venueHighlight: z.boolean().default(false),
     links: z
       .object({
         paper: z.string().optional(),
@@ -44,9 +44,7 @@ const pubs = defineCollection({
         pdf: z.string().optional(),
       })
       .optional(),
-    tldr: z.string().max(220).optional(),
     hero: z.string().optional(),
-    bibtex: z.string().optional(),
   }),
 });
 
@@ -60,28 +58,30 @@ const news = defineCollection({
 
 const education = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/education" }),
-  schema: z.object({
-    school: z.string(),
-    degree: z.string(),
-    start: z.string(),
-    end: z.string().optional(),
-    location: z.string().optional(),
-    logo: z.string().optional(),
-    url: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      school: z.string(),
+      degree: z.string(),
+      start: z.string(),
+      end: z.string().optional(),
+      location: z.string().optional(),
+      logo: image().optional(),
+      url: z.string().optional(),
+    }),
 });
 
 const work = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/work" }),
-  schema: z.object({
-    org: z.string(),
-    role: z.string(),
-    start: z.string(),
-    end: z.string().optional(),
-    location: z.string().optional(),
-    logo: z.string().optional(),
-    url: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      org: z.string(),
+      role: z.string(),
+      start: z.string(),
+      end: z.string().optional(),
+      location: z.string().optional(),
+      logo: image().optional(),
+      url: z.string().optional(),
+    }),
 });
 
 const projects = defineCollection({
@@ -89,32 +89,23 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     role: z.string().optional(),
+    stars: z.string().optional(),
+    github: z.string().optional(),
     hero: z.string().optional(),
     featured: z.boolean().default(false),
-    links: z
-      .array(
-        z.object({
-          href: z.string(),
-          label: z.string(),
-        }),
-      )
-      .optional(),
   }),
 });
 
-const archived = defineCollection({
-  loader: glob({ pattern: "*.md", base: "./src/content/archived" }),
+const teaching = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/teaching" }),
   schema: z.object({
-    title: z.string(),
-    url: z.string(),
-    tagline: z.string().optional(),
-  }),
-});
-
-const misc = defineCollection({
-  loader: glob({ pattern: "*.md", base: "./src/content/misc" }),
-  schema: z.object({
-    order: z.number().default(0),
+    course: z.string(),
+    role: z.string(),
+    instructor: z.string().optional(),
+    instructorUrl: z.string().optional(),
+    start: z.string(),
+    end: z.string().optional(),
+    location: z.string().optional(),
   }),
 });
 
@@ -124,7 +115,6 @@ export const collections = {
   news,
   education,
   work,
+  teaching,
   projects,
-  archived,
-  misc,
 };

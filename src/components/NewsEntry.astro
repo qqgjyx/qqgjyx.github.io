@@ -15,7 +15,7 @@ const dateStr = item.data.date.toLocaleString("en-US", {
 ---
 
 <li class="flex gap-3 text-sm">
-  <span class="shrink-0 text-[var(--color-peach)] tabular-nums">
+  <span class="shrink-0 text-[var(--color-fg-muted)] tabular-nums">
     [{dateStr}]
   </span>
   <span class="news-body"><Content /></span>
@@ -23,4 +23,5 @@ const dateStr = item.data.date.toLocaleString("en-US", {
 
 <style is:global>
   .news-body p { display: inline; margin: 0; }
+  .news-body strong { color: var(--color-yellow); }
 </style>

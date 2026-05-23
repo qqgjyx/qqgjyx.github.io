@@ -14,9 +14,8 @@
     --color-accent    = Mauve      (deviation: guide silent on brand accent)
 
   Font: Monaspace Neon variable, loaded via Astro Fonts API (see astro.config.mjs).
-  Full-mono identity with legibility mitigations: line-height 1.65, body
-  max-width 68ch, body weight 380 (variable axis), texture healing via calt
-  + ss01 + ss02.
+  Full-mono identity with legibility mitigations: 15px / 1.5 line-height,
+  body weight 380 (variable axis), texture healing via calt + ss01 + ss02.
 */
 
 @theme {
@@ -30,6 +29,7 @@
   --color-accent: #8839ef;
   --color-peach: #fe640b;
   --color-teal: #179299;
+  --color-yellow: #df8e1d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,6 +44,7 @@
     --color-accent: #cba6f7;
     --color-peach: #fab387;
     --color-teal: #94e2d5;
+    --color-yellow: #f9e2af;
   }
 }
 
@@ -68,6 +69,7 @@
   --color-accent: #cba6f7;
   --color-peach: #fab387;
   --color-teal: #94e2d5;
+  --color-yellow: #f9e2af;
 }
 :root[data-theme="light"] {
   --color-bg: #eff1f5;
@@ -80,6 +82,7 @@
   --color-accent: #8839ef;
   --color-peach: #fe640b;
   --color-teal: #179299;
+  --color-yellow: #df8e1d;
 }
 
 @layer base {
@@ -88,8 +91,8 @@
     color: var(--color-fg);
     font-family: var(--font-mono), ui-monospace, "Cascadia Mono", Menlo,
       monospace;
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.5;
     font-feature-settings: "calt" 1, "ss01" 1, "ss02" 1;
     -webkit-font-smoothing: antialiased;
     color-scheme: light dark;

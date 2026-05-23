@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 interface Props {
   entry: CollectionEntry<"education">;
@@ -8,18 +9,29 @@ interface Props {
 const { entry } = Astro.props;
 const { school, degree, start, end, location, logo, url } = entry.data;
 const initial = school.charAt(0);
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmt = (ym: string | undefined) => {
+  if (!ym) return "";
+  const [y, m] = ym.split("-");
+  return `${MONTHS[parseInt(m, 10) - 1]} ${y}`;
+};
+const startFmt = fmt(start);
+const endFmt = end ? fmt(end) : "Present";
 ---
 
 <div class="flex items-start gap-4 py-3">
   <div
-    class="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md bg-[var(--color-card-bg)] text-lg font-semibold text-[var(--color-fg-muted)]"
+    class="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md text-lg font-semibold text-[var(--color-fg-muted)]"
   >
     {
       logo ? (
-        <img
+        <Image
           src={logo}
           alt={school}
-          class="h-full w-full object-cover"
+          loading="lazy"
+          widths={[48, 96]}
+          sizes="48px"
+          class="h-full w-full object-contain"
           data-fallback={initial}
         />
       ) : (
@@ -37,9 +49,9 @@ const initial = school.charAt(0);
         <strong>{school}</strong>
       )
     }
-    <div class="text-[var(--color-fg-muted)]">{degree}</div>
+    <div>{degree}</div>
     <div class="text-[var(--color-fg-muted)]">
-      {start}{end ? ` – ${end}` : ""}{location ? ` · ${location}` : ""}
+      {startFmt} – {endFmt}{location ? ` · ${location}` : ""}
     </div>
   </div>
 </div>

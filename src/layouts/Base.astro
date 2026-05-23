@@ -73,7 +73,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
     <script>
       // CSP-friendly image fallback: any <img data-fallback="..."> swaps to a
       // text placeholder containing the fallback string on error. One handler
-      // covers every card; no per-element inline JS.
+      // covers every card; no per-element inline JS. Special value "hide"
+      // just hides the broken img (used when an icon is rendered behind).
       document.addEventListener(
         "error",
         (event) => {
@@ -81,9 +82,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
           if (!(target instanceof HTMLImageElement)) return;
           const label = target.dataset.fallback;
           if (!label) return;
+          target.style.display = "none";
+          if (label === "hide") return;
           const parent = target.parentElement;
           if (!parent) return;
-          target.style.display = "none";
           parent.classList.add(
             "flex",
             "items-center",
