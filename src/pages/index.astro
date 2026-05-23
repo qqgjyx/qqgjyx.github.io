@@ -154,8 +154,8 @@ const hasEqualContribution = pubs.some((p) =>
             </p>
           )}
           <div class="mt-2">
-            {pubs.map((p, i) => (
-              <PubEntry pub={p} priority={i < 4} />
+            {pubs.map((p) => (
+              <PubEntry pub={p} />
             ))}
           </div>
         </section>

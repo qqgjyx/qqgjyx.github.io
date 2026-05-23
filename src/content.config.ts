@@ -14,38 +14,39 @@ const bio = defineCollection({
 
 const pubs = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/pubs" }),
-  schema: z.object({
-    title: z.string(),
-    type: z.string(),
-    date: z.coerce.date(),
-    authors: z
-      .array(
-        z.object({
-          name: z.string(),
-          self: z.boolean().optional(),
-          equal: z.boolean().optional(),
-        }),
-      )
-      .optional(),
-    displayAuthors: z.string().optional(),
-    venue: z.string().optional(),
-    venueShort: z.string().optional(),
-    track: z.string().optional(),
-    award: z.string().optional(),
-    featured: z.boolean().default(false),
-    venueHighlight: z.boolean().default(false),
-    links: z
-      .object({
-        paper: z.string().optional(),
-        arxiv: z.string().optional(),
-        code: z.string().optional(),
-        poster: z.string().optional(),
-        slides: z.string().optional(),
-        pdf: z.string().optional(),
-      })
-      .optional(),
-    hero: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      type: z.string(),
+      date: z.coerce.date(),
+      authors: z
+        .array(
+          z.object({
+            name: z.string(),
+            self: z.boolean().optional(),
+            equal: z.boolean().optional(),
+          }),
+        )
+        .optional(),
+      displayAuthors: z.string().optional(),
+      venue: z.string().optional(),
+      venueShort: z.string().optional(),
+      track: z.string().optional(),
+      award: z.string().optional(),
+      venueHighlight: z.boolean().default(false),
+      links: z
+        .object({
+          paper: z.string().optional(),
+          arxiv: z.string().optional(),
+          code: z.string().optional(),
+          poster: z.string().optional(),
+          slides: z.string().optional(),
+          pdf: z.string().optional(),
+        })
+        .optional(),
+      hero: image().optional(),
+      heroDark: image().optional(),
+    }),
 });
 
 const news = defineCollection({

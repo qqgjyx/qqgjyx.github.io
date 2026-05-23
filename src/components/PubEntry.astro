@@ -1,11 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import { people } from "../data/people";
 
 interface Props {
   pub: CollectionEntry<"pubs">;
-  priority?: boolean;
 }
 
 const LINK_ICONS: Record<string, string> = {
@@ -26,9 +26,8 @@ const LINK_LABELS: Record<string, string> = {
   poster: "poster",
 };
 
-const { pub, priority = false } = Astro.props;
+const { pub } = Astro.props;
 const { data } = pub;
-const heroPath = data.hero ?? `/images/pubs/${pub.id}.webp`;
 const links = Object.entries(data.links ?? {})
   .filter(([, v]) => Boolean(v))
   .map(([key, url]) => ({
@@ -41,26 +40,38 @@ const links = Object.entries(data.links ?? {})
 
 <article
   id={pub.id}
-  class:list={[
-    "grid grid-cols-[90px_1fr] gap-3 py-5 sm:grid-cols-[160px_1fr] sm:gap-5",
-    data.featured &&
-      "-mx-4 rounded-md bg-[var(--color-card-bg)] px-4 sm:-mx-5 sm:px-5",
-  ]}
+  class="grid grid-cols-[90px_1fr] gap-3 py-5 sm:grid-cols-[160px_1fr] sm:gap-5"
 >
-  <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-md bg-[var(--color-card-bg)]">
-    <Icon
-      name="lucide:file-text"
-      class="size-10 text-[var(--color-fg-muted)]"
-      aria-hidden="true"
-    />
-    <img
-      src={heroPath}
-      alt={data.title}
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-      class="absolute inset-0 h-full w-full object-cover"
-      data-fallback="hide"
-    />
+  <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-md ring-2 ring-[var(--color-accent-ring)]">
+    {data.hero ? (
+      <>
+        <Image
+          src={data.hero}
+          alt={data.title}
+          loading="lazy"
+          widths={[160, 320, 480]}
+          sizes="(min-width: 640px) 160px, 90px"
+          class="pub-hero-light absolute inset-0 h-full w-full object-cover"
+        />
+        {data.heroDark && (
+          <Image
+            src={data.heroDark}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            widths={[160, 320, 480]}
+            sizes="(min-width: 640px) 160px, 90px"
+            class="pub-hero-dark absolute inset-0 h-full w-full object-cover"
+          />
+        )}
+      </>
+    ) : (
+      <Icon
+        name="lucide:file-text"
+        class="size-10 text-[var(--color-fg-muted)]"
+        aria-hidden="true"
+      />
+    )}
   </div>
   <div class="min-w-0">
     <h3 class="font-semibold leading-snug">{data.title}</h3>
@@ -110,3 +121,12 @@ const links = Object.entries(data.links ?? {})
     }
   </div>
 </article>
+
+<style is:global>
+  /* Theme-aware hero swap. Light is the always-rendered fallback; dark variant
+     (if provided) takes over via :has(+ .pub-hero-dark) so pubs without a
+     dark image still render their light hero in dark mode. */
+  .pub-hero-dark { display: none; }
+  :root[data-theme="dark"] .pub-hero-light:has(+ .pub-hero-dark) { display: none; }
+  :root[data-theme="dark"] .pub-hero-dark { display: block; }
+</style>

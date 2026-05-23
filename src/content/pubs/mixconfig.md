@@ -12,7 +12,8 @@ displayAuthors: "<strong>Juntang Wang</strong><sup>†</sup>, Hao Wu<sup>†</su
 venue: "Proceedings of the 43rd International Conference on Machine Learning (ICML)"
 venueShort: ICML
 venueHighlight: true
-featured: true
+hero: ../../assets/pubs/mixconfig.webp
+heroDark: ../../assets/pubs/mixconfig-dark.webp
 links:
   paper: "https://icml.cc/virtual/2026/poster/63010"
   arxiv: "https://arxiv.org/abs/2510.19248"
