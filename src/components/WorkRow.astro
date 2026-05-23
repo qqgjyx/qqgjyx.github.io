@@ -13,7 +13,9 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const fmt = (ym: string | undefined) => {
   if (!ym) return "";
   const [y, m] = ym.split("-");
-  return `${MONTHS[parseInt(m, 10) - 1]} ${y}`;
+  const idx = parseInt(m ?? "", 10) - 1;
+  if (!Number.isFinite(idx) || idx < 0 || idx > 11) return ym;
+  return `${MONTHS[idx]} ${y}`;
 };
 const startFmt = fmt(start);
 const endFmt = end ? fmt(end) : "Present";
@@ -24,7 +26,18 @@ const endFmt = end ? fmt(end) : "Present";
     class="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md text-lg font-semibold text-[var(--color-fg-muted)]"
   >
     {
-      logo ? (
+      logo && logo.format === "svg" ? (
+        <img
+          src={logo.src}
+          alt={org}
+          loading="lazy"
+          decoding="async"
+          width={48}
+          height={48}
+          class="h-full w-full object-contain"
+          data-fallback={initial}
+        />
+      ) : logo ? (
         <Image
           src={logo}
           alt={org}

@@ -13,7 +13,9 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const fmt = (ym: string | undefined) => {
   if (!ym) return "";
   const [y, m] = ym.split("-");
-  return `${MONTHS[parseInt(m, 10) - 1]} ${y}`;
+  const idx = parseInt(m ?? "", 10) - 1;
+  if (!Number.isFinite(idx) || idx < 0 || idx > 11) return ym;
+  return `${MONTHS[idx]} ${y}`;
 };
 const startFmt = fmt(start);
 const endFmt = end ? fmt(end) : "Present";

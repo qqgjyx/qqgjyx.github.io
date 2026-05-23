@@ -82,10 +82,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
           if (!(target instanceof HTMLImageElement)) return;
           const label = target.dataset.fallback;
           if (!label) return;
-          target.style.display = "none";
-          if (label === "hide") return;
+          if (label === "hide") {
+            target.style.display = "none";
+            return;
+          }
           const parent = target.parentElement;
           if (!parent) return;
+          target.style.display = "none";
           parent.classList.add(
             "flex",
             "items-center",

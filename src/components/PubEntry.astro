@@ -68,7 +68,7 @@ const links = Object.entries(data.links ?? {})
       <p class="mt-1 text-sm leading-relaxed">
         {data.authors.map((a, i) => {
           const url = !a.self ? people[a.name]?.url : undefined;
-          const named = url ? <a href={url}>{a.name}</a> : a.name;
+          const named = url ? <a href={url} target="_blank" rel="noopener noreferrer">{a.name}</a> : a.name;
           const wrapped = a.self ? <strong>{named}</strong> : named;
           return (
             <>
@@ -86,7 +86,7 @@ const links = Object.entries(data.links ?? {})
       <em title={data.venue} class:list={[data.venueHighlight && "font-bold not-italic text-[var(--color-yellow)]"]}>
         {data.venueShort
           ? `${data.venueShort} ${data.date.getUTCFullYear()}`
-          : data.venue}
+          : `${data.venue} ${data.date.getUTCFullYear()}`}
       </em>
       {data.track && <span> · {data.track}</span>}
       {data.award && <Fragment>{" · "}<span class="font-bold text-[var(--color-yellow)]">{data.award}</span></Fragment>}
