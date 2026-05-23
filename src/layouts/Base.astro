@@ -11,6 +11,7 @@ interface Props {
   noIndex?: boolean;
   lang?: string;
   className?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   noIndex = false,
   lang = "en",
   className,
+  jsonLd,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
@@ -41,12 +43,21 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={SITE_TITLE} />
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical.toString()} />
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content="summary_large_image" />
 
+    <link rel="alternate" type="application/rss+xml" title={`${SITE_TITLE} — News`} href="/rss.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    <meta name="theme-color" content="#eff1f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1e1e2e" media="(prefers-color-scheme: dark)" />
+
     {noIndex && <meta name="robots" content="noindex,nofollow" />}
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
     <Font cssVariable="--font-mono" preload />
 
