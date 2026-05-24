@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+
+interface Props {
+  item: CollectionEntry<"news">;
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+const dateStr = item.data.date.toLocaleString("en-US", {
+  month: "short",
+  year: "numeric",
+});
+---
+
+<li class="flex gap-3 text-sm">
+  <span class="shrink-0 text-[var(--color-fg-muted)] tabular-nums">
+    [{dateStr}]
+  </span>
+  <span class="news-body"><Content /></span>
+</li>
+
+<style is:global>
+  .news-body p { display: inline; margin: 0; }
+  .news-body strong { color: var(--color-yellow); }
+</style>

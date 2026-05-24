@@ -1,113 +1,292 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection, getEntry, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+import EduRow from "../components/EduRow.astro";
+import NewsEntry from "../components/NewsEntry.astro";
+import ProjectEntry from "../components/ProjectEntry.astro";
+import PubEntry from "../components/PubEntry.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import TeachingRow from "../components/TeachingRow.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import WorkRow from "../components/WorkRow.astro";
+import { SITE_TITLE, SITE_URL, SOCIAL_LINKS } from "../consts";
+import { honors } from "../data/honors";
+import { service } from "../data/service";
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import PubCard from "../components/PubCard.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import { getAllPubs } from "../lib/pubs";
-import { news } from "../data/news";
-import { education } from "../data/education";
-import { work } from "../data/work";
-import { archivedProjects } from "../data/archived";
-import { projects } from "../data/projects";
-import { researchInterests } from "../data/research";
+import { inlineMd } from "../lib/inline-md";
 
-const pubs = getAllPubs();
+const bioEntry = await getEntry("bio", "bio");
+if (!bioEntry) throw new Error("Missing src/content/bio.md");
+const { Content: BioContent } = await render(bioEntry);
+
+const externalProfiles = SOCIAL_LINKS.filter(
+  (l) => /^https?:/.test(l.url) && !l.url.startsWith("mailto:"),
+).map((l) => l.url);
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE_TITLE,
+  url: SITE_URL,
+  ...(bioEntry.data.photo && {
+    image: new URL(bioEntry.data.photo.src, SITE_URL).toString(),
+  }),
+  ...(bioEntry.data.role && { jobTitle: bioEntry.data.role }),
+  affiliation: {
+    "@type": "EducationalOrganization",
+    name: "Harvard University",
+    url: "https://gsas.harvard.edu/",
+  },
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Duke University",
+      url: "https://duke.edu",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Duke Kunshan University",
+      url: "https://www.dukekunshan.edu.cn",
+    },
+  ],
+  sameAs: externalProfiles,
+};
+
+const pubs = (await getCollection("pubs")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const news = (await getCollection("news")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const education = (await getCollection("education")).sort((a, b) => {
+  const dateDiff = (b.data.start ?? "").localeCompare(a.data.start ?? "");
+  if (dateDiff !== 0) return dateDiff;
+  return b.data.school.localeCompare(a.data.school);
+});
+
+const work = (await getCollection("work")).sort((a, b) =>
+  (b.data.start ?? "").localeCompare(a.data.start ?? ""),
+);
+
+const teaching = (await getCollection("teaching")).sort((a, b) =>
+  (b.data.start ?? "").localeCompare(a.data.start ?? ""),
+);
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => Number(b.data.featured) - Number(a.data.featured),
+);
+
+const hasMiscellanea =
+  teaching.length > 0 ||
+  honors.length > 0 ||
+  service.length > 0 ||
+  projects.length > 0;
+
+const hasEqualContribution = pubs.some((p) =>
+  p.data.authors?.some((a) => a.equal),
+);
 ---
 
-<Base title="Juntang Wang" description="Personal site of Juntang Wang, AI for Science researcher.">
-  <Header />
-  <main id="main" class="mx-auto max-w-screen-lg px-5 py-10">
-    <section id="bio" class="scroll-mt-20">
-      <h1 class="text-3xl font-semibold tracking-tight">Juntang Wang</h1>
-      <p class="mt-2 text-sm text-[var(--color-fg-muted)]">
-        {researchInterests.join(" · ")}
-      </p>
-      <!-- TODO: user bio -->
-      <p class="mt-4 max-w-prose">
-        Researcher in AI for Science. Current threads: graph and spectral methods,
-        manifold-informed learning for medical signals, and configuration learning
-        for early cognition. Starting the Harvard MS in Data Science, fall 2026.
-      </p>
-    </section>
+<Base jsonLd={personSchema}>
+  <main class="mx-auto max-w-[860px] px-6 py-12">
+    <div class="flex items-start justify-between gap-4">
+      <div class="min-w-0">
+        <h1 class="text-3xl font-semibold tracking-tight">
+          Juntang Wang
+          <span class="ml-1.5 text-xl font-normal text-[var(--color-fg-muted)]">王俊棠</span>
+        </h1>
+        <p class="mt-2 text-sm text-[var(--color-fg-muted)]">
+          {bioEntry.data.role}{bioEntry.data.affiliation && ` · ${bioEntry.data.affiliation}`}
+        </p>
+      </div>
+      <ThemeToggle />
+    </div>
 
-    {news.length > 0 && (
-      <section id="news" class="mt-12 scroll-mt-20">
-        <h2 class="text-xl font-semibold tracking-tight">News</h2>
-        <ul class="mt-3 space-y-2 text-sm">
-          {news.map((n) => (
-            <li class="flex gap-3">
-              <span class="shrink-0 text-[var(--color-fg-muted)] tabular-nums">{n.date}</span>
-              <span>
-                {n.link ? <a href={n.link}>{n.body}</a> : n.body}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    <section id="publications" class="mt-12 scroll-mt-20">
-      <h2 class="text-xl font-semibold tracking-tight">Publications</h2>
-      <div class="mt-2">
-        {pubs.map((p) => <PubCard pub={p} />)}
+    <section class="mt-6 grid grid-cols-[90px_1fr] gap-3 sm:grid-cols-[160px_1fr] sm:gap-5">
+      <div>
+        {
+          bioEntry.data.photo && (
+            <Image
+              src={bioEntry.data.photo}
+              alt="Juntang Wang"
+              loading="eager"
+              widths={[160, 320]}
+              sizes="(min-width: 640px) 160px, 90px"
+              class="aspect-square w-full rounded-md bg-[var(--color-card-bg)] object-cover ring-2 ring-[var(--color-accent-ring)]"
+              data-fallback="JT"
+            />
+          )
+        }
+        <SocialLinks />
+      </div>
+      <div class="min-w-0 bio-body">
+        <BioContent />
       </div>
     </section>
 
-    {projects.length > 0 && (
-      <section id="projects" class="mt-12 scroll-mt-20">
-        <h2 class="text-xl font-semibold tracking-tight">Projects</h2>
-        <div class="mt-2">
-          {projects.map((p) => <ProjectCard project={p} />)}
-        </div>
-      </section>
-    )}
+    {
+      news.length > 0 && (
+        <section class="mt-12">
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>News
+          </h2>
+          <ul class="mt-3 space-y-1.5">
+            {news.map((n) => (
+              <NewsEntry item={n} />
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
-    {education.length > 0 && (
-      <section id="education" class="mt-12 scroll-mt-20">
-        <h2 class="text-xl font-semibold tracking-tight">Education</h2>
-        <ul class="mt-3 space-y-2 text-sm">
-          {education.map((e) => (
-            <li>
-              <span class="font-medium">{e.school}</span>
-              <span class="text-[var(--color-fg-muted)]"> · {e.degree}</span>
-              <span class="text-[var(--color-fg-muted)]"> · {e.start}{e.end ? `–${e.end}` : ""}</span>
-              {e.location && <span class="text-[var(--color-fg-muted)]"> · {e.location}</span>}
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
+    {
+      pubs.length > 0 && (
+        <section class="mt-12">
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Selected Publications
+          </h2>
+          {hasEqualContribution && (
+            <p class="mt-1 text-xs text-[var(--color-fg-muted)]">
+              <sup>†</sup> denotes equal contribution.
+            </p>
+          )}
+          <div class="mt-2">
+            {pubs.map((p) => (
+              <PubEntry pub={p} />
+            ))}
+          </div>
+        </section>
+      )
+    }
 
-    {work.length > 0 && (
-      <section id="work" class="mt-12 scroll-mt-20">
-        <h2 class="text-xl font-semibold tracking-tight">Work</h2>
-        <ul class="mt-3 space-y-2 text-sm">
-          {work.map((w) => (
-            <li>
-              <span class="font-medium">{w.org}</span>
-              <span class="text-[var(--color-fg-muted)]"> · {w.role}</span>
-              <span class="text-[var(--color-fg-muted)]"> · {w.start}{w.end ? `–${w.end}` : ""}</span>
-              {w.location && <span class="text-[var(--color-fg-muted)]"> · {w.location}</span>}
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
+    {
+      education.length > 0 && (
+        <section class="mt-12">
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Education
+          </h2>
+          <div class="mt-2">
+            {education.map((e) => (
+              <EduRow entry={e} />
+            ))}
+          </div>
+        </section>
+      )
+    }
 
-    {archivedProjects.length > 0 && (
-      <section id="archived" class="mt-12 scroll-mt-20">
-        <h2 class="text-xl font-semibold tracking-tight">Archived</h2>
-        <ul class="mt-3 space-y-1 text-sm">
-          {archivedProjects.map((a) => (
-            <li>
-              <a href={a.url}>{a.title}</a>
-              {a.tagline && <span class="text-[var(--color-fg-muted)]"> · {a.tagline}</span>}
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
+    {
+      work.length > 0 && (
+        <section class="mt-12">
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Work Experience
+          </h2>
+          <div class="mt-2">
+            {work.map((w) => (
+              <WorkRow entry={w} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      hasMiscellanea && (
+        <section class="mt-12">
+          <h2 class="text-xl font-semibold tracking-tight">
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Miscellanea
+          </h2>
+
+          <div class="mt-4 grid grid-cols-[64px_1fr] gap-x-4 gap-y-4">
+            {projects.length > 0 && (
+              <>
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Projects">
+                  <Icon name="lucide:wrench" class="size-7" aria-hidden="true" />
+                </div>
+                <div class="space-y-1.5">
+                  {projects.map((p) => (
+                    <ProjectEntry project={p} />
+                  ))}
+                </div>
+              </>
+            )}
+
+            {teaching.length > 0 && (
+              <>
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Teaching">
+                  <Icon name="lucide:graduation-cap" class="size-7" aria-hidden="true" />
+                </div>
+                <div class="space-y-1.5">
+                  {teaching.map((t) => (
+                    <TeachingRow entry={t} />
+                  ))}
+                </div>
+              </>
+            )}
+
+            {honors.length > 0 && (
+              <>
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Honors & Awards">
+                  <Icon name="lucide:award" class="size-7" aria-hidden="true" />
+                </div>
+                <div class="space-y-1.5 text-sm">
+                  {honors.map((h) => (
+                    <div>
+                      <Fragment set:html={inlineMd(h.title)} />
+                      {h.note && (
+                        <span class="text-[var(--color-fg-muted)]"> ({h.note})</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {service.length > 0 && (
+              <>
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Service & Leadership">
+                  <Icon name="lucide:users" class="size-7" aria-hidden="true" />
+                </div>
+                <div class="space-y-1.5 text-sm">
+                  {service.map((s) => (
+                    <div>
+                      <Fragment set:html={inlineMd(s.title)} />
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+          </div>
+        </section>
+      )
+    }
+
+    <p
+      class="mt-16 text-center text-[var(--color-accent-soft)]"
+      aria-hidden="true"
+    >
+      ~ · ~
+    </p>
+
+    <footer class="mt-6 text-xs text-[var(--color-fg-muted)]">
+      <p>
+        © 2026 Juntang Wang · Built with{" "}
+        <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
+        {" + "}
+        <a href="https://catppuccin.com" target="_blank" rel="noopener">Catppuccin</a>
+        {" + "}
+        <a href="https://monaspace.githubnext.com" target="_blank" rel="noopener">Monaspace</a>
+        {" · "}
+        <a href="https://github.com/qqgjyx/qqgjyx.github.io">Source →</a>
+      </p>
+    </footer>
   </main>
-  <Footer />
 </Base>
+
+<style is:global>
+  .bio-body p { margin-top: 0.75rem; }
+  .bio-body p:first-child { margin-top: 0; }
+</style>

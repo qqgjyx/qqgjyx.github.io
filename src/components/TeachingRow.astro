@@ -1,0 +1,12 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"teaching">;
+}
+
+const { entry } = Astro.props;
+const { course, role, instructor, instructorUrl } = entry.data;
+---
+
+<div class="text-sm">{role}, <strong>{course}</strong>{instructor && <Fragment>, {instructorUrl ? <a href={instructorUrl}>{instructor}</a> : instructor}</Fragment>}</div>

@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  entry: CollectionEntry<"work">;
+}
+
+const { entry } = Astro.props;
+const { org, role, start, end, location, logo, url } = entry.data;
+const initial = org.charAt(0);
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const fmt = (ym: string | undefined) => {
+  if (!ym) return "";
+  const [y, m] = ym.split("-");
+  const idx = parseInt(m ?? "", 10) - 1;
+  if (!Number.isFinite(idx) || idx < 0 || idx > 11) return ym;
+  return `${MONTHS[idx]} ${y}`;
+};
+const startFmt = fmt(start);
+const endFmt = end ? fmt(end) : "Present";
+---
+
+<div class="flex items-start gap-4 py-3">
+  <div
+    class:list={[
+      "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-md text-[var(--color-fg-muted)]",
+      !logo && "bg-[var(--color-card-bg)]",
+    ]}
+  >
+    {
+      logo && logo.format === "svg" ? (
+        <img
+          src={logo.src}
+          alt={org}
+          loading="lazy"
+          decoding="async"
+          width={64}
+          height={64}
+          class="h-full w-full object-contain"
+          data-fallback={initial}
+        />
+      ) : logo ? (
+        <Image
+          src={logo}
+          alt={org}
+          loading="lazy"
+          widths={[64, 128]}
+          sizes="64px"
+          class="h-full w-full object-contain"
+          data-fallback={initial}
+        />
+      ) : (
+        <Icon name="lucide:briefcase" class="size-7" aria-hidden="true" />
+      )
+    }
+  </div>
+  <div class="min-w-0 text-sm">
+    {
+      url ? (
+        <a href={url} class="font-semibold">
+          {org}
+        </a>
+      ) : (
+        <strong>{org}</strong>
+      )
+    }
+    <div>{role}</div>
+    <div class="text-[var(--color-fg-muted)]">
+      {startFmt} – {endFmt}{location ? ` · ${location}` : ""}
+    </div>
+  </div>
+</div>

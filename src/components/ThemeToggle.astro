@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button
+  type="button"
+  id="theme-toggle"
+  aria-label="Toggle color theme"
+  aria-pressed="false"
+  class="theme-toggle inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-[var(--color-rule)] text-[var(--color-fg-muted)] hover:border-[var(--color-accent)] hover:bg-[var(--color-card-bg)] hover:text-[var(--color-accent)] focus-visible:border-[var(--color-accent)] focus-visible:bg-[var(--color-card-bg)] focus-visible:text-[var(--color-accent)]"
+>
+  <Icon name="lucide:sun" class="size-4 theme-icon-sun" aria-hidden="true" />
+  <Icon name="lucide:moon" class="size-4 theme-icon-moon" aria-hidden="true" />
+</button>
+
+<style is:global>
+  /* Default hide moon — pre-init script briefly shows light theme. */
+  .theme-icon-moon { display: none; }
+  :root[data-theme="dark"] .theme-icon-sun { display: none; }
+  :root[data-theme="dark"] .theme-icon-moon { display: inline; }
+</style>
+
+<script>
+  const btn = document.getElementById("theme-toggle");
+  const syncPressed = () => {
+    if (!btn) return;
+    btn.setAttribute(
+      "aria-pressed",
+      document.documentElement.dataset.theme === "dark" ? "true" : "false",
+    );
+  };
+  syncPressed();
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const next =
+        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      syncPressed();
+      try {
+        localStorage.setItem("theme", next);
+      } catch {
+        /* localStorage may be blocked; silently degrade to per-session toggle */
+      }
+    });
+  }
+</script>

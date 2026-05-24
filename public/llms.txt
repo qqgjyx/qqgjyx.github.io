@@ -1,0 +1,20 @@
+# Juntang Wang
+
+> M.S. Data Science student @ Harvard. AI for Science researcher working on graph and spectral methods for biomedical inference. Previously B.S. with Distinction *cum laude*, Duke & Duke Kunshan University.
+
+## Publications
+
+- [StageGuard: Physiologically Constrained Sleep Staging — KDD 2026](https://qqgjyx.com/#stageguard)
+- [Mixing Configurations for Downstream Prediction — ICML 2026](https://qqgjyx.com/#mixconfig)
+- [Brain-Inspired Perspective on Configurations — BICS 2025 (Oral)](https://qqgjyx.com/#infantconfig)
+- [Can the Mammalian Circadian System Adapt to the Martian Photoperiod? — CNS 2025](https://qqgjyx.com/#martianclock)
+- [Analyzing Temperature-Induced Phase Transitions in LK99 — MC17 2025](https://qqgjyx.com/#lk99)
+
+## Links
+
+- Homepage: https://qqgjyx.com
+- RSS feed: https://qqgjyx.com/rss.xml
+- Sitemap: https://qqgjyx.com/sitemap-index.xml
+- GitHub: https://github.com/qqgjyx
+- Google Scholar: https://scholar.google.com/citations?user=iUaLgWwAAAAJ
+- LinkedIn: https://linkedin.com/in/q9gjyx

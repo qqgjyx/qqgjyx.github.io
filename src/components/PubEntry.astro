@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import { people } from "../data/people";
+
+interface Props {
+  pub: CollectionEntry<"pubs">;
+}
+
+const LINK_ICONS: Record<string, string> = {
+  paper: "lucide:file-text",
+  pdf: "lucide:file-text",
+  arxiv: "lucide:book-open-text",
+  code: "lucide:github",
+  slides: "lucide:presentation",
+  poster: "lucide:image",
+};
+
+const LINK_LABELS: Record<string, string> = {
+  paper: "paper",
+  pdf: "pdf",
+  arxiv: "arXiv",
+  code: "code",
+  slides: "slides",
+  poster: "poster",
+};
+
+const { pub } = Astro.props;
+const { data } = pub;
+const links = Object.entries(data.links ?? {})
+  .filter(([, v]) => Boolean(v))
+  .map(([key, url]) => ({
+    key,
+    url: url as string,
+    icon: LINK_ICONS[key] ?? "lucide:link",
+    label: LINK_LABELS[key] ?? key,
+  }));
+---
+
+<article
+  id={pub.id}
+  class="grid grid-cols-[90px_1fr] gap-3 py-5 sm:grid-cols-[160px_1fr] sm:gap-5"
+>
+  <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-md ring-2 ring-[var(--color-accent-ring)]">
+    {data.hero ? (
+      <>
+        <Image
+          src={data.hero}
+          alt={data.title}
+          loading="lazy"
+          widths={[160, 320, 480]}
+          sizes="(min-width: 640px) 160px, 90px"
+          class="pub-hero-light absolute inset-0 h-full w-full object-cover"
+        />
+        {data.heroDark && (
+          <Image
+            src={data.heroDark}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            widths={[160, 320, 480]}
+            sizes="(min-width: 640px) 160px, 90px"
+            class="pub-hero-dark absolute inset-0 h-full w-full object-cover"
+          />
+        )}
+      </>
+    ) : (
+      <Icon
+        name="lucide:file-text"
+        class="size-10 text-[var(--color-fg-muted)]"
+        aria-hidden="true"
+      />
+    )}
+  </div>
+  <div class="min-w-0">
+    <h3 class="font-semibold leading-snug">{data.title}</h3>
+    {data.authors && data.authors.length > 0 ? (
+      <p class="mt-1 text-sm leading-relaxed">
+        {data.authors.map((a, i) => {
+          const url = !a.self ? people[a.name]?.url : undefined;
+          const named = url ? <a href={url} target="_blank" rel="noopener noreferrer">{a.name}</a> : a.name;
+          const wrapped = a.self ? <strong>{named}</strong> : named;
+          return (
+            <>
+              {i > 0 && ", "}
+              {wrapped}
+              {a.equal && <sup>†</sup>}
+            </>
+          );
+        })}
+      </p>
+    ) : data.displayAuthors && (
+      <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
+    )}
+    <p class="mt-1 text-sm">
+      <em title={data.venue} class:list={[data.venueHighlight && "font-bold not-italic text-[var(--color-yellow)]"]}>
+        {data.venueShort
+          ? `${data.venueShort} ${data.date.getUTCFullYear()}`
+          : `${data.venue} ${data.date.getUTCFullYear()}`}
+      </em>
+      {data.track && <span> {data.track}</span>}
+      {data.award && <Fragment>{" · "}<span class="font-bold text-[var(--color-yellow)]">{data.award}</span></Fragment>}
+    </p>
+    {
+      links.length > 0 && (
+        <p class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+          {links.map((l) => (
+            <a
+              href={l.url}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-1 text-[var(--color-link)] no-underline hover:text-[var(--color-link-hover)] hover:underline"
+            >
+              <Icon name={l.icon} class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{l.label}</span>
+            </a>
+          ))}
+        </p>
+      )
+    }
+  </div>
+</article>
+
+<style is:global>
+  /* Theme-aware hero swap. Light is the always-rendered fallback; dark variant
+     (if provided) takes over via :has(+ .pub-hero-dark) so pubs without a
+     dark image still render their light hero in dark mode. */
+  .pub-hero-dark { display: none; }
+  :root[data-theme="dark"] .pub-hero-light:has(+ .pub-hero-dark) { display: none; }
+  :root[data-theme="dark"] .pub-hero-dark { display: block; }
+</style>

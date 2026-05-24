@@ -1,42 +1,104 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
+
+/*
+  Catppuccin Latte (default) + Mocha (auto via prefers-color-scheme).
+  Spec source: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
+  Mappings:
+    --color-bg        = Base       ("Main application background")
+    --color-fg        = Text       ("Body Copy" / "Main Headline")
+    --color-fg-muted  = Subtext 0  ("Sub-Headlines, Labels")
+    --color-link      = Blue       ("Normal Links")
+    --color-link-hover= Sky        ("On Hover Links")
+    --color-card-bg   = Surface 0  ("Cards, inputs, elevated surfaces")
+    --color-rule      = Overlay 0  ("Inactive Border" — strict spec)
+    --color-accent    = Mauve      (deviation: guide silent on brand accent)
+
+  Font: Monaspace Neon variable, loaded via Astro Fonts API (see astro.config.mjs).
+  Full-mono identity with legibility mitigations: 15px / 1.5 line-height,
+  body weight 380 (variable axis), texture healing via calt + ss01 + ss02.
+*/
 
 @theme {
-  --color-bg: #ffffff;
-  --color-fg: #1a1a1a;
-  --color-fg-muted: #595959;
-  --color-link: #0055aa;
-  --color-link-hover: #003875;
-  --color-accent: #A51C30;
-  --color-rule: #e5e5e5;
-  --color-card-bg: #fafafa;
-
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --color-bg: #eff1f5;
+  --color-fg: #4c4f69;
+  --color-fg-muted: #6c6f85;
+  --color-link: #1e66f5;
+  --color-link-hover: #04a5e5;
+  --color-card-bg: #ccd0da;
+  --color-rule: #9ca0b0;
+  --color-accent: #8839ef;
+  --color-peach: #fe640b;
+  --color-teal: #179299;
+  --color-yellow: #df8e1d;
 }
 
-html.dark {
-  --color-bg: #0a0a0a;
-  --color-fg: #e8e8e8;
-  --color-fg-muted: #999999;
-  --color-link: #7fb3ff;
-  --color-link-hover: #a5cbff;
-  --color-accent: #ff6080;
-  --color-rule: #2a2a2a;
-  --color-card-bg: #141414;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1e1e2e;
+    --color-fg: #cdd6f4;
+    --color-fg-muted: #a6adc8;
+    --color-link: #89b4fa;
+    --color-link-hover: #89dceb;
+    --color-card-bg: #313244;
+    --color-rule: #6c7086;
+    --color-accent: #cba6f7;
+    --color-peach: #fab387;
+    --color-teal: #94e2d5;
+    --color-yellow: #f9e2af;
+  }
+}
+
+/* Derived from --color-accent so they auto-adapt across themes. */
+:root {
+  --color-accent-ring: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 65%, transparent);
+}
+
+/* Explicit user choice via the header ThemeToggle button. An inline script
+   in Base.astro sets :root[data-theme] before paint from localStorage, so
+   these selectors win over the prefers-color-scheme block above whenever a
+   preference has been set. */
+:root[data-theme="dark"] {
+  --color-bg: #1e1e2e;
+  --color-fg: #cdd6f4;
+  --color-fg-muted: #a6adc8;
+  --color-link: #89b4fa;
+  --color-link-hover: #89dceb;
+  --color-card-bg: #313244;
+  --color-rule: #6c7086;
+  --color-accent: #cba6f7;
+  --color-peach: #fab387;
+  --color-teal: #94e2d5;
+  --color-yellow: #f9e2af;
+}
+:root[data-theme="light"] {
+  --color-bg: #eff1f5;
+  --color-fg: #4c4f69;
+  --color-fg-muted: #6c6f85;
+  --color-link: #1e66f5;
+  --color-link-hover: #04a5e5;
+  --color-card-bg: #ccd0da;
+  --color-rule: #9ca0b0;
+  --color-accent: #8839ef;
+  --color-peach: #fe640b;
+  --color-teal: #179299;
+  --color-yellow: #df8e1d;
 }
 
 @layer base {
   html {
     background: var(--color-bg);
     color: var(--color-fg);
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.6;
+    font-family: var(--font-mono), ui-monospace, "Cascadia Mono", Menlo,
+      monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    font-feature-settings: "calt" 1, "ss01" 1, "ss02" 1;
     -webkit-font-smoothing: antialiased;
-    color-scheme: light;
+    color-scheme: light dark;
   }
-  html.dark {
-    color-scheme: dark;
+  body {
+    font-weight: 380;
   }
 
   a {
@@ -50,6 +112,11 @@ html.dark {
     outline: 2px solid var(--color-link);
     outline-offset: 2px;
     border-radius: 2px;
+  }
+
+  /* Mauve @ 25% — brand-accented selection, auto-adapts across themes. */
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
   }
 
   @media (prefers-reduced-motion: reduce) {
