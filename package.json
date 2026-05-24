@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "version": "0.0.0",
-  "description": "Personal academic site, Astro rebuild. See REDESIGN.md.",
+  "description": "Personal academic site, Astro rebuild. See docs/RATIONALE.md.",
   "engines": {
     "node": ">=22.13.0"
   },
