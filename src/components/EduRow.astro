@@ -59,15 +59,21 @@ const endFmt = end ? fmt(end) : "Present";
     }
   </div>
   <div class="min-w-0 text-sm">
-    {
-      url ? (
-        <a href={url} class="font-semibold">
-          {school}
-        </a>
-      ) : (
-        <strong>{school}</strong>
-      )
-    }
+    <h3 class="font-semibold">
+      {
+        url ? (
+          <a
+            href={url}
+            target={url.startsWith("http") ? "_blank" : undefined}
+            rel={url.startsWith("http") ? "noopener noreferrer" : undefined}
+          >
+            {school}
+          </a>
+        ) : (
+          school
+        )
+      }
+    </h3>
     <div>{degree}</div>
     <div class="text-[var(--color-fg-muted)]">
       {startFmt} – {endFmt}{location ? ` · ${location}` : ""}

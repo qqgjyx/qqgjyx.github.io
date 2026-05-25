@@ -1,8 +1,6 @@
 # Design rationale
 
-The "why" behind the major template decisions. Adopters who want to fork and
-customize meaningfully should skim this; adopters who just want a working
-homepage can skip straight to [CUSTOMIZING.md](CUSTOMIZING.md).
+The "why" behind the major decisions, kept as a design memory.
 
 ## Why Astro
 
@@ -10,9 +8,9 @@ homepage can skip straight to [CUSTOMIZING.md](CUSTOMIZING.md).
   of shipped JavaScript is a tax on first-load performance, accessibility, and
   reader trust. Astro defaults to no client JS unless explicitly opted in.
 - **Content Collections + Content Layer API** — typed content with Zod schemas
-  at build time. Adopters get autocomplete + validation as they edit markdown.
-- **`astro:assets` image pipeline** — adopters drop a `.png` / `.webp` /
-  `.gif`, Astro emits AVIF + WebP + responsive `srcset` at build.
+  at build time: autocomplete + frontmatter validation while editing markdown.
+- **`astro:assets` image pipeline** — drop a `.png` / `.webp` / `.gif`, Astro
+  emits AVIF + WebP + responsive `srcset` at build.
 - **Fonts API** — Monaspace ships as a single variable woff2; the Fonts API
   serves it with proper preload hints and FOIT/FOUT mitigation.
 - **Markdown-first authoring** — every collection (pubs, news, education,
@@ -39,15 +37,24 @@ Spec-strict mappings (see `src/styles/global.css`):
 | `--color-card-bg`  | Surface 0           |
 | `--color-rule`     | Overlay 0           |
 | `--color-accent`   | Mauve (de-facto brand) |
-| `::selection`      | Overlay 2 @ 25%     |
+| `--color-emphasis` | Peach (Latte) / Yellow (Mocha) |
+| `::selection`      | Mauve @ 25% (brand deviation; spec is Overlay 2) |
 
-Mauve is Catppuccin's *de facto* brand accent — the default in the VS Code
-port, Discord port, JupyterLab port. Adopters swap it for Teal / Peach /
-Maroon / etc. with one variable change.
+Mauve is Catppuccin's *de facto* brand accent — the default in the VS Code,
+Discord, and JupyterLab ports. It's a single `--color-accent` variable in
+`global.css` if I ever want to retune it.
 
 Latte (light) + Mocha (dark) is the canonical pairing. Auto via
-`prefers-color-scheme`; manual override via a CSS-only `:has(#theme-toggle:checked)`
-flip — no JavaScript.
+`prefers-color-scheme`; manual override via the header toggle button, which
+sets `:root[data-theme]` and persists the choice to `localStorage`. A small
+inline script in `Base.astro` applies the saved theme before first paint to
+avoid a flash. With JavaScript disabled the button is inert, but
+`prefers-color-scheme` still drives the theme.
+
+Emphasis color (venue highlights, awards, GitHub stars, bold news terms) uses
+a dedicated `--color-emphasis` token: Peach in Latte, Yellow in Mocha. Latte
+Yellow on the Base background is only ~2.4:1 contrast; Peach (~3.9:1) clears
+WCAG AA at the bold/small sizes these accents use.
 
 ## Why Monaspace, full-mono
 
@@ -64,18 +71,18 @@ deliberate departure from the academic-Inter default that every other Astro
 template ships. Tradeoffs:
 
 - **Monospace body reads slower than proportional** at length. Mitigations:
-  line-height 1.65, body max-width 68ch, body weight 380 (variable axis), and
-  texture-healing OpenType features (`'calt' 1, 'ss01' 1, 'ss02' 1`). For
-  a short personal homepage with ~30 entries, this is acceptable. Long-form
-  paper bodies should mix in a proportional font.
+  line-height 1.6, a constrained measure (the `<main>` column caps at 860px),
+  body weight 380 (variable axis), and texture-healing OpenType features
+  (`'calt' 1, 'ss01' 1, 'ss02' 1`). For a short personal homepage with ~30
+  entries, this is acceptable. Long-form paper bodies should mix in a
+  proportional font.
 - **Monaspace's italic uses letterform swaps mid-slant** — beautiful, but
   unusual. Some readers find it surprising on first encounter.
 
 ## Why markdown-per-pub instead of one `.bib` file
 
-Most academic templates assume adopters arrive with a `.bib` file and use it
-as the source of truth. We did this originally (W1+W2) with a brace-balanced
-parser. Then we noticed two problems:
+Most academic templates assume a `.bib` file as the source of truth. I did
+this originally (W1+W2) with a brace-balanced parser, then hit two problems:
 
 1. **HTML payloads don't fit BibTeX.** `display_authors` wants
    `<strong>Self</strong><sup>†</sup>` to render bold-self + dagger for
@@ -85,12 +92,8 @@ parser. Then we noticed two problems:
 
 Switching to markdown-per-pub unified the authoring model: every collection
 (pubs, news, education, work, misc) follows the same pattern. The `bibtex`
-field in pub frontmatter keeps the raw citation block, so adopters never lose
-the canonical BibTeX they need for citing their own papers.
-
-For adopters arriving with a `.bib`, `scripts/import-bib.mjs` does the
-conversion once. Net result: better authoring model, no loss of BibTeX
-fidelity.
+field in pub frontmatter keeps the raw citation block, so the canonical BibTeX
+is never lost. Net result: better authoring model, no loss of BibTeX fidelity.
 
 ## Why no top nav
 
@@ -114,14 +117,14 @@ single page, they're overhead. Pagefind = Cmd+F is enough. MDX = no rich
 markdown body needed beyond the news/misc bullets. View Transitions = only
 useful between pages, and we have one page.
 
-Adopters can opt-in via the standard `npx astro add <integration>` command.
-Documented in [CUSTOMIZING.md §8](CUSTOMIZING.md#8-want-search).
+Any of them can be added later via the standard `npx astro add <integration>`
+command if the site ever outgrows a single page.
 
-## Why GitHub "Use this template" instead of npm publish
+## Why some lists are TS, not content collections
 
-Templates that ship as npm packages create install-time complexity (npm
-registry, semver, peer-deps drift) that academic adopters don't want to think
-about. GitHub's "Use this template" button creates a clone in one click. No
-package, no install command, no version pin. The cost is that template
-improvements don't propagate back — adopters re-fork if they want updates.
-For this audience, that's the right trade.
+Pubs, news, education, work, and projects are markdown collections. Honors,
+service, and the author→URL lookup (`src/data/*.ts`) stay as small typed TS
+arrays instead. They're ~80 trivial lines with no body content; a full
+collection (loader + Zod schema + per-entry markdown files) would be more
+machinery than the data warrants. Markdown-per-entry earns its keep when an
+entry has a *body*; these don't.

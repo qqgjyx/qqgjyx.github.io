@@ -70,15 +70,21 @@ const endFmt = end ? fmt(end) : "Present";
     }
   </div>
   <div class="min-w-0 text-sm">
-    {
-      url ? (
-        <a href={url} class="font-semibold">
-          {org}
-        </a>
-      ) : (
-        <strong>{org}</strong>
-      )
-    }
+    <h3 class="font-semibold">
+      {
+        url ? (
+          <a
+            href={url}
+            target={url.startsWith("http") ? "_blank" : undefined}
+            rel={url.startsWith("http") ? "noopener noreferrer" : undefined}
+          >
+            {org}
+          </a>
+        ) : (
+          org
+        )
+      }
+    </h3>
     <div>{role}</div>
     <div class="text-[var(--color-fg-muted)]">
       {startFmt} – {endFmt}{location ? ` · ${location}` : ""}

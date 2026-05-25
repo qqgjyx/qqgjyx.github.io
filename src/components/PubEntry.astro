@@ -6,6 +6,8 @@ import { people } from "../data/people";
 
 interface Props {
   pub: CollectionEntry<"pubs">;
+  /** Top-of-list heroes are above the fold; eager-load them to help LCP. */
+  eager?: boolean;
 }
 
 const LINK_ICONS: Record<string, string> = {
@@ -26,7 +28,7 @@ const LINK_LABELS: Record<string, string> = {
   poster: "poster",
 };
 
-const { pub } = Astro.props;
+const { pub, eager = false } = Astro.props;
 const { data } = pub;
 const links = Object.entries(data.links ?? {})
   .filter(([, v]) => Boolean(v))
@@ -48,7 +50,8 @@ const links = Object.entries(data.links ?? {})
         <Image
           src={data.hero}
           alt={data.title}
-          loading="lazy"
+          loading={eager ? "eager" : "lazy"}
+          fetchpriority={eager ? "high" : "auto"}
           widths={[160, 320, 480]}
           sizes="(min-width: 640px) 160px, 90px"
           class="pub-hero-light absolute inset-0 h-full w-full object-cover"
@@ -94,13 +97,13 @@ const links = Object.entries(data.links ?? {})
       <p class="mt-1 text-sm leading-relaxed" set:html={data.displayAuthors} />
     )}
     <p class="mt-1 text-sm">
-      <em title={data.venue} class:list={[data.venueHighlight && "font-bold not-italic text-[var(--color-yellow)]"]}>
+      <em title={data.venue} class:list={[data.venueHighlight && "font-bold not-italic text-[var(--color-emphasis)]"]}>
         {data.venueShort
           ? `${data.venueShort} ${data.date.getUTCFullYear()}`
           : `${data.venue} ${data.date.getUTCFullYear()}`}
       </em>
       {data.track && <span> {data.track}</span>}
-      {data.award && <Fragment>{" · "}<span class="font-bold text-[var(--color-yellow)]">{data.award}</span></Fragment>}
+      {data.award && <Fragment>{" · "}<span class="font-bold text-[var(--color-emphasis)]">{data.award}</span></Fragment>}
     </p>
     {
       links.length > 0 && (
@@ -110,7 +113,7 @@ const links = Object.entries(data.links ?? {})
               href={l.url}
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-1 text-[var(--color-link)] no-underline hover:text-[var(--color-link-hover)] hover:underline"
+              class="inline-flex items-center gap-1"
             >
               <Icon name={l.icon} class="size-3.5 shrink-0" aria-hidden="true" />
               <span>{l.label}</span>

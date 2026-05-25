@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    site: context.site ?? "https://qqgjyx.com",
+    site: context.site ?? "https://www.qqgjyx.com",
     items: news.map((item) => {
       const body = item.body?.trim() ?? "";
       const plain = body
@@ -19,12 +19,19 @@ export async function GET(context: APIContext) {
         .replace(/[*_`]/g, "");
       const title =
         plain.length > 80 ? `${plain.slice(0, 77).trim()}...` : plain;
-      const anchor = item.data.link ?? "";
+      // Absolute URL per item, unique by anchor or entry id. Absolute links
+      // bypass @astrojs/rss's trailing-slash mangling (which produced
+      // "/#anchor/"), and the id fallback keeps anchorless items' guids unique.
+      const slug = (item.data.link ?? `#${item.id}`).replace(/^#/, "");
+      const link = new URL(
+        `#${slug}`,
+        context.site ?? "https://www.qqgjyx.com",
+      ).toString();
       return {
         title,
         pubDate: item.data.date,
         description: body,
-        link: anchor || "/",
+        link,
       };
     }),
   });

@@ -154,8 +154,8 @@ const hasEqualContribution = pubs.some((p) =>
             </p>
           )}
           <div class="mt-2">
-            {pubs.map((p) => (
-              <PubEntry pub={p} />
+            {pubs.map((p, i) => (
+              <PubEntry pub={p} eager={i < 3} />
             ))}
           </div>
         </section>
@@ -273,14 +273,16 @@ const hasEqualContribution = pubs.some((p) =>
 
     <footer class="mt-6 text-xs text-[var(--color-fg-muted)]">
       <p>
-        © 2026 Juntang Wang · Built with{" "}
-        <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
-        {" + "}
-        <a href="https://catppuccin.com" target="_blank" rel="noopener">Catppuccin</a>
-        {" + "}
-        <a href="https://monaspace.githubnext.com" target="_blank" rel="noopener">Monaspace</a>
-        {" · "}
-        <a href="https://github.com/qqgjyx/qqgjyx.github.io">Source →</a>
+        © 2026 Juntang Wang{" · "}
+        <a
+          href="https://github.com/qqgjyx/qqgjyx.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 align-[-2px]"
+        >
+          <Icon name="lucide:github" class="size-3.5 shrink-0" aria-hidden="true" />
+          <span>source</span>
+        </a>
       </p>
     </footer>
   </main>
