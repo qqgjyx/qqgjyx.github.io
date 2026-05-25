@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qqgjyx.com/sitemap-index.xml
+Sitemap: https://www.qqgjyx.com/sitemap-index.xml

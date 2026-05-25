@@ -9,4 +9,4 @@ const { entry } = Astro.props;
 const { course, role, instructor, instructorUrl } = entry.data;
 ---
 
-<div class="text-sm">{role}, <strong>{course}</strong>{instructor && <Fragment>, {instructorUrl ? <a href={instructorUrl}>{instructor}</a> : instructor}</Fragment>}</div>
+<div class="text-sm">{role}, <strong>{course}</strong>{instructor && <Fragment>, {instructorUrl ? <a href={instructorUrl} target={instructorUrl.startsWith("http") ? "_blank" : undefined} rel={instructorUrl.startsWith("http") ? "noopener noreferrer" : undefined}>{instructor}</a> : instructor}</Fragment>}</div>

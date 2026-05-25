@@ -4,17 +4,17 @@
 
 ## Publications
 
-- [StageGuard: Physiologically Constrained Sleep Staging — KDD 2026](https://qqgjyx.com/#stageguard)
-- [Mixing Configurations for Downstream Prediction — ICML 2026](https://qqgjyx.com/#mixconfig)
-- [Brain-Inspired Perspective on Configurations — BICS 2025 (Oral)](https://qqgjyx.com/#infantconfig)
-- [Can the Mammalian Circadian System Adapt to the Martian Photoperiod? — CNS 2025](https://qqgjyx.com/#martianclock)
-- [Analyzing Temperature-Induced Phase Transitions in LK99 — MC17 2025](https://qqgjyx.com/#lk99)
+- [StageGuard: Physiologically Constrained Sleep Staging — KDD 2026](https://www.qqgjyx.com/#stageguard)
+- [Mixing Configurations for Downstream Prediction — ICML 2026](https://www.qqgjyx.com/#mixconfig)
+- [Brain-Inspired Perspective on Configurations — BICS 2025 (Oral)](https://www.qqgjyx.com/#infantconfig)
+- [Can the Mammalian Circadian System Adapt to the Martian Photoperiod? — CNS 2025](https://www.qqgjyx.com/#martianclock)
+- [Analyzing Temperature-Induced Phase Transitions in LK99 — MC17 2025](https://www.qqgjyx.com/#lk99)
 
 ## Links
 
-- Homepage: https://qqgjyx.com
-- RSS feed: https://qqgjyx.com/rss.xml
-- Sitemap: https://qqgjyx.com/sitemap-index.xml
+- Homepage: https://www.qqgjyx.com
+- RSS feed: https://www.qqgjyx.com/rss.xml
+- Sitemap: https://www.qqgjyx.com/sitemap-index.xml
 - GitHub: https://github.com/qqgjyx
 - Google Scholar: https://scholar.google.com/citations?user=iUaLgWwAAAAJ
 - LinkedIn: https://linkedin.com/in/q9gjyx

@@ -30,6 +30,10 @@
   --color-peach: #fe640b;
   --color-teal: #179299;
   --color-yellow: #df8e1d;
+  /* Emphasis (venue highlights, awards, stars, news terms). Latte Yellow on
+     the Base bg is only ~2.4:1; Peach (#fe640b ≈ 3.9:1) clears AA for the
+     bold/small sizes it's used at. Dark mode keeps Yellow (high contrast). */
+  --color-emphasis: #fe640b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,6 +49,7 @@
     --color-peach: #fab387;
     --color-teal: #94e2d5;
     --color-yellow: #f9e2af;
+    --color-emphasis: #f9e2af;
   }
 }
 
@@ -70,6 +75,7 @@
   --color-peach: #fab387;
   --color-teal: #94e2d5;
   --color-yellow: #f9e2af;
+  --color-emphasis: #f9e2af;
 }
 :root[data-theme="light"] {
   --color-bg: #eff1f5;
@@ -83,6 +89,7 @@
   --color-peach: #fe640b;
   --color-teal: #179299;
   --color-yellow: #df8e1d;
+  --color-emphasis: #fe640b;
 }
 
 @layer base {
@@ -92,7 +99,7 @@
     font-family: var(--font-mono), ui-monospace, "Cascadia Mono", Menlo,
       monospace;
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.6;
     font-feature-settings: "calt" 1, "ss01" 1, "ss02" 1;
     -webkit-font-smoothing: antialiased;
     color-scheme: light dark;
@@ -104,9 +111,13 @@
   a {
     color: var(--color-link);
   }
+  /* Single link affordance everywhere: colored at rest, underline on
+     hover/focus. Components must not re-declare this (no per-link
+     no-underline/hover:underline overrides). */
   a:hover,
   a:focus-visible {
     color: var(--color-link-hover);
+    text-decoration: underline;
   }
   a:focus-visible {
     outline: 2px solid var(--color-link);
