@@ -14,12 +14,12 @@ pnpm check    # astro check (types + content)
 ```
 
 Content lives in `src/content/` (one markdown file per entry) and `src/consts.ts`
-(title, social links). Small bodyless lists (honors, service, the author→URL
-lookup) live in `src/data/*.ts`.
+(title, social links). The author→URL lookup for collaborator links lives in
+`src/data/people.ts`.
 
-The branded OG card (`public/og-card.png`) was generated once from the JT
-monogram in `public/favicon.svg` with a small `sharp` script; regenerate by
-hand if the monogram or tagline ever changes.
+The branded OG card (`public/og-card.png`) is a committed static asset, generated
+once from the JT monogram in `public/favicon.svg`; regenerate by hand if the
+monogram or tagline ever changes.
 
 ## Deploy
 
@@ -40,6 +40,9 @@ Terse rationale for the major choices (draft — to be polished):
   Radically minimal: every file/field/dep earns its place; prefer deletion.
 - **Astro, zero-JS.** Static output; works without JavaScript (theme falls back
   to the OS preference). No client framework.
+- **Deliberately omitted.** No page view-transitions (`<ClientRouter>`) or
+  `prefetch` — single page, nothing to transition or prefetch. The theme toggle
+  hard-cuts rather than animating, for restraint and to stay zero-JS.
 - **Tailwind 4** via `@tailwindcss/vite` — utility-first styling, Preflight reset,
   only-used classes shipped.
 - **Catppuccin Latte + Mocha.** Palette exposed as `@theme` tokens; auto via
@@ -51,7 +54,7 @@ Terse rationale for the major choices (draft — to be polished):
   authors are structured (`authors[]` + `src/data/people.ts` for collaborator
   links); figure heroes are themeable SVGs (`currentColor` ink) auto-detected by
   filename, screenshots stay raster via `astro:assets`.
-- **Assets.** `public/` holds stable-URL assets (favicons, OG card, manifest,
+- **Assets.** `public/` holds stable-URL assets (favicons, OG card,
   `/files/*.pdf`, `/images/profile.*`); `src/assets/` holds images optimized by
   `astro:assets`.
 - **Hosting.** GitHub Pages with custom domain `www.qqgjyx.com`. Per-paper
