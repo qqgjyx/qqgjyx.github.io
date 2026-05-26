@@ -47,7 +47,9 @@ Terse rationale for the major choices (draft — to be polished):
   only-used classes shipped.
 - **Catppuccin Latte + Mocha.** Palette exposed as `@theme` tokens; auto via
   `prefers-color-scheme`, with a header toggle that sets `:root[data-theme]`
-  (persisted to `localStorage`, applied pre-paint to avoid FOUC).
+  (persisted to `localStorage`, applied pre-paint to avoid FOUC). Tokens map to
+  the official spec roles; the few WCAG-AA deviations (Latte emphasis + hover
+  darkened; Mauve selection) are documented at the top of `global.css`.
 - **Monaspace Neon, full-mono.** Variable woff2 via the Astro Fonts API; texture
   healing (`calt`/`ss01`/`ss02`) + 1.6 line-height for legibility.
 - **Content model.** Markdown-per-entry content collections (Zod-typed). Pub

@@ -3,18 +3,31 @@
 /*
   Catppuccin Latte (default) + Mocha (auto via prefers-color-scheme).
   Spec source: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
-  Mappings:
+  Mappings (role = Catppuccin color):
     --color-bg        = Base       ("Main application background")
     --color-fg        = Text       ("Body Copy" / "Main Headline")
     --color-fg-muted  = Subtext 0  ("Sub-Headlines, Labels")
     --color-link      = Blue       ("Normal Links")
-    --color-link-hover= Sky        ("On Hover Links")
+    --color-link-hover= Sky        ("On Hover Links") — Mocha only; see deviations
     --color-card-bg   = Surface 0  ("Cards, inputs, elevated surfaces")
     --color-rule      = Overlay 0  ("Inactive Border" — strict spec)
     --color-accent    = Mauve      (deviation: guide silent on brand accent)
 
+  Deviations & contrast (light theme; Mocha clears WCAG AA everywhere):
+    - --color-emphasis: Catppuccin Peach (2.6:1) and Yellow (2.3:1) both fail AA
+      on Base, so Latte uses a darkened burnt-orange #a8430a (5.4:1); Mocha keeps
+      Yellow (12.9:1).
+    - --color-link-hover (Latte): Sky lightens, lowering contrast on a light bg
+      (2.5:1), so Latte darkens to #0b5ed7 (5.2:1); Mocha keeps Sky (lightening
+      raises contrast on a dark bg).
+    - Selection uses Mauve @ 25% (brand accent) rather than the spec's Overlay 2
+      @ 20–30%.
+    - Accepted as-is: Latte Blue (4.34:1) and Subtext 0 (4.37:1) sit ~0.15 below
+      AA — kept at their official Catppuccin values rather than overriding the
+      primary link/muted colors.
+
   Font: Monaspace Neon variable, loaded via Astro Fonts API (see astro.config.mjs).
-  Full-mono identity with legibility mitigations: 15px / 1.5 line-height,
+  Full-mono identity with legibility mitigations: 15px / 1.6 line-height,
   body weight 380 (variable axis), texture healing via calt + ss01 + ss02.
 */
 
@@ -23,17 +36,15 @@
   --color-fg: #4c4f69;
   --color-fg-muted: #6c6f85;
   --color-link: #1e66f5;
-  --color-link-hover: #04a5e5;
+  --color-link-hover: #0b5ed7;
   --color-card-bg: #ccd0da;
   --color-rule: #9ca0b0;
   --color-accent: #8839ef;
   --color-peach: #fe640b;
   --color-teal: #179299;
   --color-yellow: #df8e1d;
-  /* Emphasis (venue highlights, awards, stars, news terms). Latte Yellow on
-     the Base bg is only ~2.4:1; Peach (#fe640b ≈ 3.9:1) clears AA for the
-     bold/small sizes it's used at. Dark mode keeps Yellow (high contrast). */
-  --color-emphasis: #fe640b;
+  /* Emphasis (venue highlights, awards, stars, news terms); see header note. */
+  --color-emphasis: #a8430a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,14 +93,14 @@
   --color-fg: #4c4f69;
   --color-fg-muted: #6c6f85;
   --color-link: #1e66f5;
-  --color-link-hover: #04a5e5;
+  --color-link-hover: #0b5ed7;
   --color-card-bg: #ccd0da;
   --color-rule: #9ca0b0;
   --color-accent: #8839ef;
   --color-peach: #fe640b;
   --color-teal: #179299;
   --color-yellow: #df8e1d;
-  --color-emphasis: #fe640b;
+  --color-emphasis: #a8430a;
 }
 
 @layer base {
