@@ -24,7 +24,11 @@ export const SOCIAL_LINKS: readonly SocialLink[] = [
     icon: "lucide:graduation-cap",
   },
   { label: "GitHub", url: "https://github.com/qqgjyx", icon: "lucide:github" },
-  { label: "Email", url: "mailto:juntangwang@g.harvard.edu", icon: "lucide:mail" },
+  {
+    label: "Email",
+    url: "mailto:juntangwang@g.harvard.edu",
+    icon: "lucide:mail",
+  },
   {
     label: "LinkedIn",
     url: "https://linkedin.com/in/q9gjyx",
