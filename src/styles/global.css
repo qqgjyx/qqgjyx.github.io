@@ -8,18 +8,20 @@
     --color-fg        = Text       ("Body Copy" / "Main Headline")
     --color-fg-muted  = Subtext 0  ("Sub-Headlines, Labels")
     --color-link      = Blue       ("Normal Links")
-    --color-link-hover= Sky        ("On Hover Links") — Mocha only; see deviations
+    --color-link-hover= Mauve      (accent; spec says Sky — see deviations)
     --color-card-bg   = Surface 0  ("Cards, inputs, elevated surfaces")
     --color-rule      = Overlay 0  ("Inactive Border" — strict spec)
     --color-accent    = Mauve      (deviation: guide silent on brand accent)
 
   Deviations & contrast (light theme; Mocha clears WCAG AA everywhere):
-    - --color-emphasis: Catppuccin Peach (2.6:1) and Yellow (2.3:1) both fail AA
-      on Base, so Latte uses a darkened burnt-orange #a8430a (5.4:1); Mocha keeps
-      Yellow (12.9:1).
-    - --color-link-hover (Latte): Sky lightens, lowering contrast on a light bg
-      (2.5:1), so Latte darkens to #0b5ed7 (5.2:1); Mocha keeps Sky (lightening
-      raises contrast on a dark bg).
+    - --color-emphasis: the spec has no "highlight" role, and its warm colors
+      (Peach 2.6:1, Yellow 2.3:1) fail AA on the light Base — so emphasis uses
+      Catppuccin Red/crimson, the one vivid warm hue that stays AA-legible while
+      dark (Latte #d20f39 4.8:1, Mocha #f38ba8 7.1:1). Unified across both flavors.
+    - --color-link-hover: the spec's Sky lightens on hover, which raises contrast
+      on a dark bg but lowers it on the light Base (Latte Sky 2.5:1). Instead,
+      hover shifts to the brand accent Mauve in both flavors (Latte #8839ef 4.8:1,
+      Mocha #cba6f7 8.1:1) — a visible blue→purple cue that clears AA.
     - Selection uses Mauve @ 25% (brand accent) rather than the spec's Overlay 2
       @ 20–30%.
     - Accepted as-is: Latte Blue (4.34:1) and Subtext 0 (4.37:1) sit ~0.15 below
@@ -36,7 +38,7 @@
   --color-fg: #4c4f69;
   --color-fg-muted: #6c6f85;
   --color-link: #1e66f5;
-  --color-link-hover: #0b5ed7;
+  --color-link-hover: #8839ef;
   --color-card-bg: #ccd0da;
   --color-rule: #9ca0b0;
   --color-accent: #8839ef;
@@ -44,7 +46,7 @@
   --color-teal: #179299;
   --color-yellow: #df8e1d;
   /* Emphasis (venue highlights, awards, stars, news terms); see header note. */
-  --color-emphasis: #a8430a;
+  --color-emphasis: #d20f39;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,14 +55,14 @@
     --color-fg: #cdd6f4;
     --color-fg-muted: #a6adc8;
     --color-link: #89b4fa;
-    --color-link-hover: #89dceb;
+    --color-link-hover: #cba6f7;
     --color-card-bg: #313244;
     --color-rule: #6c7086;
     --color-accent: #cba6f7;
     --color-peach: #fab387;
     --color-teal: #94e2d5;
     --color-yellow: #f9e2af;
-    --color-emphasis: #f9e2af;
+    --color-emphasis: #f38ba8;
   }
 }
 
@@ -79,28 +81,28 @@
   --color-fg: #cdd6f4;
   --color-fg-muted: #a6adc8;
   --color-link: #89b4fa;
-  --color-link-hover: #89dceb;
+  --color-link-hover: #cba6f7;
   --color-card-bg: #313244;
   --color-rule: #6c7086;
   --color-accent: #cba6f7;
   --color-peach: #fab387;
   --color-teal: #94e2d5;
   --color-yellow: #f9e2af;
-  --color-emphasis: #f9e2af;
+  --color-emphasis: #f38ba8;
 }
 :root[data-theme="light"] {
   --color-bg: #eff1f5;
   --color-fg: #4c4f69;
   --color-fg-muted: #6c6f85;
   --color-link: #1e66f5;
-  --color-link-hover: #0b5ed7;
+  --color-link-hover: #8839ef;
   --color-card-bg: #ccd0da;
   --color-rule: #9ca0b0;
   --color-accent: #8839ef;
   --color-peach: #fe640b;
   --color-teal: #179299;
   --color-yellow: #df8e1d;
-  --color-emphasis: #a8430a;
+  --color-emphasis: #d20f39;
 }
 
 @layer base {
