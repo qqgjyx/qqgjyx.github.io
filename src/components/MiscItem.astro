@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+
+// One honors/service line: the markdown body rendered inline.
+interface Props {
+  entry: CollectionEntry<"honors"> | CollectionEntry<"service">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<div class="text-sm"><span class="body"><Content /></span></div>
+
+<style>
+  .body :global(p) {
+    display: inline;
+    margin: 0;
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-photo: ../assets/profile.webp
+photo: /images/profile.webp
 role: "M.S. Data Science @ Harvard"
 ---
 I'm an incoming M.S. in Data Science student at [Harvard](https://gsas.harvard.edu/).
