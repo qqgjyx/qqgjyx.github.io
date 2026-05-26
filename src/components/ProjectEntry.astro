@@ -1,13 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
+import { externalLinkAttrs } from "../lib/links";
 
 interface Props {
-  project: CollectionEntry<"projects">;
+  entry: CollectionEntry<"projects">;
 }
 
-const { project } = Astro.props;
-const { data } = project;
+const { entry } = Astro.props;
+const { data } = entry;
 ---
 
-<div class="text-sm">{data.role && <span class="text-[var(--color-fg-muted)]">{data.role}, </span>}<strong>{data.title}</strong>{data.stars && <Fragment>, <span class="font-bold text-[var(--color-emphasis)]">{data.stars}</span></Fragment>}{data.github && <Fragment>, <a href={data.github} target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="inline-flex items-center gap-1 align-[-2px]"><Icon name="lucide:github" class="size-3.5 shrink-0" aria-hidden="true" /><span>code</span></a></Fragment>}</div>
+<div class="text-sm">{data.role && <span class="text-[var(--color-fg-muted)]">{data.role}, </span>}<strong>{data.title}</strong>{data.stars && <Fragment>, <span class="font-bold text-[var(--color-emphasis)]">{data.stars}</span></Fragment>}{data.github && <Fragment>, <a href={data.github} {...externalLinkAttrs(data.github)} aria-label="GitHub" title="GitHub" class="inline-flex items-center gap-1 align-[-2px]"><Icon name="lucide:github" class="size-3.5 shrink-0" aria-hidden="true" /><span>code</span></a></Fragment>}</div>

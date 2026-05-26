@@ -2,19 +2,17 @@
 import { Image } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 import { Icon } from "astro-icon/components";
-import EduRow from "../components/EduRow.astro";
+import profileImg from "../assets/images/profile.webp";
+import CredentialEntry from "../components/CredentialEntry.astro";
+import MiscItem from "../components/MiscItem.astro";
 import NewsEntry from "../components/NewsEntry.astro";
 import ProjectEntry from "../components/ProjectEntry.astro";
 import PubEntry from "../components/PubEntry.astro";
 import SocialLinks from "../components/SocialLinks.astro";
-import TeachingRow from "../components/TeachingRow.astro";
+import TeachingEntry from "../components/TeachingEntry.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
-import WorkRow from "../components/WorkRow.astro";
 import { SITE_TITLE, SITE_URL, SOCIAL_LINKS } from "../consts";
-import { honors } from "../data/honors";
-import { service } from "../data/service";
 import Base from "../layouts/Base.astro";
-import { inlineMd } from "../lib/inline-md";
 
 const bioEntry = await getEntry("bio", "bio");
 if (!bioEntry) throw new Error("Missing src/content/bio.md");
@@ -30,7 +28,7 @@ const personSchema = {
   name: SITE_TITLE,
   url: SITE_URL,
   ...(bioEntry.data.photo && {
-    image: new URL(bioEntry.data.photo.src, SITE_URL).toString(),
+    image: new URL(bioEntry.data.photo, SITE_URL).toString(),
   }),
   ...(bioEntry.data.role && { jobTitle: bioEntry.data.role }),
   affiliation: {
@@ -79,6 +77,14 @@ const projects = (await getCollection("projects")).sort(
   (a, b) => Number(b.data.featured) - Number(a.data.featured),
 );
 
+const honors = (await getCollection("honors")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const service = (await getCollection("service")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
 const hasMiscellanea =
   teaching.length > 0 ||
   honors.length > 0 ||
@@ -99,7 +105,7 @@ const hasEqualContribution = pubs.some((p) =>
           <span class="ml-1.5 text-xl font-normal text-[var(--color-fg-muted)]">王俊棠</span>
         </h1>
         <p class="mt-2 text-sm text-[var(--color-fg-muted)]">
-          {bioEntry.data.role}{bioEntry.data.affiliation && ` · ${bioEntry.data.affiliation}`}
+          {bioEntry.data.role}
         </p>
       </div>
       <ThemeToggle />
@@ -110,11 +116,11 @@ const hasEqualContribution = pubs.some((p) =>
         {
           bioEntry.data.photo && (
             <Image
-              src={bioEntry.data.photo}
+              src={profileImg}
               alt="Juntang Wang"
-              loading="eager"
               widths={[160, 320]}
               sizes="(min-width: 640px) 160px, 90px"
+              loading="eager"
               class="aspect-square w-full rounded-md bg-[var(--color-card-bg)] object-cover ring-2 ring-[var(--color-accent-ring)]"
               data-fallback="JT"
             />
@@ -135,7 +141,7 @@ const hasEqualContribution = pubs.some((p) =>
           </h2>
           <ul class="mt-3 space-y-1.5">
             {news.map((n) => (
-              <NewsEntry item={n} />
+              <NewsEntry entry={n} />
             ))}
           </ul>
         </section>
@@ -155,7 +161,7 @@ const hasEqualContribution = pubs.some((p) =>
           )}
           <div class="mt-2">
             {pubs.map((p, i) => (
-              <PubEntry pub={p} eager={i < 3} />
+              <PubEntry entry={p} eager={i < 3} />
             ))}
           </div>
         </section>
@@ -170,7 +176,16 @@ const hasEqualContribution = pubs.some((p) =>
           </h2>
           <div class="mt-2">
             {education.map((e) => (
-              <EduRow entry={e} />
+              <CredentialEntry
+                title={e.data.school}
+                subtitle={e.data.degree}
+                start={e.data.start}
+                end={e.data.end}
+                location={e.data.location}
+                logo={e.data.logo}
+                url={e.data.url}
+                icon="lucide:school"
+              />
             ))}
           </div>
         </section>
@@ -185,7 +200,16 @@ const hasEqualContribution = pubs.some((p) =>
           </h2>
           <div class="mt-2">
             {work.map((w) => (
-              <WorkRow entry={w} />
+              <CredentialEntry
+                title={w.data.org}
+                subtitle={w.data.role}
+                start={w.data.start}
+                end={w.data.end}
+                location={w.data.location}
+                logo={w.data.logo}
+                url={w.data.url}
+                icon="lucide:briefcase"
+              />
             ))}
           </div>
         </section>
@@ -207,7 +231,7 @@ const hasEqualContribution = pubs.some((p) =>
                 </div>
                 <div class="space-y-1.5">
                   {projects.map((p) => (
-                    <ProjectEntry project={p} />
+                    <ProjectEntry entry={p} />
                   ))}
                 </div>
               </>
@@ -220,7 +244,7 @@ const hasEqualContribution = pubs.some((p) =>
                 </div>
                 <div class="space-y-1.5">
                   {teaching.map((t) => (
-                    <TeachingRow entry={t} />
+                    <TeachingEntry entry={t} />
                   ))}
                 </div>
               </>
@@ -231,14 +255,9 @@ const hasEqualContribution = pubs.some((p) =>
                 <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Honors & Awards">
                   <Icon name="lucide:award" class="size-7" aria-hidden="true" />
                 </div>
-                <div class="space-y-1.5 text-sm">
+                <div class="space-y-1.5">
                   {honors.map((h) => (
-                    <div>
-                      <Fragment set:html={inlineMd(h.title)} />
-                      {h.note && (
-                        <span class="text-[var(--color-fg-muted)]"> ({h.note})</span>
-                      )}
-                    </div>
+                    <MiscItem entry={h} />
                   ))}
                 </div>
               </>
@@ -249,11 +268,9 @@ const hasEqualContribution = pubs.some((p) =>
                 <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Service & Leadership">
                   <Icon name="lucide:users" class="size-7" aria-hidden="true" />
                 </div>
-                <div class="space-y-1.5 text-sm">
+                <div class="space-y-1.5">
                   {service.map((s) => (
-                    <div>
-                      <Fragment set:html={inlineMd(s.title)} />
-                    </div>
+                    <MiscItem entry={s} />
                   ))}
                 </div>
               </>
@@ -277,7 +294,7 @@ const hasEqualContribution = pubs.some((p) =>
         <a
           href="https://github.com/qqgjyx/qqgjyx.github.io"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           class="inline-flex items-center gap-1 align-[-2px]"
         >
           <Icon name="lucide:github" class="size-3.5 shrink-0" aria-hidden="true" />

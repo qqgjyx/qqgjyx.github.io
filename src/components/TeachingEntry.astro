@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { fmtTerm } from "../lib/date";
+import { externalLinkAttrs } from "../lib/links";
+
+interface Props {
+  entry: CollectionEntry<"teaching">;
+}
+
+const { entry } = Astro.props;
+const { course, role, instructor, instructorUrl, start, end } = entry.data;
+const startTerm = fmtTerm(start);
+const endTerm = end ? fmtTerm(end) : "";
+const term =
+  endTerm && endTerm !== startTerm ? `${startTerm}–${endTerm}` : startTerm;
+---
+
+<div class="text-sm">{term && <span class="mr-1 text-[var(--color-fg-muted)]">{term}</span>}{role}, <strong>{course}</strong>{instructor && <Fragment>, {instructorUrl ? <a href={instructorUrl} {...externalLinkAttrs(instructorUrl)}>{instructor}</a> : instructor}</Fragment>}</div>

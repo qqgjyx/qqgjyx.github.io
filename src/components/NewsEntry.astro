@@ -3,12 +3,12 @@ import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 
 interface Props {
-  item: CollectionEntry<"news">;
+  entry: CollectionEntry<"news">;
 }
 
-const { item } = Astro.props;
-const { Content } = await render(item);
-const dateStr = item.data.date.toLocaleString("en-US", {
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const dateStr = entry.data.date.toLocaleString("en-US", {
   month: "short",
   year: "numeric",
 });

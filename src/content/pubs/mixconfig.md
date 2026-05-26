@@ -1,6 +1,5 @@
 ---
 title: Mixing Configurations for Downstream Prediction
-type: inproceedings
 date: 2026-05-01
 authors:
   - { name: "Juntang Wang", self: true, equal: true }
@@ -8,12 +7,10 @@ authors:
   - { name: "Yihan Wang", equal: true }
   - { name: "Dongmian Zou" }
   - { name: "Shixin Xu" }
-displayAuthors: "<strong>Juntang Wang</strong><sup>†</sup>, Hao Wu<sup>†</sup>, Yihan Wang<sup>†</sup>, Dongmian Zou, Shixin Xu"
 venue: "Proceedings of the 43rd International Conference on Machine Learning (ICML)"
 venueShort: ICML
 venueHighlight: true
-hero: ../../assets/pubs/mixconfig.webp
-heroDark: ../../assets/pubs/mixconfig-dark.webp
+hero: p-mixconfig.svg
 links:
   paper: "https://icml.cc/virtual/2026/poster/63010"
   arxiv: "https://arxiv.org/abs/2510.19248"
