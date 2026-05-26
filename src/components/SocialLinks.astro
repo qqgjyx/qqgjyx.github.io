@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { SOCIAL_LINKS } from "../consts";
+import { externalLinkAttrs } from "../lib/links";
 ---
 
 <ul class="mt-3 flex flex-wrap justify-center gap-0.5">
@@ -9,8 +10,7 @@ import { SOCIAL_LINKS } from "../consts";
       <li>
         <a
           href={link.url}
-          target={link.url.startsWith("http") || link.url.startsWith("mailto:") ? "_blank" : undefined}
-          rel="noopener"
+          {...externalLinkAttrs(link.url)}
           aria-label={link.label}
           title={link.label}
           class="inline-flex size-6 items-center justify-center rounded text-[var(--color-link)] hover:bg-[var(--color-card-bg)] hover:text-[var(--color-link-hover)] focus-visible:bg-[var(--color-card-bg)] focus-visible:text-[var(--color-link-hover)]"

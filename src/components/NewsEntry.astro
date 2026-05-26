@@ -21,7 +21,7 @@ const dateStr = entry.data.date.toLocaleString("en-US", {
   <span class="news-body"><Content /></span>
 </li>
 
-<style is:global>
-  .news-body p { display: inline; margin: 0; }
-  .news-body strong { color: var(--color-emphasis); }
+<style>
+  .news-body :global(p) { display: inline; margin: 0; }
+  .news-body :global(strong) { color: var(--color-emphasis); }
 </style>
