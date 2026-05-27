@@ -1,4 +1,4 @@
 ---
 order: 0
 ---
-From Kunshan, Jiangsu, China
+From Kunshan, China
