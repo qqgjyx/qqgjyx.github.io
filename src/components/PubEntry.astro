@@ -31,14 +31,8 @@ const LINK_LABELS: Record<string, string> = {
 // Canonical link order, applied regardless of frontmatter key order.
 const LINK_ORDER = ["paper", "pdf", "poster", "code", "arxiv"];
 
-// Hero assets live in src/assets/images/, named in each pub's `hero` field.
-// An .svg hero is inlined raw so its `currentColor` ink follows the theme;
-// a raster hero goes through astro:assets <Image>. Trusted build-time content.
-const rawSvgs = import.meta.glob<string>("../assets/images/*.svg", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-});
+// Hero assets live in src/assets/images/, named in each pub's `hero` field;
+// optimized at build via astro:assets <Image>. Trusted build-time content.
 const rasterImages = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/images/*.{webp,png,jpg,jpeg}",
   { eager: true },
@@ -48,12 +42,7 @@ const { entry, eager = false } = Astro.props;
 const { data } = entry;
 
 const heroPath = data.hero ? `../assets/images/${data.hero}` : null;
-const inlineSvg =
-  heroPath && data.hero?.endsWith(".svg") ? (rawSvgs[heroPath] ?? null) : null;
-const rasterHero =
-  heroPath && !data.hero?.endsWith(".svg")
-    ? (rasterImages[heroPath]?.default ?? null)
-    : null;
+const rasterHero = heroPath ? (rasterImages[heroPath]?.default ?? null) : null;
 
 const links = Object.entries(data.links ?? {})
   .filter(([, v]) => Boolean(v))
@@ -70,11 +59,9 @@ const links = Object.entries(data.links ?? {})
   id={entry.id}
   class="grid grid-cols-[90px_1fr] gap-3 py-5 sm:grid-cols-[160px_1fr] sm:gap-5"
 >
-  <div class="relative flex aspect-[4/3] self-start items-center justify-center overflow-hidden rounded-md text-[var(--color-fg)] ring-2 ring-[var(--color-accent-ring)] [&>svg]:h-full [&>svg]:w-full">
+  <div class="relative flex aspect-[4/3] self-start items-center justify-center overflow-hidden rounded-md ring-2 ring-[var(--color-accent-ring)]">
     {
-      inlineSvg ? (
-        <Fragment set:html={inlineSvg} />
-      ) : rasterHero ? (
+      rasterHero ? (
         <Image
           src={rasterHero}
           alt={data.title}

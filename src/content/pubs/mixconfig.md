@@ -10,7 +10,7 @@ authors:
 venue: "Proceedings of the 43rd International Conference on Machine Learning (ICML)"
 venueShort: ICML
 venueHighlight: true
-hero: p-mixconfig.svg
+hero: p-mixconfig.webp
 links:
   paper: "https://openreview.net/forum?id=aw6alulxr8"
   poster: "https://icml.cc/virtual/2026/poster/63010"
