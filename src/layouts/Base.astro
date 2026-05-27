@@ -64,7 +64,15 @@ const resolvedOgImage =
 
     {noIndex && <meta name="robots" content="noindex,nofollow" />}
 
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {/* Escape `<` so a `</script>` substring in content can't break out. */}
+    {
+      jsonLd && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+        />
+      )
+    }
 
     <Font cssVariable="--font-mono" preload />
 
