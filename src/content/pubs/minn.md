@@ -1,5 +1,5 @@
 ---
-title: "Manifold-Informed Neural Network for Low-Data, Imbalanced ECG Inference with Auxiliary Clinical Metadata"
+title: "Manifold-Informed Neural Network"
 date: 2026-04-17
 authors:
   - { name: "Juntang Wang", self: true }
