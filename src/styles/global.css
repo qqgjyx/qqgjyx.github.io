@@ -14,10 +14,10 @@
     --color-accent    = Mauve      (deviation: guide silent on brand accent)
 
   Deviations & contrast (light theme; Mocha clears WCAG AA everywhere):
-    - --color-emphasis: the spec has no "highlight" role, and its warm colors
-      (Peach 2.6:1, Yellow 2.3:1) fail AA on the light Base — so emphasis uses
-      Catppuccin Red/crimson, the one vivid warm hue that stays AA-legible while
-      dark (Latte #d20f39 4.8:1, Mocha #f38ba8 7.1:1). Unified across both flavors.
+    - --color-emphasis: Catppuccin Peach (Latte #fe640b, Mocha #fab387), the
+      owner's choice for a warmer highlight. Note: Latte Peach is ~2.6:1 on the
+      light Base (below WCAG AA for text), a deliberate aesthetic deviation;
+      Mocha Peach on the dark Base passes (~8:1).
     - --color-link-hover: the spec's Sky lightens on hover, which raises contrast
       on a dark bg but lowers it on the light Base (Latte Sky 2.5:1). Instead,
       hover shifts to the brand accent Mauve in both flavors (Latte #8839ef 4.8:1,
@@ -109,16 +109,15 @@
   html {
     background: var(--color-bg);
     color: var(--color-fg);
-    font-family: var(--font-mono), ui-monospace, "Cascadia Mono", Menlo,
-      monospace;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+      Arial, sans-serif;
     font-size: 15px;
     line-height: 1.6;
-    font-feature-settings: "calt" 1, "ss01" 1, "ss02" 1;
     -webkit-font-smoothing: antialiased;
     color-scheme: light dark;
   }
   body {
-    font-weight: 380;
+    font-weight: 400;
   }
 
   a {
