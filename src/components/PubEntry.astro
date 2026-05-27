@@ -28,6 +28,9 @@ const LINK_LABELS: Record<string, string> = {
   poster: "poster",
 };
 
+// Canonical link order, applied regardless of frontmatter key order.
+const LINK_ORDER = ["paper", "pdf", "poster", "code", "arxiv"];
+
 // Hero assets live in src/assets/images/, named in each pub's `hero` field.
 // An .svg hero is inlined raw so its `currentColor` ink follows the theme;
 // a raster hero goes through astro:assets <Image>. Trusted build-time content.
@@ -59,7 +62,8 @@ const links = Object.entries(data.links ?? {})
     url: url as string,
     icon: LINK_ICONS[key] ?? "lucide:link",
     label: LINK_LABELS[key] ?? key,
-  }));
+  }))
+  .sort((a, b) => LINK_ORDER.indexOf(a.key) - LINK_ORDER.indexOf(b.key));
 ---
 
 <article
