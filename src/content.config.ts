@@ -119,6 +119,13 @@ const service = defineCollection({
   }),
 });
 
+const personal = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/personal" }),
+  schema: z.object({
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   bio,
   pubs,
@@ -129,4 +136,5 @@ export const collections = {
   projects,
   honors,
   service,
+  personal,
 };

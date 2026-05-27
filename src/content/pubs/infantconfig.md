@@ -10,7 +10,7 @@ authors:
 venue: "15th International Conference on Brain Inspired Cognitive Systems (BICS 2025)"
 venueShort: Brain Inspired Cognitive Systems
 award: Oral Presentation
-hero: p-infantconfig.svg
+hero: p-infantconfig.webp
 links:
   arxiv: "https://arxiv.org/abs/2510.19229"
 ---

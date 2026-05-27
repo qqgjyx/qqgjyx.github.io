@@ -85,11 +85,16 @@ const service = (await getCollection("service")).sort(
   (a, b) => a.data.order - b.data.order,
 );
 
+const personal = (await getCollection("personal")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
 const hasMiscellanea =
   teaching.length > 0 ||
   honors.length > 0 ||
   service.length > 0 ||
-  projects.length > 0;
+  projects.length > 0 ||
+  personal.length > 0;
 
 const hasEqualContribution = pubs.some((p) =>
   p.data.authors?.some((a) => a.equal),
@@ -152,7 +157,7 @@ const hasEqualContribution = pubs.some((p) =>
       pubs.length > 0 && (
         <section class="mt-12">
           <h2 class="text-xl font-semibold tracking-tight">
-            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Selected Publications
+            <span aria-hidden="true" class="mr-1 text-[var(--color-accent-soft)]">§</span>Publications
           </h2>
           {hasEqualContribution && (
             <p class="mt-1 text-xs text-[var(--color-fg-muted)]">
@@ -271,6 +276,19 @@ const hasEqualContribution = pubs.some((p) =>
                 <div class="space-y-1.5">
                   {service.map((s) => (
                     <MiscItem entry={s} />
+                  ))}
+                </div>
+              </>
+            )}
+
+            {personal.length > 0 && (
+              <>
+                <div class="flex size-16 items-center justify-center rounded-md bg-[var(--color-card-bg)] text-[var(--color-fg-muted)]" title="Personal">
+                  <Icon name="lucide:map-pin" class="size-7" aria-hidden="true" />
+                </div>
+                <div class="space-y-1.5">
+                  {personal.map((p) => (
+                    <MiscItem entry={p} />
                   ))}
                 </div>
               </>

@@ -2,9 +2,12 @@
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 
-// One honors/service line: the markdown body rendered inline.
+// One honors/service/personal line: the markdown body rendered inline.
 interface Props {
-  entry: CollectionEntry<"honors"> | CollectionEntry<"service">;
+  entry:
+    | CollectionEntry<"honors">
+    | CollectionEntry<"service">
+    | CollectionEntry<"personal">;
 }
 
 const { entry } = Astro.props;

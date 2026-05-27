@@ -12,7 +12,7 @@ venue: "Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and
 venueShort: KDD
 venueHighlight: true
 track: AI for Science Track (Inaugural)
-hero: p-stageguard.svg
+hero: p-stageguard.webp
 links:
   paper: "https://openreview.net/forum?id=LEwjtvV1VK"
 ---
