@@ -106,19 +106,22 @@ const hasEqualContribution = pubs.some((p) =>
 const pubArticles = pubs.map((p) => {
   const { data } = p;
   const articleUrl = data.links?.paper ?? data.links?.arxiv;
+  const arxiv = data.links?.arxiv;
   return {
     "@type": "ScholarlyArticle",
-    headline: data.title,
+    name: data.title,
     datePublished: data.date.toISOString().slice(0, 10),
-    author: (data.authors ?? []).map((a) => {
-      const url = a.self ? SITE_URL : people[a.name]?.url;
-      return { "@type": "Person", name: a.name, ...(url && { url }) };
+    ...(data.authors?.length && {
+      author: data.authors.map((a) => {
+        const url = a.self ? SITE_URL : people[a.name]?.url;
+        return { "@type": "Person", name: a.name, ...(url && { url }) };
+      }),
     }),
     ...(data.venue && {
       isPartOf: { "@type": "Periodical", name: data.venue },
     }),
-    ...(articleUrl && { url: articleUrl }),
-    ...(data.links?.arxiv && { sameAs: [data.links.arxiv] }),
+    ...(articleUrl && { url: new URL(articleUrl, SITE_URL).toString() }),
+    ...(arxiv && arxiv !== articleUrl && { sameAs: [arxiv] }),
   };
 });
 
