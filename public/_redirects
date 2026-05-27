@@ -1,0 +1,22 @@
+# Old Jekyll URLs -> new single-page anchors / paths (301 = permanent).
+# Cloudflare Pages only (inert on GitHub Pages). .html matched literally;
+# a #fragment destination is sent as the Location suffix.
+/about                              /                           301
+/about.html                         /                           301
+/publications                       /#publications              301
+/publications/                      /#publications              301
+/publications.html                  /#publications              301
+/projects                           /#miscellanea               301
+/projects/                          /#miscellanea               301
+/projects.html                      /#miscellanea               301
+/more                               /                           301
+/talks                              /                           301
+/teaching                           /                           301
+/categories                         /                           301
+/tags                               /                           301
+/sitemap                            /sitemap-index.xml          301
+/sitemap.xml                        /sitemap-index.xml          301
+/feed.xml                           /rss.xml                    301
+/files/p01-LK99-MC17.pdf            /files/p-lk99-poster.pdf    301
+/files/p02-SW2026-MINN-paper.pdf    /files/p-minn-paper.pdf     301
+/files/p02-SW2026-MINN-poster.pdf   /files/p-minn-poster.pdf    301

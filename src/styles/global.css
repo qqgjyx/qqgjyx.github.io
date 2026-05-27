@@ -143,6 +143,11 @@
     background: color-mix(in srgb, var(--color-accent) 25%, transparent);
   }
 
+  /* Breathing room when landing on a #anchor (sections + per-pub articles). */
+  :target {
+    scroll-margin-top: 1.5rem;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

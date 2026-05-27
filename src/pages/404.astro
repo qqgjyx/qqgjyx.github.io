@@ -1,0 +1,17 @@
+---
+import { SITE_TITLE } from "../consts";
+import Base from "../layouts/Base.astro";
+---
+
+<Base noIndex title={`Page not found · ${SITE_TITLE}`}>
+  <main class="mx-auto max-w-[860px] px-6 py-12">
+    <h1 class="text-3xl font-semibold tracking-tight">
+      404
+      <span class="ml-1.5 text-xl font-normal text-[var(--color-fg-muted)]">page not found</span>
+    </h1>
+    <p class="mt-4 text-sm text-[var(--color-fg-muted)]">
+      That page doesn't exist or has moved.
+    </p>
+    <p class="mt-6 text-sm"><a href="/">← Back to home</a></p>
+  </main>
+</Base>
