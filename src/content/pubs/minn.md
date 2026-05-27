@@ -8,6 +8,6 @@ venue: "DKU SignatureWork Symposium"
 venueShort: "DKU Signature Work"
 hero: p-minn.webp
 links:
-  paper: /files/p02-SW2026-MINN-paper.pdf
-  poster: /files/p02-SW2026-MINN-poster.pdf
+  paper: /files/p-minn-paper.pdf
+  poster: /files/p-minn-poster.pdf
 ---
