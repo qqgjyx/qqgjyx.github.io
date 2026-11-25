@@ -1,0 +1,6 @@
+# Keep binaries byte-exact. Without this, core.autocrlf can rewrite PDFs that Git mistakes for text.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.webp binary
